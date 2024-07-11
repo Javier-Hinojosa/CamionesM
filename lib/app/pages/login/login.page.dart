@@ -1,39 +1,13 @@
+import 'package:camionesm/app/pages/login/login.controller.dart';
 import 'package:camionesm/app/widgets/button.widget.dart';
 import 'package:camionesm/app/widgets/reactive_text_field.widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
-class LoginPage extends StatefulWidget {
+class LoginPage extends GetView<LoginController> {
   const LoginPage({super.key});
 
-  static const int emailQuantityMinLength = 5;
-  static const int passQuantityMinLength = 4;
-
-
-  @override
-  State<LoginPage> createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
-  late bool isPasswordVisible = false;
-  late var loginForm=FormGroup({});
-
-  @override
-  void initState() {
-    super.initState();
-    loginForm=FormGroup({
-      'user': FormControl<String>(validators: [
-        Validators.required,
-        Validators.minLength(LoginPage.emailQuantityMinLength)
-      ]),
-      'password': FormControl<String>(validators: [
-        Validators.required,
-        Validators.minLength(LoginPage.passQuantityMinLength)
-      ]),
-    }, validators: [
-      Validators.required
-    ]);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,29 +28,29 @@ class _LoginPageState extends State<LoginPage> {
         Padding(
           padding: const EdgeInsets.only(top: 10,bottom: 10),
           child: ReactiveForm(
-              formGroup: loginForm,
+              formGroup: controller.loginForm(),
               child: Column(children: [
                 CustomReactiveTextField("user",
-                    minLength: LoginPage.emailQuantityMinLength,
+                    minLength: LoginController.emailQuantityMinLength,
                     labelText: "Usuario",
                     hintText: "Introduce usuario o correo electrónico",
                     keyboard: TextInputType.emailAddress),
                 CustomReactiveTextField("password",
-                    minLength: LoginPage.passQuantityMinLength,
-                    iconSuffix: isPasswordVisible
+                    minLength: LoginController.passQuantityMinLength,
+                    iconSuffix: controller.isPasswordVisible()
                         ? Icons.visibility
                         : Icons.visibility_off,
-                    onSuffixIconTap: () => _changePasswordVisibility(),
+                    onSuffixIconTap: () => controller.changePasswordVisibility(),
                     labelText: "Contraseña",
                     hintText: "Introduce tu contraseña",
                     keyboard: TextInputType.text,
-                    isPass: !isPasswordVisible,
-                    onSubmitted: (resp) => {})
-              ])),
+                    isPass: !controller.isPasswordVisible(),
+                    onSubmitted: (resp) => controller.onLogin())
+              ]))
         ),
             Padding(
                 padding: const EdgeInsets.only(bottom: 20,top: 10,right: 10,left: 10),
-                child: CustomButton(title:"Entrar",onPressed:() {})),
+                child: CustomButton(title:"Entrar",onPressed:() => controller.onLogin())),
             Row(
               mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -89,14 +63,6 @@ class _LoginPageState extends State<LoginPage> {
       ]),
     );
   }
-
-  //#region Functions
-  _changePasswordVisibility() {
-    setState(() {
-      isPasswordVisible = !isPasswordVisible;
-    });
-  }
-  //endregion
 
 //#region Widgets
   Widget _labelText(String title, {TextStyle? style}) {
