@@ -1,4 +1,5 @@
 import 'package:camionesm/app/pages/login/login.page.dart';
+import 'package:camionesm/app/pages/signup/signup.page.dart';
 import 'package:camionesm/app/pages/splash_screen/splash_screen.page.dart';
 import 'package:camionesm/core/routes/bindings.dart';
 import 'package:camionesm/core/routes/routes.dart';
@@ -15,12 +16,12 @@ abstract class Pages {
       page: () => const LoginPage(),
       binding: LoginBinding(),
       transition: Transition.rightToLeft,
-      transitionDuration: const Duration(seconds: 1, milliseconds: 500),
+      transitionDuration: const Duration(seconds: 1),
     ),
     GetPage(
-        name: Routes.signUp,
-        page: () => const SplashScreenPage(),
-        binding: SplashScreenBinding()),
+        name: Routes.singUp,
+        page: ()=>const SingUpPage(),
+    binding: SingUpBinding()),
     GetPage(
         name: Routes.home,
         page: () => const SplashScreenPage(),

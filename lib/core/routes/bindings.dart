@@ -1,5 +1,6 @@
 
 import 'package:camionesm/app/pages/login/login.controller.dart';
+import 'package:camionesm/app/pages/signup/signup.controller.dart';
 import 'package:camionesm/app/pages/splash_screen/splash_screen.controller.dart';
 import 'package:get/get.dart';
 
@@ -16,3 +17,11 @@ class SplashScreenBinding implements Bindings {
     Get.lazyPut<SplashScreenController>(() => SplashScreenController());
   }
 }
+
+class SingUpBinding implements Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<SingUpController>(()=> SingUpController());
+  }
+}
+

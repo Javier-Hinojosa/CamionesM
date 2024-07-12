@@ -31,7 +31,7 @@ class SplashScreenPage extends GetView<SplashScreenController> {
                 borderRadius: BorderRadius.circular(18.0),
                 boxShadow: [
                   BoxShadow(
-                      color: Theme.of(context).primaryColor.withOpacity(0.7),
+                      color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.7),
                       blurRadius: 10.0,
                       spreadRadius: 2.0)
                 ]),
@@ -42,7 +42,7 @@ class SplashScreenPage extends GetView<SplashScreenController> {
                     child: Container(
                         padding: const EdgeInsets.all(20.0),
                         decoration: BoxDecoration(
-                          color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.5),
+                          color: Theme.of(context).primaryColor.withOpacity(0.5),
                           borderRadius: BorderRadius.circular(15.0)
                         ),
                         child: CustomImageAssets(

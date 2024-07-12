@@ -32,7 +32,10 @@ class LoginController extends GetxController{
       isPasswordVisible(!isPasswordVisible());
   }
 
-  onLogin(){
+  onLogin()=>
     Get.toNamed(Routes.home);
-  }
+
+  onSingUp()=>
+    Get.toNamed(Routes.singUp);
+
 }

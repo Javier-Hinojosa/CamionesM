@@ -135,7 +135,7 @@ Color? borderSideColor}) {
 var themeDefault = borderSideColor ?? Colors.black;
 return InputDecoration(
 filled: true,
-fillColor: backgroundColor ?? const Color(0xfff6c700),
+fillColor: backgroundColor ?? Theme.of(context).scaffoldBackgroundColor,
   suffixIcon: suffixIcon != null
       ? IconButton(
       icon: Icon(
