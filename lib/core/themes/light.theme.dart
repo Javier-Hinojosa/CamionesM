@@ -1,13 +1,19 @@
 import 'package:camionesm/core/themes/text.theme.dart';
+import 'package:camionesm/core/values/globals.dart';
 import 'package:flutter/material.dart';
+
+
 
 final ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
-    scaffoldBackgroundColor: const Color(0xfff1f0f0),
-    primaryColor: const Color(0xfff6c700),
-    colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xfff6c700)),
+    scaffoldBackgroundColor:  Globals.backGroundColor,
+    sliderTheme: const SliderThemeData(activeTrackColor: Colors.white),
+    primaryColor: Globals.principalColor,
+    colorScheme: ColorScheme.fromSeed(seedColor: Globals.principalColor),
     useMaterial3: true,
-    appBarTheme: const AppBarTheme(backgroundColor: Color(0xfff1f0f0)),
+    appBarTheme: AppBarTheme(
+        backgroundColor: Globals.backGroundColor,
+        surfaceTintColor: Globals.backGroundColor),
     dividerTheme: const DividerThemeData(color: Colors.black),
   textTheme: CustomTextStyles()
 );

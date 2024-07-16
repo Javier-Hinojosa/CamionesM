@@ -11,13 +11,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
   Widget build(BuildContext context) {
    return AppBar(
      backgroundColor: backgroundColor,
+     automaticallyImplyLeading: true,
+     leadingWidth: Get.width*0.25,
      leading: IconButton(onPressed: ()=>Get.back(), icon:  const CustomIconButton())
    );
   }
 
   @override
-  Size get preferredSize => Size(Get.width, Get.height*0.07);
-
+  Size get preferredSize => Size.fromHeight(Get.height*0.065);
 
 
 }

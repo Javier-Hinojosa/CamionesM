@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CustomIconButton extends StatelessWidget{
 
@@ -11,6 +12,7 @@ class CustomIconButton extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: Get.width*0.11,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30.0),
         border: const Border(

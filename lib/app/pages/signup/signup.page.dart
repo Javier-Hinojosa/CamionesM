@@ -12,33 +12,33 @@ class SingUpPage extends GetView<SingUpController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const CustomAppBar(),
+        appBar:  const CustomAppBar(),
         body: ListView(shrinkWrap: true, children: [
            CustomText("¿Qué tipo de usuario eres?", style: Theme.of(context).textTheme.titleMedium!.apply(fontWeightDelta: FontWeight.w100.index,fontSizeDelta: 4)).paddingOnly(bottom: 10,left: 10,right: 10),
           _textWithBold('Entendemos la importancia de conectar a los clientes con transportistas de manera eficiente. ', textBold: 'Por eso, te invitamos a identificarte según tu rol en nuestra red.').paddingAll(10),
           CustomCardButton(
               children:[
             Padding(
-                padding: EdgeInsets.all(5),
+                padding: const EdgeInsets.all(5),
                 child: CustomImageAssets(url: "assets/images/box_icon.png",height: Get.height*0.15,width: Get.width*0.3,fit: BoxFit.fill,)),
-            CustomText("1   Cliente ( Persona o empresa que envía)", style: Theme.of(context).textTheme.bodyMedium!.apply(fontWeightDelta: FontWeight.bold.value)),
+            CustomText("1   Cliente (Persona o empresa que envía)", style: Theme.of(context).textTheme.bodyMedium!.apply(fontWeightDelta: FontWeight.bold.value)),
             CustomText("Eres una persona o cliente que desea envíar.", style: Theme.of(context).textTheme.bodyMedium)
           ]).paddingAll(10),
           CustomCardButton(
               children:[
                 Padding(
-                    padding: EdgeInsets.all(5),
+                    padding: const EdgeInsets.all(5),
                     child: CustomImageAssets(url: "assets/images/charts_icon.png",height: Get.height*0.15,width: Get.width*0.3,fit: BoxFit.fill,)),
-                CustomText("1   Cliente ( Persona o empresa que envía)", style: Theme.of(context).textTheme.bodyMedium!.apply(fontWeightDelta: FontWeight.bold.value)),
-                CustomText("Eres una persona o cliente que desea envíar.", style: Theme.of(context).textTheme.bodyMedium)
+                CustomText("2   Transportista Independiente", style: Theme.of(context).textTheme.bodyMedium!.apply(fontWeightDelta: FontWeight.bold.value)),
+                CustomText("Empresa de pequeña escala.", style: Theme.of(context).textTheme.bodyMedium)
               ]).paddingAll(10),
           CustomCardButton(
               children:[
                 Padding(
-                    padding: EdgeInsets.all(5),
+                    padding: const EdgeInsets.all(5),
                     child: CustomImageAssets(url: "assets/images/shop_icon.png",height: Get.height*0.15,width: Get.width*0.3,fit: BoxFit.fill,)),
-                CustomText("1   Cliente ( Persona o empresa que envía)", style: Theme.of(context).textTheme.bodyMedium!.apply(fontWeightDelta: FontWeight.bold.value)),
-                CustomText("Eres una persona o cliente que desea envíar.", style: Theme.of(context).textTheme.bodyMedium)
+                CustomText("3   Transportista Empresarial", style: Theme.of(context).textTheme.bodyMedium!.apply(fontWeightDelta: FontWeight.bold.value)),
+                CustomText("Empresa de mediana a grande escala.", style: Theme.of(context).textTheme.bodyMedium)
               ]).paddingAll(10)
         ]).paddingAll(15));
   }
