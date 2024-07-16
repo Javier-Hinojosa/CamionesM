@@ -45,9 +45,13 @@ class SplashScreenPage extends GetView<SplashScreenController> {
                           color: Theme.of(context).primaryColor.withOpacity(0.5),
                           borderRadius: BorderRadius.circular(15.0)
                         ),
-                        child: CustomImageAssets(
-                            url: "assets/images/logo.png",
-                            width: Get.width * 0.4,
-                            fit: BoxFit.fill)))))));
+                        child: Padding(
+                          padding: const EdgeInsets.all(60),
+                          child: CustomImageAssets(
+                              url: "assets/images/logo.png",
+                              width: Get.width * 0.3,
+                              height: Get.height*0.5,
+                              fit: BoxFit.fill),
+                        )))))));
   }
 }
