@@ -46,7 +46,7 @@ class SplashScreenPage extends GetView<SplashScreenController> {
                           borderRadius: BorderRadius.circular(15.0)
                         ),
                         child: CustomImageAssets(
-                            url: "assets/images/enviogoupng.png",
+                            url: "assets/images/logo.png",
                             width: Get.width * 0.4,
                             fit: BoxFit.fill)))))));
   }
