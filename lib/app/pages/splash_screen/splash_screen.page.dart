@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:camionesm/app/pages/splash_screen/splash_screen.controller.dart';
 import 'package:camionesm/app/utils/animation.utils.dart';
 import 'package:camionesm/app/widgets/images_assets.widget.dart';
+import 'package:camionesm/core/values/paths.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,7 +17,7 @@ class SplashScreenPage extends GetView<SplashScreenController> {
       SizedBox(
           width: Get.width,
           height: Get.height,
-          child: const CustomImageAssets(url: "assets/images/splash.png")),
+          child: const CustomImageAssets(url: Paths.splash)),
       _cardLogo(context)
     ]));
   }
@@ -48,7 +49,7 @@ class SplashScreenPage extends GetView<SplashScreenController> {
                         child: Padding(
                           padding: const EdgeInsets.all(60),
                           child: CustomImageAssets(
-                              url: "assets/images/logo.png",
+                              url: Paths.logo,
                               width: Get.width * 0.3,
                               height: Get.height*0.5,
                               fit: BoxFit.fill),

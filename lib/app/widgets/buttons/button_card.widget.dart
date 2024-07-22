@@ -4,7 +4,10 @@ import 'package:get/get.dart';
 
 class CustomCardButton extends StatelessWidget{
   final List<Widget> children;
-  const CustomCardButton({super.key, required this.children});
+  final void Function()? onPressed;
+  final Color? backgroundColor;
+  final Color? borderColor;
+  const CustomCardButton({super.key, required this.children, this.backgroundColor, this.onPressed, this.borderColor});
 
   @override
   Widget build(BuildContext context) {
@@ -12,26 +15,27 @@ class CustomCardButton extends StatelessWidget{
       elevation: 2,
       borderRadius: BorderRadius.circular(30.0),
       borderOnForeground: true,
-      color: Theme.of(context).scaffoldBackgroundColor,
+      color: backgroundColor??Theme.of(context).scaffoldBackgroundColor,
       child: InkWell(
         borderRadius: BorderRadius.circular(30.0),
         splashColor: Globals.principalColor,
         highlightColor: Globals.principalColor,
-        onTap: (){},
+        onTap: onPressed,
         child: Container(
             decoration: BoxDecoration(
               shape: BoxShape.rectangle,
               borderRadius: BorderRadius.circular(30.0),
                 border:  Border.all(
                   strokeAlign: BorderSide.strokeAlignInside,
-                 color: Colors.black45,
+                 width: borderColor==Colors.black?2:1,
+                 color: borderColor??Colors.black45,
                 )
             ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: children,
-          ).paddingAll(10)
+          ).paddingAll(2.5)
         ),
       ),
     );

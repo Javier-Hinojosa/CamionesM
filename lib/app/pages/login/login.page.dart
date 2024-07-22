@@ -1,6 +1,6 @@
 import 'package:camionesm/app/pages/login/login.controller.dart';
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
-import 'package:camionesm/app/widgets/reactive_text_field.widget.dart';
+import 'package:camionesm/app/widgets/reactives/reactive_text_field.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
 
 import 'package:flutter/material.dart';
