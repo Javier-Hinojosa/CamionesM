@@ -1,6 +1,5 @@
 import 'package:camionesm/app/pages/login/login.controller.dart';
 import 'package:camionesm/app/pages/nav/home/home.controller.dart';
-import 'package:camionesm/app/pages/nav/home/home_filter.controller.dart';
 import 'package:camionesm/app/pages/nav/menu/settings.controller.dart';
 import 'package:camionesm/app/pages/nav/nav_bar.controller.dart';
 import 'package:camionesm/app/pages/nav/petitions/petitions.controller.dart';

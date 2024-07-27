@@ -1,5 +1,4 @@
 import 'package:camionesm/app/pages/login/login.page.dart';
-import 'package:camionesm/app/pages/nav/home/home.page.dart';
 import 'package:camionesm/app/pages/nav/nav_bar.page.dart';
 import 'package:camionesm/app/pages/signup/signup.page.dart';
 import 'package:camionesm/app/pages/splash_screen/splash_screen.page.dart';

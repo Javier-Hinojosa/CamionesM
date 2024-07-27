@@ -1,4 +1,3 @@
-import 'package:camionesm/app/widgets/card_reduce.widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

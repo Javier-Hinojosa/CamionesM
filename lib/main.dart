@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:camionesm/app/pages/splash_screen/splash_screen.page.dart';
 import 'package:camionesm/core/routes/bindings.dart';
 import 'package:camionesm/core/routes/pages.dart';
