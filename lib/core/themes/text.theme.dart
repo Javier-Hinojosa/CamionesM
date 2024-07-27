@@ -33,7 +33,7 @@ class CustomTextStyles extends TextTheme {
   TextStyle? get labelLarge => null;
 
   @override
-  TextStyle? get labelMedium => null;
+  TextStyle? get labelMedium => const TextStyle(fontSize: 14, color: Colors.black);
 
   @override
   TextStyle? get labelSmall => null;
@@ -45,5 +45,5 @@ class CustomTextStyles extends TextTheme {
   TextStyle? get titleLarge => const TextStyle(fontSize: 32, color: Colors.black,fontWeight: FontWeight.bold);
 
   @override
-  TextStyle? get titleMedium => const TextStyle(fontSize: 18, color: Colors.black);
+  TextStyle? get titleMedium => const TextStyle(fontSize: 18, color: Colors.black, overflow: TextOverflow.ellipsis);
 }

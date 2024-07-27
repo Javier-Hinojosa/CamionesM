@@ -38,17 +38,18 @@ class LoginPage extends GetView<LoginController> {
                     labelText: "Usuario",
                     hintText: "Introduce usuario o correo electrónico",
                     keyboard: TextInputType.emailAddress),
-                CustomReactiveTextField("password",
-                    minLength: LoginController.passQuantityMinLength,
-                    iconSuffix: controller.isPasswordVisible()
-                        ? Icons.visibility
-                        : Icons.visibility_off,
-                    onSuffixIconTap: () => controller.changePasswordVisibility(),
-                    labelText: "Contraseña",
-                    hintText: "Introduce tu contraseña",
-                    keyboard: TextInputType.text,
-                    isPass: !controller.isPasswordVisible(),
-                    onSubmitted: (resp) => controller.onLogin())
+                Obx(()=> CustomReactiveTextField("password",
+                      minLength: LoginController.passQuantityMinLength,
+                      iconSuffix: controller.isPasswordVisible()
+                          ? Icons.visibility
+                          : Icons.visibility_off,
+                      onSuffixIconTap: () => controller.changePasswordVisibility(),
+                      labelText: "Contraseña",
+                      hintText: "Introduce tu contraseña",
+                      keyboard: TextInputType.text,
+                      isPass: !controller.isPasswordVisible(),
+                      onSubmitted: (resp) => controller.onLogin()),
+                )
               ]))
         ),
             Padding(

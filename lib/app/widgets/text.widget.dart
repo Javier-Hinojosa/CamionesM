@@ -18,6 +18,7 @@ import 'package:flutter/material.dart';
         style: style,
         textAlign: textAlign,
         maxLines: maxLines,
+        softWrap: true,
         overflow: TextOverflow.ellipsis);
   }
 

@@ -15,6 +15,9 @@ class Keys {
   static const String streetNoInt ='street_no_int';
   static const String postalCode ='postal_code';
 
+  static const String stateOrigin ='stateOrigin';
+  static const String stateDestiny ='stateDestiny';
+
   static const String name ='name';
   static const String lastName ='last_name';
   static const String rfcLR ='rfc_lr';

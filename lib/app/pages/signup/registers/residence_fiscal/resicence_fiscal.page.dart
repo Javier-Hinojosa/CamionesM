@@ -1,5 +1,5 @@
 import 'package:camionesm/app/pages/signup/registers/residence_fiscal/residence_fiscal.Controller.dart';
-import 'package:camionesm/app/widgets/app_bar.widget.dart';
+import 'package:camionesm/app/widgets/app_bar/app_bar.widget.dart';
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
 import 'package:camionesm/app/widgets/card_reduce.widget.dart';
 import 'package:camionesm/app/widgets/images_assets.widget.dart';

@@ -1,4 +1,6 @@
 import 'package:camionesm/app/pages/login/login.page.dart';
+import 'package:camionesm/app/pages/nav/home/home.page.dart';
+import 'package:camionesm/app/pages/nav/nav_bar.page.dart';
 import 'package:camionesm/app/pages/signup/signup.page.dart';
 import 'package:camionesm/app/pages/splash_screen/splash_screen.page.dart';
 import 'package:camionesm/core/routes/bindings.dart';
@@ -27,8 +29,8 @@ abstract class Pages {
         page: ()=>const SingUpPage(),
     binding: SingUpBinding(countryApiService)),
     GetPage(
-        name: Routes.home,
-        page: () => const SplashScreenPage(),
-        binding: SplashScreenBinding()),
+        name: Routes.navBar,
+        page: () =>  NavBarPage(),
+        binding: NavBarBinding(countryApiService)),
   ];
 }

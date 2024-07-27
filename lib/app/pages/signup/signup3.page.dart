@@ -1,5 +1,6 @@
 import 'package:camionesm/app/pages/signup/signup.controller.dart';
-import 'package:camionesm/app/widgets/app_bar.widget.dart';
+import 'package:camionesm/app/pages/signup/signup_finish.page.dart';
+import 'package:camionesm/app/widgets/app_bar/app_bar.widget.dart';
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
 import 'package:camionesm/app/widgets/buttons/button_card.widget.dart';
 import 'package:camionesm/app/widgets/buttons/icon_button.widget.dart';
@@ -33,7 +34,7 @@ class SingUp3Page extends GetView<SingUpController> {
           _genericWidget(context,Paths.briefcase,"Datos de Representante Legal","Proporciona información del representante legal para fines legales.",WidgetStatus.enabled),
           _genericWidget(context,Paths.key,"Datos de Acceso","Crea tus credenciales de acceso para gestionar envíos y servicios.",WidgetStatus.enabled),
           CustomButton(title: "Guardar y salir", onPressed:()=>Get.toNamed(Routes.splashScreen)).paddingAll(10),
-          CustomButton(title: "Siguiente", onPressed:(){}, color: Colors.black).paddingAll(10)
+          CustomButton(title: "Siguiente", onPressed:()=>Get.to(()=>const SignUpFinish()), color: Colors.black).paddingAll(10)
         ]
       ).paddingAll(15)
     );

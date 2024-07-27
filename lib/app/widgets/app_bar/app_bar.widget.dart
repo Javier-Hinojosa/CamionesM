@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
-  const CustomAppBar({super.key, this.backgroundColor});
+  const CustomAppBar({super.key, this.backgroundColor,this.onBack});
 
   final Color?  backgroundColor;
+  final void Function()? onBack;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
        backgroundColor: Colors.transparent, // Hace que el fondo sea transparente
        elevation: 0, // Quita la sombra
      leadingWidth: Get.width*0.2,
-     leading: IconButton(onPressed: ()=>Get.back(), icon:  const CustomIconButton())
+     leading: IconButton(onPressed: onBack??()=>Get.back(), icon:  const CustomIconButton())
    );
   }
 

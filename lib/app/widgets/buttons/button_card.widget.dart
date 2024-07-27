@@ -7,24 +7,25 @@ class CustomCardButton extends StatelessWidget{
   final void Function()? onPressed;
   final Color? backgroundColor;
   final Color? borderColor;
-  const CustomCardButton({super.key, required this.children, this.backgroundColor, this.onPressed, this.borderColor});
+  final double radius;
+  const CustomCardButton({super.key, required this.children, this.backgroundColor, this.onPressed, this.borderColor, this.radius=30});
 
   @override
   Widget build(BuildContext context) {
     return Material(
       elevation: 2,
-      borderRadius: BorderRadius.circular(30.0),
+      borderRadius: BorderRadius.circular(radius),
       borderOnForeground: true,
       color: backgroundColor??Theme.of(context).scaffoldBackgroundColor,
       child: InkWell(
-        borderRadius: BorderRadius.circular(30.0),
+        borderRadius: BorderRadius.circular(radius),
         splashColor: Globals.principalColor,
         highlightColor: Globals.principalColor,
         onTap: onPressed,
         child: Container(
             decoration: BoxDecoration(
               shape: BoxShape.rectangle,
-              borderRadius: BorderRadius.circular(30.0),
+              borderRadius: BorderRadius.circular(radius),
                 border:  Border.all(
                   strokeAlign: BorderSide.strokeAlignInside,
                  width: borderColor==Colors.black?2:1,

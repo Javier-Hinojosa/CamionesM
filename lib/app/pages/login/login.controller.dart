@@ -26,15 +26,24 @@ class LoginController extends GetxController{
     }, validators: [
       Validators.required
     ]);
+
+    loginForm().control("user").value="JavierHS";
+    loginForm().control("password").value="Abcd1234";
   }
+
+
 
   changePasswordVisibility() {
       isPasswordVisible(!isPasswordVisible());
   }
 
-  onLogin()=>
-    Get.toNamed(Routes.home);
-
+  onLogin() {
+  if(loginForm().valid){
+    Get.toNamed(Routes.navBar);
+  }else{
+    loginForm().markAllAsTouched();
+  }
+  }
   onSingUp()=>
     Get.toNamed(Routes.singUp);
 
