@@ -2,16 +2,17 @@
 import 'package:flutter/material.dart';
 
 class CustomNotification extends StatelessWidget {
-  const CustomNotification({super.key, this.child, this.right=1, this.top=1});
+  const CustomNotification({super.key,required this.child, this.right=1, this.top=1, this.haveNotification=true});
 
-  final Widget? child;
+  final Widget child;
   final double right;
   final double top;
+  final bool haveNotification;
 
   @override
   Widget build(BuildContext context) {
-    return child==null?
-    Container():
+    return !haveNotification?
+    child:
     Stack(
         children: [
           child!,

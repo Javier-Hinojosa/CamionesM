@@ -1,8 +1,11 @@
 class Paths {
+  static const String box = 'assets/icons/box.png';
   static const String key = 'assets/icons/key.png';
   static const String logo = 'assets/images/logo.png';
   static const String splash = 'assets/images/splash.png';
+  static const String papers  = 'assets/images/papers.png';
   static const String profile = 'assets/images/profile.png';
+  static const String profile2 ='assets/images/profile2.png';
   static const String boxIcon = 'assets/images/box_icon.png';
   static const String location = 'assets/icons/location.png';
   static const String congrats = 'assets/images/congrats.png';
@@ -13,6 +16,4 @@ class Paths {
   static const String chartsIcon = 'assets/images/charts_icon.png';
   static const String personIcon = 'assets/images/person_icon.png';
   static const String filterList = 'assets/icons/filter_list.png';
-
-
 }

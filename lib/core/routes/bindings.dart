@@ -1,8 +1,8 @@
 import 'package:camionesm/app/pages/login/login.controller.dart';
 import 'package:camionesm/app/pages/nav/home/home.controller.dart';
-import 'package:camionesm/app/pages/nav/menu/settings.controller.dart';
 import 'package:camionesm/app/pages/nav/nav_bar.controller.dart';
 import 'package:camionesm/app/pages/nav/petitions/petitions.controller.dart';
+import 'package:camionesm/app/pages/nav/settings/settings.controller.dart';
 import 'package:camionesm/app/pages/nav/trips/trips.controller.dart';
 import 'package:camionesm/app/pages/nav/truks/truck.controller.dart';
 import 'package:camionesm/app/pages/signup/registers/access_data/access_data.controller.dart';
@@ -52,7 +52,6 @@ class NavBarBinding implements Bindings {
   void dependencies() {
     Get.lazyPut<NavBarController>(() => NavBarController());
     Get.lazyPut<HomeController>(() => HomeController(iCountryService),fenix: true);
-   //Get.lazyPut<HomeFilterController>(()=> HomeFilterController(iCountryService),fenix: true);
     Get.lazyPut<PetitionsController>(() => PetitionsController(),fenix: true);
     Get.lazyPut<TrucksController>(() => TrucksController(),fenix: true);
     Get.lazyPut<TripsController>(() => TripsController(),fenix: true);

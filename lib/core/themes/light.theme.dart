@@ -1,40 +1,43 @@
 import 'package:camionesm/core/themes/text.theme.dart';
 import 'package:camionesm/core/values/globals.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 
 
 
 final ThemeData lightTheme = ThemeData(
+    useMaterial3: true,
     brightness: Brightness.light,
-    scaffoldBackgroundColor:  Globals.backGroundColor,
+    scaffoldBackgroundColor: Globals.backgroundColor,
+    cardColor: Colors.black,
     sliderTheme: const SliderThemeData(activeTrackColor: Colors.white),
     primaryColor: Globals.principalColor,
-    dividerColor: Globals.backGroundColor,
+    dividerColor: Globals.backgroundColor,
+    canvasColor: Colors.grey.shade300,
+    primaryColorDark: Colors.black45,
     iconTheme: const IconThemeData(color: Colors.white70),
     iconButtonTheme: IconButtonThemeData(style: ButtonStyle(iconColor: WidgetStateProperty.all<Color>(Colors.white70))),
-    chipTheme:   ChipThemeData(
-          shape: const RoundedRectangleBorder(
-              side: BorderSide(width: 2),
-              borderRadius: BorderRadius.all(Radius.circular(30)) ),
-        backgroundColor: Globals.secondColor,
-        labelStyle: CustomTextStyles().labelMedium!.apply(color: Colors.white),
-        selectedColor: Globals.principalColor),
-    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-      backgroundColor: Globals.secondColor,
-      type: BottomNavigationBarType.fixed,
-      selectedItemColor: Colors.white ,
-      unselectedItemColor: Colors.white54,
-      elevation: 3,
-      selectedIconTheme: IconThemeData(color: Colors.white),
-      unselectedIconTheme: IconThemeData(color: Colors.white54)
-    ),
-    colorScheme: ColorScheme.fromSeed(seedColor: Globals.principalColor),
-    useMaterial3: true,
-    appBarTheme: const AppBarTheme(
-        backgroundColor: Globals.backGroundColor,
-        surfaceTintColor: Globals.backGroundColor),
+    colorScheme: ColorScheme.fromSeed(
+        surface: Colors.white,
+        seedColor: Globals.principalColor),
     dividerTheme: const DividerThemeData(color: Colors.black),
-  textTheme: CustomTextStyles()
+    chipTheme:   ChipThemeData(
+    shape: const RoundedRectangleBorder(
+        side: BorderSide(width: 2),
+        borderRadius: BorderRadius.all(Radius.circular(30)) ),
+    backgroundColor: Globals.secondColor,
+    labelStyle: CustomTextStyles().labelMedium!.apply(color: Colors.white),
+    selectedColor: Globals.principalColor),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+        backgroundColor: Globals.secondColor,
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: Colors.white ,
+        unselectedItemColor: Colors.white54,
+        elevation: 3,
+        selectedIconTheme: IconThemeData(color: Colors.white),
+        unselectedIconTheme: IconThemeData(color: Colors.white54)
+    ),
+    appBarTheme: const AppBarTheme(
+    backgroundColor: Globals.backgroundColor,
+    surfaceTintColor: Globals.backgroundColor),
+    textTheme: CustomTextStyles()
 );

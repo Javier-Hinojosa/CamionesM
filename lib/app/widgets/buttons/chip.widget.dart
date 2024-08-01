@@ -1,3 +1,4 @@
+import 'package:camionesm/core/values/globals.dart';
 import 'package:flutter/material.dart';
 
 class CustomChips extends StatelessWidget{
@@ -12,13 +13,15 @@ class CustomChips extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return Chip(
-      avatar: leading,
-      onDeleted: onPressed,
-      padding: EdgeInsets.all(paddingAll),
-      backgroundColor: color,
-      label: Text(label),
-      labelStyle: TextStyle(color:color==Colors.white?Colors.black:null),
+    return GestureDetector(
+      onTap: onPressed,
+      child: Chip(
+        avatar: leading,
+        padding: EdgeInsets.all(paddingAll),
+        backgroundColor: color,
+        label: Text(label),
+        labelStyle: TextStyle(color:color==Colors.white?Colors.black:null),
+      ),
     );
   }
 

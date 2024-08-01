@@ -1,11 +1,10 @@
 import 'package:camionesm/core/values/enums.dart';
+import 'package:camionesm/data/models/internal/list_item.module.dart';
 import 'package:flutter/material.dart';
 
-class NavBarItem {
+ class NavBarItem extends ListItem{
   NavBarItems id;
   Widget page;
-  IconData icon;
-  String label;
-  bool haveNotification;
-  NavBarItem(this.id,this.icon,this.label, this.page,{this.haveNotification=false});
+
+  NavBarItem(this.id,super.icon, super.label,this.page,{super.haveNotification=false});
 }

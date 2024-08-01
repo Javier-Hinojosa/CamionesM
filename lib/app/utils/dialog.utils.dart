@@ -17,19 +17,22 @@ class DialogUtils {
     }
   }
 
-  static Future<bool> screen({required List<Widget> children}) async {
+  static Future<bool> screen({required Widget child, Color? backgroundColor,double height=0.89, AlignmentGeometry alignment=Alignment.topCenter}) async {
     try{
       return await Get.dialog(Dialog(
           elevation: 0,
-          alignment: Alignment.topCenter,
+          alignment: alignment,
           insetPadding: const EdgeInsets.all(0),
+          backgroundColor: backgroundColor,
           child: SizedBox(
-              width: double.infinity,
-              height: Get.height * 0.89,
-              child: Material(child: Column(
+              width: Get.width,
+              height: Get.height * height,
+              child: Material(
+                  color: backgroundColor,
+                  child: Column(
                   children: [
                     Align(alignment: Alignment.topRight, child: IconButton(onPressed: ()=> Get.back(result: true), icon: const Icon(Icons.close_outlined, color: Colors.black,size: 32))),
-                    Expanded(child: Scrollbar(child: SingleChildScrollView(child: Column(children: children))))
+                    Expanded(child: child)
                   ]).paddingAll(10)))),
           barrierDismissible: true,
           useSafeArea: true);

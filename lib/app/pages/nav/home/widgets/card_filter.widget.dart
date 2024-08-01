@@ -1,7 +1,7 @@
 import 'package:camionesm/app/pages/nav/home/home.controller.dart';
 import 'package:camionesm/app/utils/dialog.utils.dart';
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
-import 'package:camionesm/app/widgets/card_reduce.widget.dart';
+import 'package:camionesm/app/widgets/cards/card_reduce.widget.dart';
 import 'package:camionesm/app/widgets/reactives/reactive_dropdown_field.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
 import 'package:camionesm/core/values/globals.dart';
@@ -76,7 +76,7 @@ class HomeCardFilter extends GetView<HomeController> {
           const CircleAvatar(
               radius: 15,
               backgroundColor: Colors.white24,
-              child: Icon(Icons.search,color: Colors.white70,)),
+              child: Icon(Icons.search,color: Colors.white70)),
         ]
     ).paddingAll(5);
   }

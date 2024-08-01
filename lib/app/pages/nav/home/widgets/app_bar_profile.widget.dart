@@ -7,23 +7,23 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AppBarProfile extends StatelessWidget{
-  const AppBarProfile({super.key,required this.enableNotification, required this.name});
+  const AppBarProfile({super.key,required this.enableNotification, required this.name,this.backgroundColor,this.lettersColor});
 
   final String name;
   final bool enableNotification;
+  final Color? backgroundColor;
+  final Color? lettersColor;
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        _customAppbar(context)]
-    );
+    return _customAppbar(context);
   }
 
  Widget _customAppbar(BuildContext context){
     return Column(
       children: [
         CustomAppBarUndulate(
+          backgroundColor: backgroundColor,
             child:  Row(children: [
               const CircleAvatar(
                   backgroundImage: AssetImage(Paths.profile),
@@ -33,14 +33,16 @@ class AppBarProfile extends StatelessWidget{
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    CustomText("Bienvenido,",style: Theme.of(context).textTheme.labelLarge!.apply(fontWeightDelta: FontWeight.w100.index)),
-                    CustomText(name,style: Theme.of(context).textTheme.titleLarge)
+                    CustomText("Bienvenido,",style: Theme.of(context).textTheme.labelLarge!.apply(color: lettersColor, fontWeightDelta: FontWeight.w100.index)),
+                    CustomText(name,style: Theme.of(context).textTheme.titleLarge!.apply(color: lettersColor))
                   ]),
               SizedBox(width: Get.width*0.2),
               SizedBox(
                   height: Get.height*0.05,
-                  child:  enableNotification? const CustomNotification(child:CustomIconButton(icon: Icons.notifications_none_outlined,backgroundColor: Colors.black)):
-                  const CustomIconButton(icon: Icons.notifications_none_outlined,backgroundColor: Colors.black))
+                  child: CustomNotification(
+                      haveNotification: enableNotification,
+                      child:const CustomIconButton(icon: Icons.notifications_none_outlined,
+                          backgroundColor: Colors.black)))
             ]).paddingAll(15)
         )
       ]

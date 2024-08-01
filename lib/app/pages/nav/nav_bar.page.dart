@@ -23,7 +23,7 @@ class NavBarPage extends GetView<NavBarController>{
       onTap: (index) => controller.onItemTapped(index),
       items: NavBarController.navItems.map((e) =>
           BottomNavigationBarItem(
-              icon: e.haveNotification? CustomNotification(child: Icon(e.icon, size: 25)) :Icon(e.icon, size: 25),
+              icon:  CustomNotification(haveNotification: e.haveNotification, child: Icon(e.icon, size: 25)),
               label: e.label)).toList()
     );
   }
