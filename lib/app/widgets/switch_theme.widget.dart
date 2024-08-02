@@ -5,9 +5,9 @@ import 'package:get/get.dart';
 
 class CustomSwitch extends StatelessWidget{
   final bool value;
-  final Function() onPressed;
+  final Function()? onPressed;
 
-  const CustomSwitch({super.key, required this.value, required this.onPressed});
+  const CustomSwitch({super.key, required this.value, this.onPressed});
 
   @override
   Widget build(BuildContext context) {

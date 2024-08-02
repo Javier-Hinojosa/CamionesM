@@ -8,9 +8,10 @@ import 'package:camionesm/app/widgets/buttons/button.widget.dart';
 import 'package:camionesm/app/widgets/buttons/button_card.widget.dart';
 import 'package:camionesm/app/widgets/buttons/chip.widget.dart';
 import 'package:camionesm/app/widgets/buttons/icon_button.widget.dart';
-import 'package:camionesm/app/widgets/images_assets.widget.dart';
+import 'package:camionesm/app/widgets/images/images_assets.widget.dart';
 import 'package:camionesm/app/widgets/progess_bar.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
+import 'package:camionesm/core/routes/routes.dart';
 import 'package:camionesm/core/values/globals.dart';
 import 'package:camionesm/core/values/keys.dart';
 import 'package:camionesm/core/values/paths.dart';
@@ -252,8 +253,8 @@ class HomePage extends GetView<HomeController> {
                 context: context,
                 color: Colors.black12,
                 tiles: [
-                  const CustomTransportItem(),
-                  const CustomTransportItem()
+                   CustomTransportItem(onPressedNext: ()=>Get.toNamed("${Routes.detail}?id=0")),
+                   CustomTransportItem(onPressedNext: ()=>Get.toNamed("${Routes.detail}?id=1"))
                 ]).toList()
         ).paddingAll(10));
   }

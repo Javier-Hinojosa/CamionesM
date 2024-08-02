@@ -15,7 +15,7 @@ class CustomNotification extends StatelessWidget {
     child:
     Stack(
         children: [
-          child!,
+          child,
           Positioned(
               right: right,
               top: top,

@@ -28,6 +28,7 @@ class SettingsController extends GetxController with GetSingleTickerProviderStat
   }
 
   onChangeMode() {
+    print('eee');
     lightTheme(!lightTheme());
     print(lightTheme());
   }

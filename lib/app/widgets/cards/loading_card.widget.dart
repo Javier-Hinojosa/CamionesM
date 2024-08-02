@@ -18,8 +18,7 @@ class LoadingCard extends StatelessWidget {
         child: CustomShimmer(
             loading,
             Container(
-                decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(5)),
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(5)),
                 height: height,
                 width: MediaQuery.of(context).size.width,
                 child: const Card(elevation: 2))));
@@ -29,18 +28,16 @@ class LoadingCard extends StatelessWidget {
     return SizedBox(
         height: height,
         child: Container(
-                decoration:
-                BoxDecoration(borderRadius: BorderRadius.circular(5)),
-                height: height,
-                width: MediaQuery.of(context).size.width,
-                child: Card(elevation: 2,child: Image.asset(path,
-                    fit: BoxFit.fill,
-                    frameBuilder: (context, child, frame, wasSynchronouslyLoaded)  {
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(5)),
+            height: height,
+            width: MediaQuery.of(context).size.width,
+            child: Card(
+                elevation: 2,
+                child: Image.asset(path, fit: BoxFit.cover, frameBuilder: (context, child, frame, wasSynchronouslyLoaded)  {
                 if(wasSynchronouslyLoaded) {
                   return LoadingCard(height: height, loading: true.obs);
                 } else {
                   return child;
-                }
-                } ))));
+                }}))));
   }
 }

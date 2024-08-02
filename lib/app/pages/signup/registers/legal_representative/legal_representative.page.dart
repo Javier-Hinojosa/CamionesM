@@ -2,7 +2,7 @@ import 'package:camionesm/app/pages/signup/registers/legal_representative/legal_
 import 'package:camionesm/app/widgets/app_bar/app_bar.widget.dart';
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
 import 'package:camionesm/app/widgets/cards/card_reduce.widget.dart';
-import 'package:camionesm/app/widgets/images_assets.widget.dart';
+import 'package:camionesm/app/widgets/images/images_assets.widget.dart';
 import 'package:camionesm/app/widgets/reactives/reactive_text_field.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
 import 'package:camionesm/core/values/keys.dart';

@@ -1,3 +1,4 @@
+import 'package:camionesm/app/pages/detail/detail.controller.dart';
 import 'package:camionesm/app/pages/login/login.controller.dart';
 import 'package:camionesm/app/pages/nav/home/home.controller.dart';
 import 'package:camionesm/app/pages/nav/nav_bar.controller.dart';
@@ -57,5 +58,14 @@ class NavBarBinding implements Bindings {
     Get.lazyPut<TripsController>(() => TripsController(),fenix: true);
     Get.lazyPut<SettingsController>(() => SettingsController(),fenix: true);
   }
+}
+
+class DetailBinding implements Bindings{
+
+  @override
+  void dependencies() {
+    Get.lazyPut<DetailController>(()=> DetailController());
+  }
+
 }
 

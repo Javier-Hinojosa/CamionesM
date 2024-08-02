@@ -1,4 +1,3 @@
-import 'package:camionesm/core/values/globals.dart';
 import 'package:flutter/material.dart';
 
 class CustomChips extends StatelessWidget{

@@ -12,8 +12,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
   Widget build(BuildContext context) {
    return AppBar(
      automaticallyImplyLeading: true,
-       backgroundColor: Colors.transparent, // Hace que el fondo sea transparente
-       elevation: 0, // Quita la sombra
+       backgroundColor: Colors.transparent,
+       elevation: 0,
      leadingWidth: Get.width*0.2,
      leading: IconButton(onPressed: onBack??()=>Get.back(), icon:  const CustomIconButton())
    );
