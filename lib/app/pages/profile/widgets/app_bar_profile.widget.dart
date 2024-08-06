@@ -1,11 +1,3 @@
-import 'package:camionesm/app/widgets/app_bar/app_bar_undulated.widget.dart';
-import 'package:camionesm/app/widgets/buttons/icon_button.widget.dart';
-import 'package:camionesm/app/widgets/notification.widget.dart';
-import 'package:camionesm/app/widgets/text.widget.dart';
-import 'package:camionesm/core/routes/routes.dart';
-import 'package:camionesm/core/values/globals.dart';
-import 'package:camionesm/core/values/keys.dart';
-import 'package:camionesm/core/values/paths.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
