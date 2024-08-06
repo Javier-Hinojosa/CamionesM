@@ -4,4 +4,5 @@ abstract class Routes {
   static const singUp= '/singUp';
   static const navBar = '/navBar';
   static const detail = '/detail';
+  static const profile = '/profile';
 }

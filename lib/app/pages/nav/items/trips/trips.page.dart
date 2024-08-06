@@ -1,4 +1,4 @@
-import 'package:camionesm/app/pages/nav/trips/trips.controller.dart';
+import 'package:camionesm/app/pages/nav/items/trips/trips.controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

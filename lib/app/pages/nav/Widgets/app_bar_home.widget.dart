@@ -2,12 +2,15 @@ import 'package:camionesm/app/widgets/app_bar/app_bar_undulated.widget.dart';
 import 'package:camionesm/app/widgets/buttons/icon_button.widget.dart';
 import 'package:camionesm/app/widgets/notification.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
+import 'package:camionesm/core/routes/routes.dart';
+import 'package:camionesm/core/values/globals.dart';
+import 'package:camionesm/core/values/keys.dart';
 import 'package:camionesm/core/values/paths.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class AppBarProfile extends StatelessWidget{
-  const AppBarProfile({super.key,required this.enableNotification, required this.name,this.backgroundColor,this.lettersColor});
+class AppBarHome extends StatelessWidget{
+  const AppBarHome({super.key,required this.enableNotification, required this.name,this.backgroundColor,this.lettersColor});
 
   final String name;
   final bool enableNotification;
@@ -25,9 +28,14 @@ class AppBarProfile extends StatelessWidget{
         CustomAppBarUndulate(
           backgroundColor: backgroundColor,
             child:  Row(children: [
-              const CircleAvatar(
-                  backgroundImage: AssetImage(Paths.profile),
-                  radius: 30.0),
+              GestureDetector(
+                onTap: ()=>Get.toNamed(Routes.profile),
+                child:  const Hero(
+                  tag: Keys.animationAppBarToProfile,
+                  child: CircleAvatar(
+                      backgroundImage: AssetImage(Paths.profile),
+                      radius: 30.0)),
+              ),
               SizedBox(width: Get.width*0.05),
               Column(
                   mainAxisAlignment: MainAxisAlignment.center,

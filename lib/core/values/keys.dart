@@ -2,6 +2,8 @@ class Keys {
   static const String dev = 'DEV';
   static const String prod = 'PROD';
 
+  static const String animationAppBarToProfile = 'app_bar-profile';
+
   static const String reasonSocial = 'reason_social';
   static const String phone = 'phone';
   static const String email = 'email';

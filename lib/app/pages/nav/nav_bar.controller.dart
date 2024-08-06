@@ -1,8 +1,8 @@
-import 'package:camionesm/app/pages/nav/home/home.page.dart';
-import 'package:camionesm/app/pages/nav/petitions/petitions.page.dart';
-import 'package:camionesm/app/pages/nav/settings/settings.page.dart';
-import 'package:camionesm/app/pages/nav/trips/trips.page.dart';
-import 'package:camionesm/app/pages/nav/truks/truks.page.dart';
+import 'package:camionesm/app/pages/nav/items/home/home.page.dart';
+import 'package:camionesm/app/pages/nav/items/petitions/petitions.page.dart';
+import 'package:camionesm/app/pages/nav/items/settings/settings.page.dart';
+import 'package:camionesm/app/pages/nav/items/trips/trips.page.dart';
+import 'package:camionesm/app/pages/nav/items/truks/truks.page.dart';
 import 'package:camionesm/core/values/enums.dart';
 import 'package:camionesm/data/models/internal/nav_bar.item.model.dart';
 import 'package:flutter/material.dart';

@@ -1,11 +1,12 @@
 import 'package:camionesm/app/pages/detail/detail.controller.dart';
 import 'package:camionesm/app/pages/login/login.controller.dart';
-import 'package:camionesm/app/pages/nav/home/home.controller.dart';
+import 'package:camionesm/app/pages/nav/items/home/home.controller.dart';
+import 'package:camionesm/app/pages/nav/items/petitions/petitions.controller.dart';
+import 'package:camionesm/app/pages/nav/items/settings/settings.controller.dart';
+import 'package:camionesm/app/pages/nav/items/trips/trips.controller.dart';
+import 'package:camionesm/app/pages/nav/items/truks/truck.controller.dart';
 import 'package:camionesm/app/pages/nav/nav_bar.controller.dart';
-import 'package:camionesm/app/pages/nav/petitions/petitions.controller.dart';
-import 'package:camionesm/app/pages/nav/settings/settings.controller.dart';
-import 'package:camionesm/app/pages/nav/trips/trips.controller.dart';
-import 'package:camionesm/app/pages/nav/truks/truck.controller.dart';
+import 'package:camionesm/app/pages/profile/profile.controller.dart';
 import 'package:camionesm/app/pages/signup/registers/access_data/access_data.controller.dart';
 import 'package:camionesm/app/pages/signup/registers/general_data/general_data.controller.dart';
 import 'package:camionesm/app/pages/signup/registers/legal_representative/legal_representative.controller.dart';
@@ -65,6 +66,15 @@ class DetailBinding implements Bindings{
   @override
   void dependencies() {
     Get.lazyPut<DetailController>(()=> DetailController());
+  }
+
+}
+
+class ProfileBinding implements Bindings{
+
+  @override
+  void dependencies() {
+    Get.lazyPut<ProfileController>(()=> ProfileController());
   }
 
 }

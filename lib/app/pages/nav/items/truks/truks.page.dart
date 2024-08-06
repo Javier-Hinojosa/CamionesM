@@ -1,4 +1,4 @@
-import 'package:camionesm/app/pages/nav/truks/truck.controller.dart';
+import 'package:camionesm/app/pages/nav/items/truks/truck.controller.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';

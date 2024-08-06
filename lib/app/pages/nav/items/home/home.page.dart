@@ -1,8 +1,8 @@
-import 'package:camionesm/app/pages/nav/home/home.controller.dart';
-import 'package:camionesm/app/pages/nav/home/home_filter.controller.dart';
-import 'package:camionesm/app/pages/nav/home/widgets/app_bar_profile.widget.dart';
-import 'package:camionesm/app/pages/nav/home/widgets/card_filter.widget.dart';
-import 'package:camionesm/app/pages/nav/home/widgets/transport_item.dart';
+import 'package:camionesm/app/pages/nav/Widgets/app_bar_home.widget.dart';
+import 'package:camionesm/app/pages/nav/items/home/home.controller.dart';
+import 'package:camionesm/app/pages/nav/items/home/home_filter.controller.dart';
+import 'package:camionesm/app/pages/nav/items/home/widgets/card_filter.widget.dart';
+import 'package:camionesm/app/pages/nav/items/home/widgets/transport_item.dart';
 import 'package:camionesm/app/utils/dialog.utils.dart';
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
 import 'package:camionesm/app/widgets/buttons/button_card.widget.dart';
@@ -48,7 +48,7 @@ class HomePage extends GetView<HomeController> {
   Widget _frameHome(BuildContext context){
     return Column(
         children: [
-          AppBarProfile(
+          AppBarHome(
               backgroundColor: Globals.principalColor,
               enableNotification: controller.enableNotification(),
               name: "Jorge M."),

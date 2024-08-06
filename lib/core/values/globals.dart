@@ -6,9 +6,7 @@ abstract class Globals{
   static const Color backgroundColor =  Color(0xfff1f0f0);
   static const Color principalColor  =  Color(0xfff6c700);
   static const Color secondColor = Colors.black;
-
   static const Color backgroundColorBlack = Colors.black54;//Color(0x222b2b2b);
-
 
   static const String currentLocale = 'es';
   static const String currentCountry = 'MX';
@@ -24,7 +22,5 @@ abstract class Globals{
      LatLng(20.659698, -103.349609), // Guadalajara
      LatLng(21.161908, -86.851528), // Cancún
   ];
-
-
 
 }

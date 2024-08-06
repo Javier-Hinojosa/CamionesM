@@ -5,13 +5,13 @@ class DialogUtils {
   static Future<bool> dialog({required Widget child, List<TextButton>? options}) async {
     try{
       return await Get.dialog(AlertDialog(
-        title: Align(
+          title: Align(
             alignment: Alignment.centerRight,
             child: GestureDetector(
                 onTap: () => Get.back(result: true),
                 child: const Icon(Icons.close_outlined, color: Colors.black))),
         content: SizedBox(width: Get.width, child: child),
-        actions: options));
+        actions: options,insetPadding: EdgeInsets.all(15),));
     }catch(e){
       return true;
     }

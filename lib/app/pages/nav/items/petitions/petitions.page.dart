@@ -1,4 +1,4 @@
-import 'package:camionesm/app/pages/nav/petitions/petitions.controller.dart';
+import 'package:camionesm/app/pages/nav/items/petitions/petitions.controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -1,5 +1,5 @@
-import 'package:camionesm/app/pages/nav/home/widgets/app_bar_profile.widget.dart';
-import 'package:camionesm/app/pages/nav/settings/settings.controller.dart';
+import 'package:camionesm/app/pages/nav/Widgets/app_bar_home.widget.dart';
+import 'package:camionesm/app/pages/nav/items/settings/settings.controller.dart';
 import 'package:camionesm/app/widgets/cards/card_reduce.widget.dart';
 import 'package:camionesm/app/widgets/notification.widget.dart';
 import 'package:camionesm/app/widgets/progess_bar.widget.dart';
@@ -21,7 +21,7 @@ class SettingsPage extends GetView<SettingsController>{
             child: Stack(
                 children: [
                   Column(children: [
-                        AppBarProfile(
+                        AppBarHome(
                             enableNotification: controller.enableNotification(),
                             lettersColor: Theme.of(context).scaffoldBackgroundColor,
                             name: "Jorge M."),
