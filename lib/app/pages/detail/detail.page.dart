@@ -4,13 +4,14 @@ import 'package:camionesm/app/utils/dialog.utils.dart';
 import 'package:camionesm/app/widgets/app_bar/app_bar.widget.dart';
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
 import 'package:camionesm/app/widgets/buttons/icon_button.widget.dart';
-import 'package:camionesm/app/widgets/cards/card_reduce.widget.dart';
+import 'package:camionesm/app/widgets/cards/container.widget.dart';
 import 'package:camionesm/app/widgets/dotted_divider.widget.dart';
 import 'package:camionesm/app/widgets/drop_down.widget.dart';
 import 'package:camionesm/app/widgets/images/images_carrousel.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
 import 'package:camionesm/core/values/globals.dart';
 import 'package:camionesm/core/values/paths.dart';
+import 'package:camionesm/core/values/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:get/get.dart';
@@ -37,17 +38,14 @@ class DetailPage extends GetView<DetailController> {
                     carouselController: controller.controllerCarrousel()),
               ),
               SliverPadding(
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   sliver: SliverList(
                       delegate: SliverChildListDelegate([
                     Align(
                         alignment: Alignment.centerLeft,
                         child: CustomText("Acerca del cliente",
                             textAlign: TextAlign.left,
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleLarge
-                                ?.apply(fontSizeDelta: -5))),
+                            style: titleLarge.apply(fontSizeDelta: -5))),
                     SizedBox(height: Get.height * 0.02),
                     Row(mainAxisAlignment: MainAxisAlignment.start, children: [
                       const CircleAvatar(
@@ -67,10 +65,8 @@ class DetailPage extends GetView<DetailController> {
                     Row(children: [
                       const CustomText("Cliente verificado"),
                       SizedBox(width: Get.width * 0.01),
-                      const Icon(
-                        Icons.check_circle_outline,
-                        color: Colors.lightGreen,
-                      )
+                      const Icon(Icons.check_circle_outline,
+                          color: Colors.lightGreen)
                     ]),
                     const Align(
                         alignment: Alignment.centerLeft,
@@ -88,15 +84,12 @@ class DetailPage extends GetView<DetailController> {
                     const Divider(thickness: 2),
                     _customCardMap(context),
                     _customCardReduce(context, "Distancia: 120 km"),
-                        SizedBox(height: Get.height * 0.02),
+                    SizedBox(height: Get.height * 0.02),
                     Align(
                         alignment: Alignment.centerLeft,
                         child: CustomText("Detalles de viaje",
                             textAlign: TextAlign.left,
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleLarge
-                                ?.apply(fontSizeDelta: -8))),
+                            style: titleLarge.apply(fontSizeDelta: -8))),
                     const ListTile(
                         contentPadding: EdgeInsets.all(0),
                         leading: CircleAvatar(
@@ -106,15 +99,21 @@ class DetailPage extends GetView<DetailController> {
                         title: CustomText("Origen",
                             style: TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.w400)),
-                        subtitle: CustomText("Calle Pitágoras 526, Narvarte Ponie... 03020 CDMX, México. 03/04/24 12:00 hrs",
+                        subtitle: CustomText(
+                            "Calle Pitágoras 526, Narvarte Ponie... 03020 CDMX, México. 03/04/24 12:00 hrs",
                             style: TextStyle(fontWeight: FontWeight.w800))),
                     const ListTile(
                         contentPadding: EdgeInsets.all(0),
                         leading: CircleAvatar(
                             backgroundColor: Globals.principalColor,
-                            child: Icon(Icons.location_on_outlined, color: Colors.black, size: 40.0)),
-                        title: CustomText("Destino", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400)),
-                        subtitle: CustomText("Calle Pitágoras 526, Narvarte Ponie... 03020 CDMX, México. 03/04/24 12:00 hrs",style: TextStyle(fontWeight: FontWeight.w800))),
+                            child: Icon(Icons.location_on_outlined,
+                                color: Colors.black, size: 40.0)),
+                        title: CustomText("Destino",
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.w400)),
+                        subtitle: CustomText(
+                            "Calle Pitágoras 526, Narvarte Ponie... 03020 CDMX, México. 03/04/24 12:00 hrs",
+                            style: TextStyle(fontWeight: FontWeight.w800))),
                     SizedBox(height: Get.height * 0.02),
                     const DottedDivider(),
                     SizedBox(height: Get.height * 0.02),
@@ -122,7 +121,7 @@ class DetailPage extends GetView<DetailController> {
                         alignment: Alignment.centerLeft,
                         child: CustomText("Detalles del transporte",
                             textAlign: TextAlign.left,
-                            style: Theme.of(context).textTheme.titleLarge!.apply(fontSizeDelta: -8))),
+                            style: titleLarge.apply(fontSizeDelta: -8))),
                     SizedBox(height: Get.height * 0.04),
                     Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -164,17 +163,24 @@ class DetailPage extends GetView<DetailController> {
                           SizedBox(width: Get.width * 0.03),
                           Flexible(
                               child: _textWithBold("Tipo de carga: ",
-                                  normalText: "Craga seca, mudanza, paquetería"))
+                                  normalText:
+                                      "Craga seca, mudanza, paquetería"))
                         ]),
                     SizedBox(height: Get.height * 0.05),
                     CustomButton(
-                        title: "Enviar Solicitud",
+                        title: "Enviar Solicitud A",
                         color: Globals.principalColor,
-                        onPressed: () => _onDialogSend(context))
+                        onPressed: () => _onDialogSend(context)),
+                    SizedBox(height: Get.height * 0.02),
+                    CustomButton(
+                        title: "Enviar Solicitud B",
+                        color: Globals.principal2Color,
+                        onPressed: () => _onDialogSendClient(context))
                   ])))
             ])));
   }
 
+  //region widgets
   Widget _customCardMap(BuildContext context) {
     const LatLng point1 = LatLng(48.8566, 2.3522);
     const LatLng point2 = LatLng(48.8666, 2.3522);
@@ -229,21 +235,24 @@ class DetailPage extends GetView<DetailController> {
                   ])
             ])));
   }
-  _customCardReduce(BuildContext context, String title) {
+
+  Widget _customCardReduce(BuildContext context, String title) {
     const disableColor = Colors.transparent;
-    return CustomCardReduce(
+    return CustomContainer(
             backgroundColor: disableColor,
             circularRadius: 15,
             child: Align(
                 alignment: Alignment.centerRight,
                 child: CustomText(title,
                     maxLines: 1,
-                    style: Theme.of(context).textTheme.bodyMedium!.apply(
+                    style: bodyMedium.apply(
                         fontWeightDelta: FontWeight.w200.index,
                         decoration: TextDecoration.underline))))
         .paddingOnly(top: 10, bottom: 10);
   }
-  Widget _textWithBold(String textBold,{String? normalText, String? endNormalText}) {
+
+  Widget _textWithBold(String textBold,
+      {String? normalText, String? endNormalText}) {
     return RichText(
         maxLines: 3,
         textAlign: TextAlign.start,
@@ -253,64 +262,62 @@ class DetailPage extends GetView<DetailController> {
             style: const TextStyle(
                 fontWeight: FontWeight.bold, color: Colors.black),
             children: <TextSpan>[
-              TextSpan(
-                  text: normalText ?? "",
-                  style: Theme.of(Get.context!).textTheme.bodyMedium),
+              TextSpan(text: normalText ?? "", style: bodyMedium),
               TextSpan(text: endNormalText ?? "")
             ]));
   }
+  //endregion
 
+  //region dialogs
   Future<bool> _onDialogSend(BuildContext context) {
-    var titleSmall = Theme.of(context).textTheme.titleSmall!.apply(fontWeightDelta: FontWeight.w100.index, fontSizeDelta: 4);
+    var titleSmallMod = titleSmall.apply(
+        fontWeightDelta: FontWeight.w100.index, fontSizeDelta: 4);
     return DialogUtils.dialog(
         child: ListView(shrinkWrap: true, children: [
-          Align(
+      Align(
           alignment: Alignment.topCenter,
           child: CircleAvatar(
               radius: 50,
               backgroundColor: Theme.of(context).disabledColor.withOpacity(0.2),
               child: Image.asset(Paths.clipboardPlus).paddingAll(20))),
-          Align(
+      Align(
           alignment: Alignment.center,
-          child: CustomText("Selecciona tu envío",
-              style: Theme.of(context).textTheme.titleLarge)),
-          CustomText(
+          child: CustomText("Selecciona tu envío", style: titleLarge)),
+      CustomText(
           "Selecciona uno de tus envíos registrados o registra uno nuevo",
           textAlign: TextAlign.center,
           maxLines: 3,
-          style: Theme.of(context)
-              .textTheme
-              .bodyMedium!
-              .apply(color: Theme.of(context).disabledColor)),
-          SizedBox(height: Get.height * 0.05),
-          Align(
+          style: bodyMedium.apply(color: Theme.of(context).disabledColor)),
+      SizedBox(height: Get.height * 0.05),
+      Align(
           alignment: Alignment.centerLeft,
-          child: CustomText("Tus envíos registrados", style: titleSmall)),
-          CustomDropDown(
-              paddingAll: 0,
-              items: controller.registerSends.map((e) => DropdownMenuItem(value: e, child: Text(e))).toList(),
-              onChanged: (p0) => controller.selectedSend(p0),
-              value: controller.selectedSend()),
-          SizedBox(height: Get.height*0.1),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Expanded(
+          child: CustomText("Tus envíos registrados", style: titleSmallMod)),
+      CustomDropDown(
+          paddingAll: 0,
+          items: controller.registerSends
+              .map((e) => DropdownMenuItem(value: e, child: Text(e)))
+              .toList(),
+          onChanged: (p0) => controller.selectedSend(p0),
+          value: controller.selectedSend()),
+      SizedBox(height: Get.height * 0.1),
+      Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Expanded(
                 flex: 6,
                 child: SizedBox(
                     height: Get.height * 0.05,
                     child: CustomButton(
                         title: "Registrar nuevo envío",
                         height: Get.height * 0.02,
-                        width: Get.width ,
-                        onPressed: () async{
+                        width: Get.width,
+                        onPressed: () async {
                           Get.back(result: true);
                           await _onDialogManeuver(context);
-                        }))
-              ),
-              const Spacer(),
-              Expanded(
+                        }))),
+            const Spacer(),
+            Expanded(
                 flex: 4,
                 child: SizedBox(
                     height: Get.height * 0.05,
@@ -320,106 +327,172 @@ class DetailPage extends GetView<DetailController> {
                         width: Get.width,
                         color: Colors.black,
                         onPressed: () => Get.back(result: true))))
-            ])
+          ])
     ]));
   }
+
   Future<bool> _onDialogManeuver(BuildContext context) {
     return DialogUtils.dialog(
         child: ListView(shrinkWrap: true, children: [
-          Align(
-              alignment: Alignment.center,
-              child: CustomText("El envío no incluye “La maniobra”",
-                  style: Theme.of(context).textTheme.titleLarge)),
-          Align(
-              alignment: Alignment.topCenter,
-              child: Image.asset(Paths.truckCharger).paddingAll(20)),
-          CustomText(
-              "A la llegada del camión, el conductor no tiene la responsabilidad de movilizar los productos a envío, dentro del transporte.",
-              textAlign: TextAlign.center,
-              maxLines: 3,
-              style: Theme.of(context).textTheme.bodyMedium!.apply(color: Theme.of(context).disabledColor)),
-          SizedBox(height: Get.height*0.1),
-          SizedBox(
-              height: Get.height * 0.07,
-              child: CustomButton(
-                            title: "Continuar",
-                            height: Get.height * 0.02,
-                            width: Get.width ,
-                            color: Colors.black,
-                            onPressed: () async{
-                              Get.back(result: true);
-                              await _onDialogConfirm(context);
-                            })),
-          SizedBox(height: Get.height*0.02),
-          CustomText(
-              "Ver detalles",
-              textAlign: TextAlign.right,
-              maxLines: 3,
-              style: Theme.of(context).textTheme.bodyMedium!)
-        ]));
-  }
-  Future<bool> _onDialogConfirm(BuildContext context) {
-    var titleSmall = Theme.of(context).textTheme.bodyMedium!.apply(color: Theme.of(context).disabledColor);
-    return DialogUtils.dialog(
-        child: ListView(shrinkWrap: true, children: [
-          _customCardMap(context),
-          _customCardReduce(context, "Distancia: 120 km"),
-          SizedBox(height: Get.height * 0.02),
-          Align(
-              alignment: Alignment.centerLeft,
-              child: CustomText("Cotizacion de viaje", style: Theme.of(context).textTheme.titleLarge)),
-          SizedBox(height: Get.height * 0.02),
-          CustomText(
-              "En base al cálculo se obtuvo el siguiente monto. Una vez aceptada la solicitud por la otra parte se procede a realizar el pago.",
-              textAlign: TextAlign.left,
-              maxLines: 4,
-              style: titleSmall),
-          SizedBox(height: Get.height * 0.02),
-          Align(
-              alignment: Alignment.centerLeft,
-              child: CustomText("\$4,300 MXN", style: Theme.of(context).textTheme.titleLarge!.apply(fontSizeDelta: 3))),
-          SizedBox(height: Get.height * 0.02),
-          CustomText("Costo sin seguro de envío incluido", textAlign: TextAlign.left, maxLines: 4, style:titleSmall),
-          SizedBox(height: Get.height * 0.03),
-          CustomButton(
-              title: "Solicitar Viaje",
-              height: Get.height * 0.07,
-              width: Get.width ,
-              color: Globals.principalColor,
-              onPressed: () async{
+      Align(
+          alignment: Alignment.center,
+          child: CustomText("El envío no incluye “La maniobra”",
+              style: titleLarge)),
+      Align(
+          alignment: Alignment.topCenter,
+          child: Image.asset(Paths.truckCharger).paddingAll(20)),
+      CustomText(
+          "A la llegada del camión, el conductor no tiene la responsabilidad de movilizar los productos a envío, dentro del transporte.",
+          textAlign: TextAlign.center,
+          maxLines: 3,
+          style: bodyMedium.apply(color: Theme.of(context).disabledColor)),
+      SizedBox(height: Get.height * 0.1),
+      SizedBox(
+          height: Get.height * 0.07,
+          child: CustomButton(
+              title: "Continuar",
+              height: Get.height * 0.02,
+              width: Get.width,
+              color: Colors.black,
+              onPressed: () async {
                 Get.back(result: true);
-                await _onDialogSuccess(context);
-              })
-        ]));
-  }
-  Future<bool> _onDialogSuccess(BuildContext context) {
-    var disableText = Theme.of(context).textTheme.bodyMedium!.apply(color: Theme.of(context).disabledColor);
-    return DialogUtils.dialog(
-        child: ListView(shrinkWrap: true, children: [
-          Align(
-              alignment: Alignment.topCenter,
-              child: Image.asset(Paths.circleCheck).paddingAll(20)),
-          Align(
-              alignment: Alignment.center,
-              child: CustomText("¡La solicitud se ha enviado correctamente!",maxLines: 3, style: Theme.of(context).textTheme.titleLarge!.apply(fontSizeDelta: -2))),
-          SizedBox(height: Get.height * 0.02),
-          CustomText(
-              "A través de “Mis solicitudes” podrás ver el estatus de la solicitud realizada.",
-              textAlign: TextAlign.center,
-              maxLines: 4,
-              style: disableText),
-          SizedBox(height: Get.height * 0.05),
-          CustomButton(
-              title: "Ir a mis solicitudes",
-              height: Get.height * 0.07,
-              width: Get.width ,
-              color: Globals.principalColor,
-              onPressed: () async{
-                Get.back(result: true);//close dialog
-                Get.back();//exit DetailPage
-               Get.find<NavBarController>().onItemTapped(2);//indexed page in 'Mis Solicitudes'
-              })
-        ]));
+                await _onDialogConfirm(context);
+              })),
+      SizedBox(height: Get.height * 0.02),
+      CustomText("Ver detalles",
+          textAlign: TextAlign.right, maxLines: 3, style: bodyMedium)
+    ]));
   }
 
+  Future<bool> _onDialogConfirm(BuildContext context) {
+    var titleSmall = bodyMedium.apply(color: Theme.of(context).disabledColor);
+    return DialogUtils.dialog(
+        child: ListView(shrinkWrap: true, children: [
+      _customCardMap(context),
+      _customCardReduce(context, "Distancia: 120 km"),
+      SizedBox(height: Get.height * 0.02),
+      Align(
+          alignment: Alignment.centerLeft,
+          child: CustomText("Cotizacion de viaje", style: titleLarge)),
+      SizedBox(height: Get.height * 0.02),
+      CustomText(
+          "En base al cálculo se obtuvo el siguiente monto. Una vez aceptada la solicitud por la otra parte se procede a realizar el pago.",
+          textAlign: TextAlign.left,
+          maxLines: 4,
+          style: titleSmall),
+      SizedBox(height: Get.height * 0.02),
+      Align(
+          alignment: Alignment.centerLeft,
+          child: CustomText("\$4,300 MXN",
+              style: titleLarge.apply(fontSizeDelta: 3))),
+      SizedBox(height: Get.height * 0.02),
+      CustomText("Costo sin seguro de envío incluido",
+          textAlign: TextAlign.left, maxLines: 4, style: titleSmall),
+      SizedBox(height: Get.height * 0.03),
+      CustomButton(
+          title: "Solicitar Viaje",
+          height: Get.height * 0.07,
+          width: Get.width,
+          color: Globals.principalColor,
+          onPressed: () async {
+            Get.back(result: true);
+            await _onDialogSuccess(context);
+          })
+    ]));
+  }
+
+  Future<bool> _onDialogSuccess(BuildContext context) {
+    var disableText = bodyMedium.apply(color: Theme.of(context).disabledColor);
+    return DialogUtils.dialog(
+        child: ListView(shrinkWrap: true, children: [
+      Align(
+          alignment: Alignment.topCenter,
+          child: Image.asset(Paths.circleCheck).paddingAll(20)),
+      Align(
+          alignment: Alignment.center,
+          child: CustomText("¡La solicitud se ha enviado correctamente!",
+              maxLines: 3, style: titleLarge.apply(fontSizeDelta: -2))),
+      SizedBox(height: Get.height * 0.02),
+      CustomText(
+          "A través de “Mis solicitudes” podrás ver el estatus de la solicitud realizada.",
+          textAlign: TextAlign.center,
+          maxLines: 4,
+          style: disableText),
+      SizedBox(height: Get.height * 0.05),
+      CustomButton(
+          title: "Ir a mis solicitudes",
+          height: Get.height * 0.07,
+          width: Get.width,
+          color: Globals.principalColor,
+          onPressed: () async {
+            Get.back(result: true); //close dialog
+            Get.back(); //exit DetailPage
+            Get.find<NavBarController>()
+                .onItemTapped(2); //indexed page in 'Mis Solicitudes'
+          })
+    ]));
+  }
+
+  Future<bool> _onDialogSendClient(BuildContext context) {
+    var titleSmallMod = titleSmall.apply(
+        fontWeightDelta: FontWeight.w100.index, fontSizeDelta: 4);
+    return DialogUtils.dialog(
+        child: ListView(shrinkWrap: true, children: [
+      Align(
+          alignment: Alignment.topCenter,
+          child: CircleAvatar(
+              radius: 50,
+              backgroundColor: Theme.of(context).disabledColor.withOpacity(0.2),
+              child: Image.asset(Paths.clipboardPlus).paddingAll(20))),
+      Align(
+          alignment: Alignment.center,
+          child: CustomText("Selecciona tu envío", style: titleLarge)),
+      CustomText(
+          "Selecciona uno de tus envíos registrados o registra uno nuevo",
+          textAlign: TextAlign.center,
+          maxLines: 3,
+          style: bodyMedium.apply(color: Theme.of(context).disabledColor)),
+      SizedBox(height: Get.height * 0.05),
+      Align(
+          alignment: Alignment.centerLeft,
+          child: CustomText("Tus envíos registrados", style: titleSmallMod)),
+      CustomDropDown(
+          paddingAll: 0,
+          items: controller.registerSends
+              .map((e) => DropdownMenuItem(value: e, child: Text(e)))
+              .toList(),
+          onChanged: (p0) => controller.selectedSend(p0),
+          value: controller.selectedSend()),
+      SizedBox(height: Get.height * 0.1),
+      Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Expanded(
+                flex: 6,
+                child: SizedBox(
+                    height: Get.height * 0.05,
+                    child: CustomButton(
+                        title: "Registrar nuevo envío",
+                        height: Get.height * 0.02,
+                        width: Get.width,
+                        onPressed: () async {
+                          Get.back(result: true);
+                          await _onDialogManeuver(context);
+                        }))),
+            const Spacer(),
+            Expanded(
+                flex: 4,
+                child: SizedBox(
+                    height: Get.height * 0.05,
+                    child: CustomButton(
+                        title: "Cotizar",
+                        height: Get.height * 0.02,
+                        width: Get.width,
+                        color: Colors.black,
+                        onPressed: () => Get.back(result: true))))
+          ])
+    ]));
+  }
+//endregion
 }

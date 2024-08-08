@@ -10,6 +10,7 @@ class Paths {
   static const String profile2 ='assets/images/profile2.png';
   static const String boxIcon = 'assets/images/box_icon.png';
   static const String location = 'assets/icons/location.png';
+  static const String insignia = 'assets/images/insignia.png';
   static const String congrats = 'assets/images/congrats.png';
   static const String shopIcon = 'assets/images/shop_icon.png';
   static const String briefcase = 'assets/icons/briefcase.png';
@@ -21,7 +22,5 @@ class Paths {
   static const String circleCheck = 'assets/images/circle_check.png';
   static const String truckCharger = 'assets/images/truck_charger.png';
   static const String clipboardPlus = 'assets/icons/clipboard_plus.png';
-
-
 
 }

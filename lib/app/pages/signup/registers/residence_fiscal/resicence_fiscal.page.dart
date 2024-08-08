@@ -1,7 +1,8 @@
+import 'package:camionesm/app/pages/nav/Widgets/simple_title_card.widget.dart';
 import 'package:camionesm/app/pages/signup/registers/residence_fiscal/residence_fiscal.Controller.dart';
 import 'package:camionesm/app/widgets/app_bar/app_bar.widget.dart';
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
-import 'package:camionesm/app/widgets/cards/card_reduce.widget.dart';
+import 'package:camionesm/app/widgets/cards/container.widget.dart';
 import 'package:camionesm/app/widgets/images/images_assets.widget.dart';
 import 'package:camionesm/app/widgets/reactives/reactive_dropdown_field.widget.dart';
 import 'package:camionesm/app/widgets/reactives/reactive_text_field.widget.dart';
@@ -26,7 +27,7 @@ class ResidenceFiscalPage extends GetView<ResidenceFiscalController>{
               shrinkWrap: true,
               physics: const BouncingScrollPhysics(),
               children: [
-                _customCardReduce(context,Paths.location,"Domicilio Fiscal"),
+                const SimpleTitleCard(Paths.location,"Domicilio Fiscal"),
                 ReactiveForm(
                     formGroup: controller.form(),
                     child: Column(children: [
@@ -94,23 +95,6 @@ class ResidenceFiscalPage extends GetView<ResidenceFiscalController>{
           ).paddingAll(15),
         )
     );
-  }
-
-
-  _customCardReduce(BuildContext context,String pathIcon, String title){
-    const disableColor= Colors.transparent;
-    return CustomCardReduce(
-        backgroundColor: disableColor,
-        child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              SizedBox(width: Get.width*0.03),
-              CustomImageAssets(url:pathIcon, height: Get.height*0.055,width: Get.width*0.12,fit: BoxFit.fill),
-              SizedBox(width: Get.width*0.035),
-              CustomText(title,maxLines: 1, style: Theme.of(context).textTheme.bodyMedium!.apply(fontWeightDelta: FontWeight.bold.value))
-            ]
-        )).paddingOnly(top: 10,bottom: 10);
   }
 
 

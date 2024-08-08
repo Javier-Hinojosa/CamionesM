@@ -1,7 +1,8 @@
+import 'package:camionesm/app/pages/nav/Widgets/simple_title_card.widget.dart';
 import 'package:camionesm/app/pages/signup/registers/access_data/access_data.controller.dart';
 import 'package:camionesm/app/widgets/app_bar/app_bar.widget.dart';
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
-import 'package:camionesm/app/widgets/cards/card_reduce.widget.dart';
+import 'package:camionesm/app/widgets/cards/container.widget.dart';
 import 'package:camionesm/app/widgets/images/images_assets.widget.dart';
 import 'package:camionesm/app/widgets/reactives/reactive_text_field.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
@@ -23,7 +24,7 @@ class AccessDataPage extends GetView<AccessDataController>{
        shrinkWrap: true,
        physics: const BouncingScrollPhysics(),
        children: [
-         _customCardReduce(context,Paths.key,"Datos de Acceso"),
+         const SimpleTitleCard(Paths.key,"Datos de Acceso"),
        ReactiveForm(
              formGroup: controller.form(),
              child: Column(children: [
@@ -39,33 +40,12 @@ class AccessDataPage extends GetView<AccessDataController>{
                    labelText: "Confirma tu contraseña",
                    hintText: "Confirma tu contraseña",
                    keyboard: TextInputType.text),
-               SizedBox(
-                 height: Get.height*.05,
-               )
+               SizedBox(height: Get.height*.05)
              ])),
        Obx(()=>CustomButton(title: "Siguiente",
                onPressed: controller.isValid()?()=>controller.onFinish():null,
                color: Colors.black).paddingAll(10))
-       ]
-     ).paddingAll(15)
-    );
-  }
-
-
-  _customCardReduce(BuildContext context,String pathIcon, String title){
-    const disableColor= Colors.transparent;
-    return CustomCardReduce(
-        backgroundColor: disableColor,
-        child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              SizedBox(width: Get.width*0.03),
-              CustomImageAssets(url:pathIcon, height: Get.height*0.055,width: Get.width*0.12,fit: BoxFit.fill),
-              SizedBox(width: Get.width*0.035),
-              CustomText(title,maxLines: 1, style: Theme.of(context).textTheme.bodyMedium!.apply(fontWeightDelta: FontWeight.bold.value))
-            ]
-        )).paddingOnly(top: 10,bottom: 10);
+       ]).paddingAll(15));
   }
 
 

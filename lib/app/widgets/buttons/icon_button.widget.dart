@@ -11,13 +11,14 @@ class CustomIconButton extends StatelessWidget{
   final Color? color;
   final double? size;
   final Color? backgroundColor;
+  final double? width;
 
-  const CustomIconButton({super.key, this.onPressed, this.icon=Icons.arrow_back,this.color, this.backgroundColor, this.iconWidget, this.size});
+  const CustomIconButton({super.key, this.onPressed, this.icon=Icons.arrow_back,this.color, this.backgroundColor, this.iconWidget, this.size, this.width});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: Get.width*0.11,
+        width: width??Get.width*0.11,
         decoration: BoxDecoration(
           color: backgroundColor,
           borderRadius: BorderRadius.circular(30.0),

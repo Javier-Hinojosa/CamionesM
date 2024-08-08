@@ -5,6 +5,7 @@ abstract class Globals{
 
   static const Color backgroundColor =  Color(0xfff1f0f0);
   static const Color principalColor  =  Color(0xfff6c700);
+  static const Color principal2Color  =  Color(0xfff8a404);
   static const Color secondColor = Colors.black;
   static const Color backgroundColorBlack = Colors.black54;//Color(0x222b2b2b);
 

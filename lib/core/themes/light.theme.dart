@@ -1,4 +1,4 @@
-import 'package:camionesm/core/themes/text.theme.dart';
+import 'package:camionesm/core/themes/text_style.theme.dart';
 import 'package:camionesm/core/values/globals.dart';
 import 'package:flutter/material.dart';
 
@@ -36,6 +36,11 @@ final ThemeData lightTheme = ThemeData(
         selectedIconTheme: IconThemeData(color: Colors.white),
         unselectedIconTheme: IconThemeData(color: Colors.white54)
     ),
+    inputDecorationTheme: const InputDecorationTheme(
+        disabledBorder: UnderlineInputBorder(),
+        enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(10.0)), borderSide: BorderSide(color: Colors.black)),
+        border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(10.0)), borderSide: BorderSide(color: Colors.black)),
+        focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(10.0)), borderSide: BorderSide(style: BorderStyle.solid))),
     appBarTheme: const AppBarTheme(
     backgroundColor: Globals.backgroundColor,
     surfaceTintColor: Globals.backgroundColor),

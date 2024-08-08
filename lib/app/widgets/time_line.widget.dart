@@ -56,8 +56,7 @@ class BuildTimelineTile extends StatelessWidget {
               fontSize: 12,
               fontWeight: FontWeight.w500,
               overflow: TextOverflow.ellipsis,
-              color: isActive ? Colors.black : Colors.black54)),
-        ),
+              color: isActive ? Colors.black : Colors.black54))),
         trailing!=null?
         Expanded(child: Align(
             alignment: Alignment.centerRight,

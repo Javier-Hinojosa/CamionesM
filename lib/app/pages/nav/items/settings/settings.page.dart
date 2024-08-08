@@ -1,6 +1,6 @@
 import 'package:camionesm/app/pages/nav/Widgets/app_bar_home.widget.dart';
 import 'package:camionesm/app/pages/nav/items/settings/settings.controller.dart';
-import 'package:camionesm/app/widgets/cards/card_reduce.widget.dart';
+import 'package:camionesm/app/widgets/cards/container.widget.dart';
 import 'package:camionesm/app/widgets/notification.widget.dart';
 import 'package:camionesm/app/widgets/progess_bar.widget.dart';
 import 'package:camionesm/app/widgets/switch_theme.widget.dart';
@@ -37,7 +37,7 @@ class SettingsPage extends GetView<SettingsController>{
  Widget  _cardItem(BuildContext context, ProfileItem item){
     return GestureDetector(
         onTap: ()=>controller.onSelectProfileItem(item.id),
-        child: CustomCardReduce(
+        child: CustomContainer(
             backgroundColor: Theme.of(context).canvasColor,
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

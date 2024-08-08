@@ -2,16 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class DialogUtils {
-  static Future<bool> dialog({required Widget child, List<TextButton>? options}) async {
+  static Future<bool> dialog({required Widget child, List<TextButton>? options,AlignmentGeometry? align}) async {
     try{
       return await Get.dialog(AlertDialog(
+        alignment: align,
           title: Align(
             alignment: Alignment.centerRight,
             child: GestureDetector(
                 onTap: () => Get.back(result: true),
-                child: const Icon(Icons.close_outlined, color: Colors.black))),
+                child: const Icon(Icons.close_outlined,size: 28, color: Colors.black))),
         content: SizedBox(width: Get.width, child: child),
-        actions: options,insetPadding: EdgeInsets.all(15),));
+        actions: options,insetPadding: const EdgeInsets.all(15),));
     }catch(e){
       return true;
     }

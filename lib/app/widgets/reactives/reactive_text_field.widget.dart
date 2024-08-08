@@ -1,3 +1,5 @@
+import 'package:camionesm/core/themes/light.theme.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:reactive_forms/reactive_forms.dart';
@@ -12,7 +14,7 @@ class CustomReactiveTextField extends StatelessWidget {
   final int? maxLines;
   final int? minLines;
   final bool isPass;
-  final bool? isActive;
+  final bool isActive;
   final IconData? iconSuffix;
   final void Function(FormControl<dynamic>)? onSubmitted;
   final void Function(FormControl<dynamic>)? onChanged;
@@ -32,7 +34,7 @@ class CustomReactiveTextField extends StatelessWidget {
       this.controlName, {
         super.key,
         this.labelText = "",
-        this.isActive,
+        this.isActive=true,
         this.maxLength,
         this.minLength,
         this.onSubmitted,
@@ -56,31 +58,34 @@ class CustomReactiveTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var themeDefault =  Colors.black;
     return Padding(
       padding: EdgeInsets.all(paddingAll),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Text(labelText,style: const TextStyle(fontWeight: FontWeight.w400)),
+          Text(labelText,style:  TextStyle(color: !isActive? themeDefault.withOpacity(0.5):null, fontWeight: FontWeight.w400)),
           Padding(
-            padding: const EdgeInsets.only(top: 10),
+            padding:  EdgeInsets.only(top: !isActive?5:10),
             child: ReactiveTextField(
               formControlName: controlName,
               controller: textEditing,
               autofocus: false,
+              textAlign: TextAlign.left,
               autocorrect: false,
               onSubmitted: onSubmitted,
               onChanged: onChanged,
-              scribbleEnabled: isActive ?? true,
-              enableInteractiveSelection: isActive ?? true,
-              readOnly: !(isActive ?? true),
+              scribbleEnabled: isActive,
+              style: TextStyle(color: !isActive?themeDefault.withOpacity(0.5):null),
+              enableInteractiveSelection: isActive,
+              readOnly: !isActive,
               inputFormatters: inputFormatters,
-              decoration: outLineText(context,hintText: hintText,suffixIcon: iconSuffix,onSuffixIconTap: onSuffixIconTap),
+              decoration: outLineText(context,hintText: hintText,enable:isActive, suffixIcon: iconSuffix,onSuffixIconTap: onSuffixIconTap),
               textCapitalization: inputFormatters != null ? TextCapitalization.characters : TextCapitalization.none,
               enableIMEPersonalizedLearning: false,
-              enableSuggestions: false,
-              focusNode: isActive != null ? AlwaysDisabledFocusNode() : null,
+              enableSuggestions: true,
+              focusNode: isActive?null:AlwaysDisabledFocusNode(), //cursor disable
               maxLines: maxLines ?? 1,
               minLines: minLines ?? 1,
               maxLengthEnforcement: MaxLengthEnforcement.truncateAfterCompositionEnds,
@@ -124,51 +129,34 @@ Map<String, String Function(Object)>? validationMessages(int? minLength, int? ma
       ValidationMessage.email: (e) => "Ingrese un correo válido",
     };
 
- InputDecoration outLineText(BuildContext context,
-{String labelText = "",
+ InputDecoration outLineText(BuildContext context,{
+  String labelText = "",
   String? hintText="",
   IconData? suffixIcon,
   GestureTapCallback? onSuffixIconTap,
-Color? labelTextColor,
-double borderRadius = 0.0,
-Color? backgroundColor,
-Color? borderSideColor}) {
+  Color? labelTextColor,
+  double borderRadius = 0.0,
+  Color? backgroundColor,
+  Color? borderSideColor,
+  bool enable=true}) {
 var themeDefault = borderSideColor ?? Colors.black;
 return InputDecoration(
-filled: true,
-fillColor: backgroundColor ?? Theme.of(context).scaffoldBackgroundColor,
-  suffixIcon: suffixIcon != null
-      ? IconButton(
-      icon: Icon(
-        suffixIcon,
-        color: Colors.black26,
-        size: 18,
-      ),
-      onPressed: onSuffixIconTap)
-      : null,
-contentPadding: const EdgeInsets.all(15),
-labelText: labelText,
-hintText: hintText,
-hintStyle: const TextStyle(fontSize: 14, color: Colors.black26),
-floatingLabelBehavior: FloatingLabelBehavior.always,
-disabledBorder: OutlineInputBorder(
-borderSide: const BorderSide(color: Colors.black, width: 1),
-borderRadius: BorderRadius.circular(10.0)
-),
-enabledBorder: OutlineInputBorder(
-borderRadius: const BorderRadius.all(Radius.circular(10.0)),
-borderSide: BorderSide(
-color: themeDefault,
-),
-),
-border: OutlineInputBorder(
-borderRadius: const BorderRadius.all(Radius.circular(10.0)),
-borderSide: BorderSide(color: themeDefault),
-),
-focusedBorder: const OutlineInputBorder(
-borderRadius: BorderRadius.all(Radius.circular(10.0)),
-borderSide: BorderSide(style: BorderStyle.solid)),
-  counterText: "",
+  filled: true,
+  enabled: enable,
+  fillColor: backgroundColor ?? Theme.of(context).scaffoldBackgroundColor,
+  suffixIcon: suffixIcon != null ? IconButton(
+      onPressed: onSuffixIconTap,
+      icon: Icon(suffixIcon, color: Colors.black26, size: 18)): null,
+  contentPadding: const EdgeInsets.all(15),
+  labelText: labelText,
+  labelStyle: !enable?TextStyle(color: themeDefault.withOpacity(0.1)):null,
+  hintText: hintText,
+  hintStyle: const TextStyle(fontSize: 14, color: Colors.black26),
+  floatingLabelBehavior: FloatingLabelBehavior.always,
+  disabledBorder: const UnderlineInputBorder(),
+  enabledBorder: enable?OutlineInputBorder(borderRadius: const BorderRadius.all(Radius.circular(10.0)), borderSide: BorderSide(color: themeDefault)):OutlineInputBorder(borderRadius: const BorderRadius.all(Radius.circular(10.0)), borderSide: BorderSide(color: themeDefault.withOpacity(0.3))),
+  border: OutlineInputBorder(borderRadius: const BorderRadius.all(Radius.circular(10.0)), borderSide: BorderSide(color: themeDefault)),
+  focusedBorder: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(10.0)), borderSide: BorderSide(style: BorderStyle.solid))
 );
 }
 

@@ -3,28 +3,30 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
-  const CustomAppBar({super.key, this.backgroundColor,this.onBack,this.leadingColor,this.trailing});
+  const CustomAppBar({super.key, this.surfaceTintColor,this.onBack,this.leadingColor,this.trailing, this.backgroundColor, this.height});
 
-  final Color?  backgroundColor;
+  final Color?  surfaceTintColor;
+  final Color? backgroundColor;
   final Color? leadingColor;
+  final double? height;
   final List<Widget>? trailing;
   final void Function()? onBack;
 
   @override
   Widget build(BuildContext context) {
    return AppBar(
-       surfaceTintColor: backgroundColor,
+       surfaceTintColor: surfaceTintColor,
        automaticallyImplyLeading: true,
-       backgroundColor: Colors.transparent,
+       backgroundColor: backgroundColor??Colors.transparent,
        elevation: 0,
        actions: trailing,
-       leadingWidth: Get.width*0.2,
-       leading: IconButton(onPressed: onBack??()=>Get.back(), icon: CustomIconButton(backgroundColor: leadingColor))
+       leadingWidth: Get.width*0.15,
+       leading: CustomIconButton(onPressed: onBack??()=>Get.back(),  backgroundColor: leadingColor).paddingAll(5)
    );
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(Get.height*0.065);
+  Size get preferredSize => Size.fromHeight(height??Get.height*0.065);
 
 
 }
