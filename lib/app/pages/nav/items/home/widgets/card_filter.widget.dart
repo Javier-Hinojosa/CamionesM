@@ -179,7 +179,7 @@ class HomeCardFilter extends GetView<HomeController> {
                 const Icon(Icons.arrow_back_ios, color: Colors.black),
             rightChevronIcon:
                 const Icon(Icons.arrow_forward_ios, color: Colors.black),
-            titleTextStyle: titleMedium!),
+            titleTextStyle: titleMedium),
         calendarStyle: const CalendarStyle(
             isTodayHighlighted: true,
             todayDecoration:

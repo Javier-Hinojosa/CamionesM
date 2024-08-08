@@ -6,7 +6,6 @@ import 'package:camionesm/app/pages/nav/items/truks/truks.page.dart';
 import 'package:camionesm/core/values/enums.dart';
 import 'package:camionesm/data/models/internal/nav_bar.item.model.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 class NavBarController extends GetxController{

@@ -1,6 +1,5 @@
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
 import 'package:camionesm/app/widgets/buttons/icon_button.widget.dart';
-import 'package:camionesm/app/widgets/cards/card_deformed.widget.dart';
 import 'package:camionesm/app/widgets/cards/container.widget.dart';
 import 'package:camionesm/app/widgets/cards/loading_card.widget.dart';
 import 'package:camionesm/app/widgets/dotted_divider.widget.dart';

@@ -60,7 +60,7 @@ class CustomTransportItem extends StatelessWidget {
           SizedBox(height: Get.height * 0.02),
           const DottedDivider(),
           CustomText("Puebla a CDMX",
-              style: titleMedium!.apply(
+              style: titleMedium.apply(
                   fontSizeDelta: 12, fontWeightDelta: FontWeight.w100.index)),
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             Row(children: [
@@ -93,7 +93,7 @@ class CustomTransportItem extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       CustomText("\$4,300 MXN",
-                          style: titleMedium!.apply(
+                          style: titleMedium.apply(
                               fontSizeDelta: 14,
                               fontWeightDelta: FontWeight.w300.index)),
                       SizedBox(

@@ -27,7 +27,7 @@ class SignUpFinish extends StatelessWidget {
               alignment: Alignment.center,
               child: CustomText("¡Tu cuenta fue creada exitósamente!.",
                   textAlign: TextAlign.center,
-                  style: titleMedium!.apply(
+                  style: titleMedium.apply(
                       fontWeightDelta: FontWeight.w100.index,
                       fontSizeDelta: 4))),
           Container(padding: const EdgeInsets.all(30)),

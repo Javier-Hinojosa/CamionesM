@@ -94,7 +94,7 @@ class SingUp3Page extends GetView<SingUpController> {
                   width: Get.width * 0.12,
                   fit: BoxFit.fill),
               title: CustomText(title,
-                  style: bodyMedium!.apply(
+                  style: bodyMedium.apply(
                       color: disable ? disableColor : null,
                       fontWeightDelta: FontWeight.bold.value)),
               subtitle: Column(
