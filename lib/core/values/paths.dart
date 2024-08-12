@@ -22,5 +22,6 @@ class Paths {
   static const String circleCheck = 'assets/images/circle_check.png';
   static const String truckCharger = 'assets/images/truck_charger.png';
   static const String clipboardPlus = 'assets/icons/clipboard_plus.png';
+  static const String clipboardTruck = 'assets/images/clipboard_truck.png';
 
 }

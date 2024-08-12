@@ -15,6 +15,11 @@ final ThemeData lightTheme = ThemeData(
     canvasColor: Colors.grey.shade300,
     primaryColorDark: Colors.black45,
     iconTheme: const IconThemeData(color: Colors.white70),
+    progressIndicatorTheme: const ProgressIndicatorThemeData(
+        color: Colors.black,
+        linearMinHeight: 5,
+        refreshBackgroundColor: Colors.black
+    ),
     iconButtonTheme: IconButtonThemeData(style: ButtonStyle(iconColor: WidgetStateProperty.all<Color>(Colors.white70))),
     colorScheme: ColorScheme.fromSeed(
         surface: Colors.white,
