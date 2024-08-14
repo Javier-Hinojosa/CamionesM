@@ -1,5 +1,5 @@
-import 'package:camionesm/app/pages/nav/items/truks/truck.controller.dart';
-import 'package:camionesm/app/pages/nav/items/truks/trucks_register_specific.page.dart';
+import 'package:camionesm/app/pages/nav/items/truks/register/trucks_register.controller.dart';
+import 'package:camionesm/app/pages/nav/items/truks/register/trucks_register_specific.page.dart';
 import 'package:camionesm/app/widgets/app_bar/app_bar.widget.dart';
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
 import 'package:camionesm/app/widgets/reactives/reactive_dropdown_field.widget.dart';
@@ -13,7 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
-class TrucksRegisterGeneralPage extends GetView<TrucksController>{
+class TrucksRegisterGeneralPage extends GetView<TrucksRegisterController>{
   const TrucksRegisterGeneralPage({super.key});
 
   @override

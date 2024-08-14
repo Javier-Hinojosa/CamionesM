@@ -1,5 +1,5 @@
 import 'package:camionesm/core/values/enums.dart';
-import 'package:camionesm/data/models/internal/profile_item.module.dart';
+import 'package:camionesm/data/models/items/profile.item.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';

@@ -1,4 +1,4 @@
-import 'package:camionesm/app/widgets/cards/container.widget.dart';
+import 'package:camionesm/app/widgets/containers/container.widget.dart';
 import 'package:camionesm/app/widgets/images/images_assets.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
 import 'package:camionesm/core/values/text_styles.dart';

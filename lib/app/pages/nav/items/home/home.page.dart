@@ -5,9 +5,9 @@ import 'package:camionesm/app/pages/nav/items/home/widgets/card_filter.widget.da
 import 'package:camionesm/app/pages/nav/items/home/widgets/transport_item.dart';
 import 'package:camionesm/app/utils/dialog.utils.dart';
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
-import 'package:camionesm/app/widgets/buttons/button_card.widget.dart';
 import 'package:camionesm/app/widgets/buttons/chip.widget.dart';
 import 'package:camionesm/app/widgets/buttons/icon_button.widget.dart';
+import 'package:camionesm/app/widgets/containers/container_outline.widget.dart';
 import 'package:camionesm/app/widgets/images/images_assets.widget.dart';
 import 'package:camionesm/app/widgets/progess_bar.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
@@ -161,7 +161,7 @@ class HomePage extends GetView<HomeController> {
                   color: Colors.black,
                   onPressed: () => Get.back(result: true)))),
       SizedBox(height: Get.height * 0.02),
-      CustomCardButton(
+      CustomContainerOutline(
           backgroundColor: Colors.white,
           borderColor: Globals.secondColor,
           radius: 20,
@@ -239,7 +239,7 @@ class HomePage extends GetView<HomeController> {
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
               children: HomeFilterController.labelsFilters
-                  .map((e) => CustomChips(label: e, paddingAll: 9)
+                  .map((e) => CustomChip(label: e, paddingAll: 9)
                       .paddingOnly(left: 5, right: 5))
                   .toList())
         ]));
@@ -256,7 +256,7 @@ class HomePage extends GetView<HomeController> {
             mainAxisExtent: 35),
         primary: false,
         padding: EdgeInsets.zero,
-        itemBuilder: (context, index) => CustomChips(
+        itemBuilder: (context, index) => CustomChip(
             label: HomeFilterController.labelsFilters[index],
             paddingAll: 5,
             onPressed: () => controller.onLabelChange(

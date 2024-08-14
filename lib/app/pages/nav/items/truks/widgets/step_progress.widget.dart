@@ -1,6 +1,6 @@
 import 'package:camionesm/app/widgets/text.widget.dart';
 import 'package:camionesm/core/values/text_styles.dart';
-import 'package:camionesm/data/models/internal/progress_step.module.dart';
+import 'package:camionesm/data/models/items/progress.item.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,15 +16,15 @@ class CustomProgressStepTruck extends StatelessWidget{
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Flexible(flex: isActive[0]?10:5, child: _getProgress(ProgressStepModule(isActive:isActive[0],icon: Icons.local_shipping_outlined,title: "Datos generales"))),
+          Flexible(flex: isActive[0]?10:5, child: _getProgress(ProgressStepItem(isActive:isActive[0],icon: Icons.local_shipping_outlined,title: "Datos generales"))),
           const Spacer(),
-          Flexible(flex: isActive[1]?10:5, child: _getProgress(ProgressStepModule(isActive:isActive[1],icon: Icons.article_outlined,title: "Datos específicos"))),
+          Flexible(flex: isActive[1]?10:5, child: _getProgress(ProgressStepItem(isActive:isActive[1],icon: Icons.article_outlined,title: "Datos específicos"))),
           const Spacer(),
-          Flexible(flex: isActive[2]?10:5, child: _getProgress(ProgressStepModule(isActive:isActive[2],icon: Icons.photo_library_outlined,title: "Docs y fotos")))
+          Flexible(flex: isActive[2]?10:5, child: _getProgress(ProgressStepItem(isActive:isActive[2],icon: Icons.photo_library_outlined,title: "Docs y fotos")))
         ]);
   }
 
- Widget _getProgress(ProgressStepModule item){
+ Widget _getProgress(ProgressStepItem item){
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

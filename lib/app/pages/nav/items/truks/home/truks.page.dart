@@ -1,0 +1,109 @@
+import 'package:camionesm/app/pages/nav/Widgets/simple_title_card.widget.dart';
+import 'package:camionesm/app/pages/nav/items/truks/home/trucks.controller.dart';
+import 'package:camionesm/app/pages/nav/items/truks/register/trucks_register_general.page.dart';
+import 'package:camionesm/app/pages/nav/items/truks/widgets/my_truck_item.dart';
+import 'package:camionesm/app/widgets/app_bar/app_bar.widget.dart';
+import 'package:camionesm/app/widgets/buttons/button.widget.dart';
+import 'package:camionesm/app/widgets/buttons/chip.widget.dart';
+import 'package:camionesm/app/widgets/buttons/icon_button.widget.dart';
+import 'package:camionesm/app/widgets/notification.widget.dart';
+import 'package:camionesm/app/widgets/text.widget.dart';
+import 'package:camionesm/core/values/globals.dart';
+import 'package:camionesm/core/values/paths.dart';
+import 'package:camionesm/core/values/text_styles.dart';
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+
+class TrucksPage extends GetView<TrucksController>{
+   const TrucksPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: CustomAppBar(
+        backgroundColor: Globals.principalColor,
+        leadingColor: Theme.of(context).scaffoldBackgroundColor,
+        trailing: [
+          SizedBox(
+              width: Get.width*0.15,
+              child: const CustomIconButton(icon: FontAwesomeIcons.sliders).paddingAll(6))
+        ]),
+      body:  SingleChildScrollView(
+        child: Column(children: [
+          const SimpleTitleCard(CustomNotification(child: CircleAvatar(backgroundColor:Colors.white, child: Icon(Icons.local_shipping_outlined))), "Mis Camiones"),
+          SizedBox(height: Get.height*0.03),
+          Visibility(visible: controller.isRegister(),
+              replacement: _listPage(),
+              child: _registerPage())
+        ]).paddingAll(15),
+      ));
+  }
+
+  Widget _registerPage() {
+   return Column(
+      children: [
+        Align(alignment: Alignment.centerLeft, child: CustomText("¡Empezar registro!", style: titleLarge.apply(fontSizeDelta: -4))),
+        SizedBox(height: Get.height*0.01),
+        Align(alignment: Alignment.centerLeft, child: CustomText("Maximiza tu eficiencia y gana más con cada kilómetro. ¡Empieza a registrar a el camión/es de tus viajes!",maxLines: 4, style: bodyMedium)),
+        SizedBox(
+            width: Get.width*0.8,
+            height: Get.height*0.3,
+            child: Image.asset(Paths.clipboardTruck)),
+        SizedBox(height: Get.height*0.03),
+        CustomButton(title: "Registrar",onPressed: ()=>Get.to(()=>const TrucksRegisterGeneralPage()),color: Globals.principalColor)
+      ]);
+  }
+  Widget _listPage(){
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Align(alignment: Alignment.centerLeft, child: CustomText("Ordenar por", style: titleLarge.apply(fontSizeDelta: -4))),
+        SizedBox(height: Get.height*0.02),
+        _orderFilters(),
+        SizedBox(height: Get.height*0.02),
+        Align(alignment: Alignment.centerLeft, child: CustomText("Mis camiones", style: titleLarge.apply(fontSizeDelta: -4))),
+        ListView(
+          physics: const NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          children:  [
+            MyCustomTransportItem(onDelete: (){},onDetail: (){},onEdit: (){}),
+            MyCustomTransportItem(onDelete: (){},onDetail: (){},onEdit: (){}),
+            MyCustomTransportItem(onDelete: (){},onDetail: (){},onEdit: (){}),
+          ]),
+        SizedBox(height: Get.height*0.02),
+        Align(
+          alignment: Alignment.center,
+          child: SizedBox(
+            height: Get.height*0.05,
+              width: Get.width*0.4,
+              child: CustomButton(
+                title: "Ver más",
+                color: Colors.black,
+                onPressed: (){},
+                height: Get.height*0.05,
+                width: Get.width*0.4)))
+      ]);
+  }
+
+ Widget  _orderFilters() {
+    return   Obx(()=>Wrap(
+      spacing: 8.0, // Espacio horizontal entre chips
+      runSpacing: 8.0, // Espacio vertical entre líneas de chips
+      children: controller.trucksFilter.map((item) {
+        return CustomChip.selector(
+          isSelected: item.isSelect,
+          paddingAll: 5,
+          color: Colors.white,
+          label: item.title,
+          leading: const Icon(Icons.add, size: 18),
+          onPressed: () {
+            item.isSelect = !item.isSelect;
+            controller.trucksFilter.refresh(); // Refresca la lista para actualizar el estado
+          },
+        );
+      }).toList(),
+    ));
+ }
+
+}

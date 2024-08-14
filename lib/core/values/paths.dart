@@ -4,7 +4,10 @@ class Paths {
   static const String bulk = 'assets/icons/bulk.png';
   static const String logo = 'assets/images/logo.png';
   static const String truck = 'assets/icons/truck.png';
+  static const String search = 'assets/images/search.png';
   static const String splash = 'assets/images/splash.png';
+  static const String truck1 = 'assets/images/truck1.png';
+  static const String truck2 = 'assets/images/truck2.png';
   static const String papers  = 'assets/images/papers.png';
   static const String profile = 'assets/images/profile.png';
   static const String profile2 ='assets/images/profile2.png';

@@ -7,9 +7,6 @@ import 'package:reactive_forms/reactive_forms.dart';
 abstract class HomeFilterController extends GetxController{
   final ICountryService iCountryService;
 
-  final  focusedDay = DateTime.now().obs;
-  final  selectedDay= DateTime.now().obs;
-
   static const List<String> labelsFilters=Globals.principalStates;
   static const List<String> typeProducts=Globals.typeProducts;
 
@@ -31,7 +28,8 @@ abstract class HomeFilterController extends GetxController{
   void _initForms() {
     filterForm.value=FormGroup({
       Keys.stateOrigin: FormControl<String>(validators: [Validators.required]),
-      Keys.stateDestiny: FormControl<String>(validators: [Validators.required])
+      Keys.stateDestiny: FormControl<String>(validators: [Validators.required]),
+      Keys.date: FormControl<DateTime>(validators: [])
     },validators: [Validators.required]);
     filterForm.value.valueChanges.listen((p0) {
       if(filterForm().valid){
@@ -48,10 +46,6 @@ abstract class HomeFilterController extends GetxController{
     statesDestiny(states.keys.toList());
   }
 
-  onSelectedCalendar(DateTime selectedDay, DateTime focusedDay) {
-    this.focusedDay(focusedDay);
-    this.selectedDay(selectedDay);
-  }
 
   onLabelChange(String labelsFilter, String state) {
     filterForm().control(state).value=labelsFilter;

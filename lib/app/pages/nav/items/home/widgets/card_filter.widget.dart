@@ -1,7 +1,8 @@
 import 'package:camionesm/app/pages/nav/items/home/home.controller.dart';
 import 'package:camionesm/app/utils/dialog.utils.dart';
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
-import 'package:camionesm/app/widgets/cards/container.widget.dart';
+import 'package:camionesm/app/widgets/containers/container.widget.dart';
+import 'package:camionesm/app/widgets/reactives/reactive_calendar.dart';
 import 'package:camionesm/app/widgets/reactives/reactive_dropdown_field.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
 import 'package:camionesm/core/values/globals.dart';
@@ -93,7 +94,9 @@ class HomeCardFilter extends GetView<HomeController> {
       CustomText("Selecciona la fecha de origen de tu viaje",
           textAlign: TextAlign.start,
           style: bodyMedium.apply(color: Theme.of(context).disabledColor)),
-      _tableCalendar(context),
+          ReactiveForm(
+              formGroup: controller.filterForm(),
+              child: const CustomReactiveCalendar(Keys.date)),
       Container(padding: const EdgeInsets.all(10)),
       Align(
           alignment: Alignment.bottomRight,
@@ -160,31 +163,5 @@ class HomeCardFilter extends GetView<HomeController> {
             ])));
   }
 
-  Widget _tableCalendar(BuildContext context) {
-    return Obx(() => TableCalendar(
-        firstDay: DateTime.utc(2022, 10, 16),
-        lastDay: DateTime.utc(2030, 3, 14),
-        focusedDay: controller.focusedDay(),
-        calendarFormat: CalendarFormat.month,
-        rangeSelectionMode: RangeSelectionMode.disabled,
-        selectedDayPredicate: (day) => isSameDay(controller.selectedDay(), day),
-        onDaySelected: (selectedDay, focusedDay) =>
-            controller.onSelectedCalendar(selectedDay, focusedDay),
-        locale: Globals.currentLocaleComplete,
-        weekNumbersVisible: false,
-        headerStyle: HeaderStyle(
-            formatButtonVisible: false,
-            titleCentered: true,
-            leftChevronIcon:
-                const Icon(Icons.arrow_back_ios, color: Colors.black),
-            rightChevronIcon:
-                const Icon(Icons.arrow_forward_ios, color: Colors.black),
-            titleTextStyle: titleMedium),
-        calendarStyle: const CalendarStyle(
-            isTodayHighlighted: true,
-            todayDecoration:
-                BoxDecoration(color: Colors.yellow, shape: BoxShape.circle),
-            selectedDecoration:
-                BoxDecoration(color: Colors.black, shape: BoxShape.circle))));
-  }
+
 }

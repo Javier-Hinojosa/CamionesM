@@ -4,12 +4,12 @@ import 'package:camionesm/app/pages/signup/registers/legal_representative/legal_
 import 'package:camionesm/app/pages/signup/registers/residence_fiscal/resicence_fiscal.page.dart';
 import 'package:camionesm/core/values/enums.dart';
 import 'package:camionesm/core/values/paths.dart';
-import 'package:camionesm/data/models/internal/Signup.model.dart';
+import 'package:camionesm/data/models/items/Signup.item.dart';
 import 'package:get/get.dart';
 
 class SingUpController extends GetxController{
 
-  final signUpModel= SignUpModel(
+  final signUpModel= SignUpItem(
     typePerson: TypePerson.none.obs,
     typeUser: TypeUser.none.obs
   );

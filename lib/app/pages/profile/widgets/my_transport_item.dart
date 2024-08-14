@@ -1,7 +1,7 @@
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
 import 'package:camionesm/app/widgets/buttons/icon_button.widget.dart';
-import 'package:camionesm/app/widgets/cards/container.widget.dart';
-import 'package:camionesm/app/widgets/cards/loading_card.widget.dart';
+import 'package:camionesm/app/widgets/containers/container.widget.dart';
+import 'package:camionesm/app/widgets/containers/container_loading.widget.dart';
 import 'package:camionesm/app/widgets/dotted_divider.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
 import 'package:camionesm/core/values/globals.dart';
@@ -40,8 +40,7 @@ class MyCustomTransportItem extends StatelessWidget {
                   SizedBox(height: Get.height * 0.01),
                   const CustomText("Respondió a la solicitud"),
                   SizedBox(height: Get.height * 0.02),
-                  LoadingCard.image(
-                      context: context,
+                  CustomContainerLoading.image(context,
                       height: Get.height * 0.1,
                       path: Paths.papers),
                   SizedBox(height: Get.height * 0.02),

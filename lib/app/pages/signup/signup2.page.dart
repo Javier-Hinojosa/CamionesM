@@ -2,7 +2,7 @@ import 'package:camionesm/app/pages/signup/signup.controller.dart';
 import 'package:camionesm/app/pages/signup/signup3.page.dart';
 import 'package:camionesm/app/widgets/app_bar/app_bar.widget.dart';
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
-import 'package:camionesm/app/widgets/buttons/button_card.widget.dart';
+import 'package:camionesm/app/widgets/containers/container_outline.widget.dart';
 import 'package:camionesm/app/widgets/images/images_assets.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
 import 'package:camionesm/core/values/enums.dart';
@@ -34,7 +34,7 @@ class SingUp2Page extends GetView<SingUpController> {
                           'Seleccionar tu tipo de usuario nos ayudará a brindarte una experiencia personalizada y adaptada a tus necesidades específicas.',
                           style: bodyMedium)
                       .paddingAll(10),
-                  CustomCardButton(
+                  CustomContainerOutline(
                       backgroundColor: controller.signUpModel.typePerson() ==
                               TypePerson.physicalPerson
                           ? Globals.principalColor
@@ -57,7 +57,7 @@ class SingUp2Page extends GetView<SingUpController> {
                             style: bodyMedium,
                             textAlign: TextAlign.center)
                       ]).paddingAll(10),
-                  CustomCardButton(
+                  CustomContainerOutline(
                       backgroundColor: controller.signUpModel.typePerson() ==
                               TypePerson.moralPerson
                           ? Globals.principalColor

@@ -4,12 +4,13 @@ import 'package:get/get.dart';
 class CustomButton extends StatelessWidget{
 
   final void Function()? onPressed;
+  final void Function()? onLongPressed;
   final String title;
   final double? height;
   final double? width;
   final Color? color;
 
-  const CustomButton({super.key, this.onPressed, this.title="",this.color, this.height,this.width});
+  const CustomButton({super.key, this.onPressed,this.onLongPressed, this.title="",this.color, this.height,this.width});
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +33,7 @@ class CustomButton extends StatelessWidget{
               backgroundColor: color,
               padding: width==null?const EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0):null),
           onPressed: onPressed,
+          onLongPress: onLongPressed,
           child: Container(
             alignment: Alignment.center,
             width: width??Get.width,

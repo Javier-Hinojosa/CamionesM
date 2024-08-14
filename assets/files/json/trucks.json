@@ -1,0 +1,40 @@
+[
+  {
+  "id": "TR01284",
+  "image": "assets/images/truck2.png",
+  "marca": "Volvo",
+  "combustible": "Diésel",
+  "placa": "AGB-0980",
+  "no.perm": 9867463953,
+  "anio": 2009,
+  "Aseguradora": "MAPFRE SEGUROS",
+  "date": "14-08-2009",
+  "type": "C2 Camion Unitario (2 llantas en el eje delantero y 4 llantas en el eje trasero)",
+  "type_carga": [
+    {
+      "name": "Textiles",
+      "id": 0,
+      "isActive": true
+    }
+  ]
+  },
+  {
+    "id": "TR01283",
+    "image": "assets/images/truck2.png",
+    "marca": "Volvo",
+    "combustible": "Diésel",
+    "placa": "AGB-0980",
+    "no.perm": 9867463953,
+    "anio": 2009,
+    "Aseguradora": "MAPFRE SEGUROS",
+    "date": "14-08-2009",
+    "type": "C2 Camion Unitario (2 llantas en el eje delantero y 4 llantas en el eje trasero)",
+    "type_carga": [
+      {
+        "name": "Textiles",
+        "id": 0,
+        "isActive": true
+      }
+    ]
+  }
+]

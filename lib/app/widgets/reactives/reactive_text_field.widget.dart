@@ -26,6 +26,7 @@ class CustomReactiveTextField extends StatelessWidget {
   final IconData? iconPrefix;
   final GestureTapCallback? onPrefixIconTap;
   final Color? secondaryColor;
+  void Function(FormControl<dynamic>)? onTap;
 
 
   CustomReactiveTextField(
@@ -52,6 +53,7 @@ class CustomReactiveTextField extends StatelessWidget {
         this.iconPrefix,
         this.onPrefixIconTap,
         this.secondaryColor,
+        this.onTap
       });
 
   @override
@@ -63,10 +65,11 @@ class CustomReactiveTextField extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Text(labelText,style:  TextStyle(color: !isActive? themeDefault.withOpacity(0.5):null, fontWeight: FontWeight.w400)),
+          Text(labelText,maxLines: 2, style:  TextStyle(color: !isActive? themeDefault.withOpacity(0.5):null, fontWeight: FontWeight.w400)),
           Padding(
             padding:  EdgeInsets.only(top: !isActive?5:10),
             child: ReactiveTextField(
+              onTap: onTap,
               formControlName: controlName,
               controller: textEditing,
               autofocus: false,

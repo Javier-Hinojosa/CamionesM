@@ -7,6 +7,7 @@ class CustomContainer extends StatelessWidget{
   final Color? backgroundColor;
   final double circularRadius;
   final double? width;
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -20,6 +21,4 @@ class CustomContainer extends StatelessWidget{
       ).paddingAll(10)
     );
   }
-
-
 }

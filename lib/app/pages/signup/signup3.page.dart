@@ -2,9 +2,9 @@ import 'package:camionesm/app/pages/signup/signup.controller.dart';
 import 'package:camionesm/app/pages/signup/signup_finish.page.dart';
 import 'package:camionesm/app/widgets/app_bar/app_bar.widget.dart';
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
-import 'package:camionesm/app/widgets/buttons/button_card.widget.dart';
 import 'package:camionesm/app/widgets/buttons/icon_button.widget.dart';
-import 'package:camionesm/app/widgets/cards/container.widget.dart';
+import 'package:camionesm/app/widgets/containers/container.widget.dart';
+import 'package:camionesm/app/widgets/containers/container_outline.widget.dart';
 import 'package:camionesm/app/widgets/images/images_assets.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
 import 'package:camionesm/core/routes/routes.dart';
@@ -62,7 +62,7 @@ class SingUp3Page extends GetView<SingUpController> {
                   .paddingAll(10),
               CustomButton(
                       title: "Siguiente",
-                      onPressed: () => Get.to(() => const SignUpFinish()),
+                      onPressed: () => Get.to(() => const SignUpFinishPage()),
                       color: Colors.black)
                   .paddingAll(10)
             ]).paddingAll(15));
@@ -83,7 +83,7 @@ class SingUp3Page extends GetView<SingUpController> {
   _customCard(BuildContext context, String pathIcon, String title,
       String subtitle, bool disable) {
     final disableColor = Theme.of(context).disabledColor;
-    return CustomCardButton(
+    return CustomContainerOutline(
         borderColor: disable ? null : Colors.black,
         children: [
           ListTile(

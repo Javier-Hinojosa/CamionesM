@@ -1,7 +1,7 @@
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
 import 'package:camionesm/app/widgets/buttons/icon_button.widget.dart';
-import 'package:camionesm/app/widgets/cards/card_deformed.widget.dart';
-import 'package:camionesm/app/widgets/cards/loading_card.widget.dart';
+import 'package:camionesm/app/widgets/containers/card_deformed.widget.dart';
+import 'package:camionesm/app/widgets/containers/container_loading.widget.dart';
 import 'package:camionesm/app/widgets/dotted_divider.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
 import 'package:camionesm/core/values/globals.dart';
@@ -24,8 +24,7 @@ class CustomTransportItem extends StatelessWidget {
             children: [
           _customTextRow(context, "ID", "VJ010874",
               mainAxisAlignment: MainAxisAlignment.end),
-          LoadingCard.image(
-              context: context, height: Get.height * 0.1, path: Paths.papers),
+          CustomContainerLoading.image(context, height: Get.height * 0.1, path: Paths.papers),
           SizedBox(height: Get.height * 0.02),
           Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

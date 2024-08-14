@@ -1,5 +1,6 @@
-import 'package:camionesm/app/pages/nav/items/truks/truck.controller.dart';
-import 'package:camionesm/app/pages/nav/items/truks/trucks_register_photo.page.dart';
+import 'package:camionesm/app/pages/nav/items/truks/home/trucks.controller.dart';
+import 'package:camionesm/app/pages/nav/items/truks/register/trucks_register.controller.dart';
+import 'package:camionesm/app/pages/nav/items/truks/register/trucks_register_photo.page.dart';
 import 'package:camionesm/app/pages/nav/items/truks/widgets/step_progress.widget.dart';
 import 'package:camionesm/app/widgets/app_bar/app_bar.widget.dart';
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
@@ -12,7 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
-class TrucksRegisterSpecificPage extends GetView<TrucksController>{
+class TrucksRegisterSpecificPage extends GetView<TrucksRegisterController>{
   const TrucksRegisterSpecificPage({super.key});
 
   @override

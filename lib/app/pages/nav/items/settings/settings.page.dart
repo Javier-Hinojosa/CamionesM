@@ -1,11 +1,11 @@
 import 'package:camionesm/app/pages/nav/Widgets/app_bar_home.widget.dart';
 import 'package:camionesm/app/pages/nav/items/settings/settings.controller.dart';
-import 'package:camionesm/app/widgets/cards/container.widget.dart';
+import 'package:camionesm/app/widgets/containers/container.widget.dart';
 import 'package:camionesm/app/widgets/notification.widget.dart';
 import 'package:camionesm/app/widgets/progess_bar.widget.dart';
 import 'package:camionesm/app/widgets/switch_theme.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
-import 'package:camionesm/data/models/internal/profile_item.module.dart';
+import 'package:camionesm/data/models/items/profile.item.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

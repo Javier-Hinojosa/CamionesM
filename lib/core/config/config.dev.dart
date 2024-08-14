@@ -1,4 +1,4 @@
-import 'package:camionesm/data/models/environment.model.dart';
+import 'package:camionesm/data/models/models/environment.model.dart';
 import 'package:camionesm/data/services/base.config.dart';
 
 class DevConfig implements BaseConfig {

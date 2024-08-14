@@ -1,11 +1,11 @@
 import 'package:camionesm/core/values/enums.dart';
 import 'package:get/get.dart';
 
-class SignUpModel{
+class SignUpItem{
   final Rx<TypeUser> typeUser;
   final Rx<TypePerson> typePerson;
 
-  SignUpModel({ required this.typePerson,required this.typeUser});
+  SignUpItem({ required this.typePerson,required this.typeUser});
 
 
 }

@@ -9,12 +9,15 @@ class NavBarPage extends GetView<NavBarController>{
 
   @override
   Widget build(BuildContext context) {
-    return Obx(()=>Scaffold(
-      body: PageView(
-          controller: controller.pageController(),
-          children: NavBarController.navItems.map((e) => e.page).toList()),
-      bottomNavigationBar: _customNavBar(context)
-    ));
+    return PopScope(
+      onPopInvoked: (didPop) => controller.onItemTapped(0),
+      child: Obx(()=>Scaffold(
+        body: PageView(
+            controller: controller.pageController(),
+            children: NavBarController.navItems.map((e) => e.page).toList()),
+        bottomNavigationBar: _customNavBar(context)
+      )),
+    );
   }
 
   Widget _customNavBar(BuildContext context) {

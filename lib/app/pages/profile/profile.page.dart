@@ -3,9 +3,10 @@ import 'package:camionesm/app/pages/profile/widgets/my_transport_item.dart';
 import 'package:camionesm/app/utils/dialog.utils.dart';
 import 'package:camionesm/app/widgets/app_bar/app_bar_undulated.widget.dart';
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
-import 'package:camionesm/app/widgets/buttons/button_card.widget.dart';
 import 'package:camionesm/app/widgets/buttons/icon_button.widget.dart';
-import 'package:camionesm/app/widgets/cards/container.widget.dart';
+import 'package:camionesm/app/widgets/containers/container.widget.dart';
+import 'package:camionesm/app/widgets/containers/container_expandable.widget.dart';
+import 'package:camionesm/app/widgets/containers/container_outline.widget.dart';
 import 'package:camionesm/app/widgets/reactives/reactive_text_field.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
 import 'package:camionesm/app/widgets/time_line.widget.dart';
@@ -207,8 +208,7 @@ class ProfilePage extends GetView<ProfileController> {
                       children: [
                         CustomText("Mi insignia",
                             style: headlineLarge.apply(fontSizeDelta: -6)),
-                        const CustomText(
-                            "Conoce más sobre las insignias y los beneficios que brindan.",
+                        const CustomText("Conoce más sobre las insignias y los beneficios que brindan.",
                             maxLines: 3,
                             style: TextStyle(fontSize: 16))
                       ])).paddingAll(20),
@@ -345,7 +345,7 @@ class ProfilePage extends GetView<ProfileController> {
 
   Widget _customCardDoubts(
       BuildContext context, String labelText, void Function()? onPressed) {
-    return CustomCardButton(contentPadding: 10, radius: 15, children: [
+    return CustomContainerOutline(contentPadding: 10, radius: 15, children: [
       CustomText(labelText,
           maxLines: 4,
           style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
@@ -463,7 +463,7 @@ class ProfilePage extends GetView<ProfileController> {
 //endregion
   //region cards
   Widget _customCardProgressProfile(BuildContext context) {
-    return CustomCardButtonPrincipal(children: [
+    return CustomContainerOutline.principal(children: [
       CustomTimeLine(items: [
         const BuildTimelineTile(
             icon: Icons.account_box, text: "Registro", isActive: true),
@@ -499,7 +499,7 @@ class ProfilePage extends GetView<ProfileController> {
   }
 
   Widget _customCardDataPersonal(BuildContext context) {
-    return CustomCardButtonExpanded(
+    return CustomContainerExpandable(
         contentPadding: 0,
         title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -559,14 +559,14 @@ class ProfilePage extends GetView<ProfileController> {
   }
 
   Widget _customCardDirection(BuildContext context) {
-    return CustomCardButtonExpanded(
+    return CustomContainerExpandable(
         contentPadding: 0,
         title: CustomText("Dirección", style: titleMedium),
         children: const []);
   }
 
   Widget _customCardDocuments(BuildContext context) {
-    return CustomCardButtonExpanded(
+    return CustomContainerExpandable(
         contentPadding: 0,
         title: Row(
             mainAxisAlignment: MainAxisAlignment.start,

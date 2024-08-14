@@ -19,6 +19,7 @@ class Keys {
 
   static const String stateOrigin ='stateOrigin';
   static const String stateDestiny ='stateDestiny';
+  static const String date ='date';
 
   static const String name ='name';
   static const String lastName ='last_name';
@@ -42,5 +43,8 @@ class Keys {
   static const String responsibleInsurer ='responsible_insurer';
   static const String noPolicy ='no_policy';
 
+  static const String picksTarget1 ='picks_target_1';
+  static const String picksTarget2 ='picks_target_2';
+  static const String dueDate ='due_date';
 
 }
