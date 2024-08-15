@@ -30,7 +30,7 @@ class CustomChip extends StatelessWidget{
       avatar: !isSelected?leading:null,
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
       visualDensity: VisualDensity.standard,
-      color: buttonColor,
+      color: CustomWidgetStateProperty.buttonColor(),
       surfaceTintColor: !isSelected?color:(colorDisable??Colors.black),
       deleteIconColor: !isSelected?color:(colorDisable??Colors.black),
       shadowColor: !isSelected?color:(colorDisable??Colors.black),

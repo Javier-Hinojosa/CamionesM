@@ -1,4 +1,3 @@
-import 'package:camionesm/app/pages/nav/items/truks/home/trucks.controller.dart';
 import 'package:camionesm/app/pages/nav/items/truks/register/trucks_register.controller.dart';
 import 'package:camionesm/app/widgets/app_bar/app_bar.widget.dart';
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
@@ -41,7 +40,7 @@ class TrucksRegisterFinishPage extends GetView<TrucksRegisterController> {
                 fit: BoxFit.fill).paddingAll(40),
             CustomText("Vuelve dentro de 24 hrs para obtener la verificación de tus documentos.", maxLines: 3,textAlign: TextAlign.center, style: bodyMedium.apply(fontSizeDelta: 2)).paddingAll(30),
             CustomButton(
-                color: Globals.principalColor,
+                backgroundColor: Globals.principalColor,
                 title: "Regrasar al inicio",
                 onPressed: () => controller.onReturnHome())
           ]).paddingAll(15)));

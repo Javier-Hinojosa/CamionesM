@@ -76,7 +76,7 @@ class SingUpPage extends GetView<SingUpController> {
                             controller.signUpModel.typeUser() == TypeUser.none
                                 ? null
                                 : () => Get.to(() => const SingUp2Page()),
-                        color: Colors.black)
+                        backgroundColor: Colors.black)
                     .paddingAll(10)
               ]).paddingAll(10),
         ));

@@ -1,4 +1,5 @@
-import 'package:camionesm/app/pages/detail/detail.page.dart';
+import 'package:camionesm/app/pages/detail/transport/detail_transport.page.dart';
+import 'package:camionesm/app/pages/detail/truck/detail_truck.page.dart';
 import 'package:camionesm/app/pages/login/login.page.dart';
 import 'package:camionesm/app/pages/nav/nav_bar.page.dart';
 import 'package:camionesm/app/pages/profile/profile.page.dart';
@@ -34,12 +35,16 @@ abstract class Pages {
         page: () =>  const NavBarPage(),
         binding: NavBarBinding(countryApiService)),
     GetPage(
-      name: Routes.detail,
-      page: ()=> const DetailPage(),
-      binding: DetailBinding()),
+      name: Routes.detailTransport,
+      page: ()=> const DetailTransportPage(),
+      binding: DetailTransportBinding()),
+    GetPage(
+        name: Routes.detailTruck,
+        page: ()=> const DetailTruckPage(),
+        binding: DetailTruckBinding()),
     GetPage(
         name: Routes.profile,
-        page: ()=> ProfilePage(),
+        page: ()=> const ProfilePage(),
         binding: ProfileBinding())
   ];
 }

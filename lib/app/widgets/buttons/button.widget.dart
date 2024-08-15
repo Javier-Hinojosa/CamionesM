@@ -1,3 +1,4 @@
+import 'package:camionesm/core/values/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -8,9 +9,10 @@ class CustomButton extends StatelessWidget{
   final String title;
   final double? height;
   final double? width;
-  final Color? color;
+  final Color? backgroundColor;
+  final Color? textColor;
 
-  const CustomButton({super.key, this.onPressed,this.onLongPressed, this.title="",this.color, this.height,this.width});
+  const CustomButton({super.key, this.onPressed,this.onLongPressed, this.title="",this.backgroundColor,this.textColor, this.height,this.width});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,7 @@ class CustomButton extends StatelessWidget{
         borderRadius: BorderRadius.circular(30.0),
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-              backgroundColor: color,
+              backgroundColor: backgroundColor,
               padding: width==null?const EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0):null),
           onPressed: onPressed,
           onLongPress: onLongPressed,
@@ -38,11 +40,25 @@ class CustomButton extends StatelessWidget{
             alignment: Alignment.center,
             width: width??Get.width,
               height: height,
-            child: Text(title, style: TextStyle(color: onPressed==null?Colors.black45:color==Colors.black?Colors.white:Colors.black,fontWeight: FontWeight.w600))
+            child: Text(title, style: TextStyle(color: _validateTextColor(),fontWeight: FontWeight.w600))
           )
         )
       )
     );
+  }
+
+Color  _validateTextColor(){
+ if(onPressed==null){
+   return Colors.black45;
+ } else if(textColor!=null) {
+   return textColor!;
+ } else{
+   switch(backgroundColor){
+     case Colors.black:return Colors.white;
+     case Colors.white:return Colors.black;
+     case Globals.errorColor:return Colors.white;
+     default: return Colors.black;
+   }}
   }
 }
 

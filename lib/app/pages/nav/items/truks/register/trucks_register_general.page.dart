@@ -127,7 +127,7 @@ class TrucksRegisterGeneralPage extends GetView<TrucksRegisterController>{
                 title: "Siguiente",
                 height: Get.height * 0.02,
                 width: Get.width * 0.2,
-                color: Colors.black,
+                backgroundColor: Colors.black,
                 onPressed: controller.isValidRegisterTruckForm()
                     ? () => Get.to(()=>const TrucksRegisterSpecificPage())
                     : null))

@@ -35,10 +35,10 @@ class CustomContainerLoading extends StatelessWidget {
         child: Card(
           elevation: 2,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(5),
+            borderRadius: BorderRadius.circular(20),
           ),
           child: ClipRRect(
-            borderRadius: BorderRadius.circular(5),
+            borderRadius: BorderRadius.circular(20),
             child: Image.asset(
               path,
               fit: BoxFit.cover,

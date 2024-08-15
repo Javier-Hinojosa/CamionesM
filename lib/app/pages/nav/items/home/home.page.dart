@@ -140,7 +140,7 @@ class HomePage extends GetView<HomeController> {
                   title: "Ver Mas",
                   height: Get.height * 0.02,
                   width: Get.width * 0.4,
-                  color: Colors.black,
+                  backgroundColor: Colors.black,
                   onPressed: () => Get.back(result: true)))),
       SizedBox(height: Get.height * 0.02),
       Align(
@@ -158,7 +158,7 @@ class HomePage extends GetView<HomeController> {
                   title: "Ver Mas",
                   height: Get.height * 0.02,
                   width: Get.width * 0.4,
-                  color: Colors.black,
+                  backgroundColor: Colors.black,
                   onPressed: () => Get.back(result: true)))),
       SizedBox(height: Get.height * 0.02),
       CustomContainerOutline(
@@ -290,10 +290,10 @@ class HomePage extends GetView<HomeController> {
                     tiles: [
                       CustomTransportItem(
                           onPressedNext: () =>
-                              Get.toNamed("${Routes.detail}?id=0")),
+                              Get.toNamed("${Routes.detailTransport}?id=0")),
                       CustomTransportItem(
                           onPressedNext: () =>
-                              Get.toNamed("${Routes.detail}?id=1"))
+                              Get.toNamed("${Routes.detailTransport}?id=1"))
                     ]).toList())
             .paddingAll(10));
   }

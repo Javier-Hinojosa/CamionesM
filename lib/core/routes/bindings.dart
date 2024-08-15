@@ -1,4 +1,5 @@
-import 'package:camionesm/app/pages/detail/detail.controller.dart';
+import 'package:camionesm/app/pages/detail/transport/detail_transport.controller.dart';
+import 'package:camionesm/app/pages/detail/truck/detail_truck.controller.dart';
 import 'package:camionesm/app/pages/login/login.controller.dart';
 import 'package:camionesm/app/pages/nav/items/home/home.controller.dart';
 import 'package:camionesm/app/pages/nav/items/petitions/petitions.controller.dart';
@@ -64,14 +65,24 @@ class NavBarBinding implements Bindings  {
 
 }
 
-class DetailBinding implements Bindings{
+class DetailTransportBinding implements Bindings{
 
   @override
   void dependencies() {
-    Get.lazyPut<DetailController>(()=> DetailController());
+    Get.lazyPut<DetailTransportController>(()=> DetailTransportController());
   }
 
 }
+
+class DetailTruckBinding implements Bindings{
+
+  @override
+  void dependencies() {
+    Get.lazyPut<DetailTruckController>(()=> DetailTruckController());
+  }
+
+}
+
 
 class ProfileBinding implements Bindings{
 

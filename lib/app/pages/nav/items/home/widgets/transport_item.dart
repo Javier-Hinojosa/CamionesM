@@ -24,7 +24,7 @@ class CustomTransportItem extends StatelessWidget {
             children: [
           _customTextRow(context, "ID", "VJ010874",
               mainAxisAlignment: MainAxisAlignment.end),
-          CustomContainerLoading.image(context, height: Get.height * 0.1, path: Paths.papers),
+          CustomContainerLoading.image(context, height: Get.height * 0.13, path: Paths.papers),
           SizedBox(height: Get.height * 0.02),
           Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -42,7 +42,7 @@ class CustomTransportItem extends StatelessWidget {
                           height: Get.height * 0.05,
                           child: CustomButton(
                               title: "Carlos Fuentes",
-                              color: Globals.principalColor,
+                              backgroundColor: Globals.principalColor,
                               width: Get.width * 0.4,
                               height: Get.height * 0.05,
                               onPressed: () {}))

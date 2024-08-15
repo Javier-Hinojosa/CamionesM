@@ -63,7 +63,7 @@ class SingUp3Page extends GetView<SingUpController> {
               CustomButton(
                       title: "Siguiente",
                       onPressed: () => Get.to(() => const SignUpFinishPage()),
-                      color: Colors.black)
+                      backgroundColor: Colors.black)
                   .paddingAll(10)
             ]).paddingAll(15));
   }
@@ -112,7 +112,7 @@ class SingUp3Page extends GetView<SingUpController> {
                     Visibility(
                         visible: !disable,
                         child: CustomButton(
-                            color: Globals.principalColor,
+                            backgroundColor: Globals.principalColor,
                             title: "Agregar",
                             width: Get.width * 0.3,
                             height: Get.height * 0.05,

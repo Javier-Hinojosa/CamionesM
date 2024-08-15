@@ -8,11 +8,9 @@ import 'package:camionesm/app/widgets/text.widget.dart';
 import 'package:camionesm/core/values/globals.dart';
 import 'package:camionesm/core/values/keys.dart';
 import 'package:camionesm/core/values/text_styles.dart';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:reactive_forms/reactive_forms.dart';
-import 'package:table_calendar/table_calendar.dart';
 
 class HomeCardFilter extends GetView<HomeController> {
   const HomeCardFilter({super.key});
@@ -21,10 +19,10 @@ class HomeCardFilter extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return CustomContainer(
       backgroundColor: Globals.secondColor,
-      circularRadius: 30,
+      circularRadius: 60,
       child: SizedBox(
         width: Get.width,
-        height: Get.height * .05,
+        height: Get.height * .06,
         child: ReactiveForm(
           formGroup: controller.filterForm(),
           child: ListView(
@@ -33,56 +31,45 @@ class HomeCardFilter extends GetView<HomeController> {
               SizedBox(
                 width: Get.width * .35,
                 child: _customTextFieldSearch(context, "Origen",
-                    (p0) => _localeDialog(context), Keys.stateOrigin),
-              ),
-              const VerticalDivider(
-                  color: Colors.white38, width: 5, thickness: 1),
+                    (p0) => _localeDialog(context), Keys.stateOrigin)),
+              const VerticalDivider(color: Colors.white38, width: 5, thickness: 1),
               SizedBox(
                 width: Get.width * .35,
                 child: _customTextFieldSearch(context, "Destino",
-                    (p0) => _localeDialog(context), Keys.stateDestiny),
-              ),
-              const VerticalDivider(
-                  color: Colors.white38, width: 5, thickness: 1),
-              SizedBox(
-                width: Get.width * .05,
-              ),
+                        (p0) => _localeDialog(context), Keys.stateDestiny)),
+              const VerticalDivider(color: Colors.white38, width: 5, thickness: 1),
+              SizedBox(width: Get.width * .05),
               GestureDetector(
-                onTap: () => _calendarDialog(context),
-                child: const CircleAvatar(
-                    radius: 15,
-                    backgroundColor: Colors.white24,
-                    child: Icon(Icons.calendar_month_outlined,
-                        color: Colors.white70, size: 20)),
-              )
-            ],
-          ),
-        ),
-      ),
-    ).paddingAll(15);
+                  onTap: () => _calendarDialog(context),
+                  child: const CircleAvatar(
+                      radius: 15,
+                      backgroundColor: Colors.white24,
+                      child: Icon(Icons.calendar_month_outlined, color: Colors.white70, size: 20)))
+            ])))).paddingAll(15);
   }
 
   Widget _customTextFieldSearch(BuildContext context, String hintText,
       void Function(Object) onPressed, String key) {
-    return ListView(scrollDirection: Axis.horizontal, children: [
-      SizedBox(
-          width: Get.width * .2,
-          child: ReactiveTextField(
-              formControlName: key,
-              onTap: onPressed,
-              readOnly: true,
-              style: bodyLarge.apply(color: Colors.white70),
-              maxLines: 1,
-              decoration: InputDecoration(
-                  hintText: hintText,
-                  hintStyle: bodyLarge.apply(color: Colors.white70),
-                  border: InputBorder.none))),
-      SizedBox(width: Get.width * .05),
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+      Expanded(
+        child: ReactiveTextField(
+            formControlName: key,
+            onTap: onPressed,
+            readOnly: true,
+            style: bodyLarge.apply(color: Colors.white70),
+            maxLines: 1,
+            decoration: InputDecoration(
+                hintText: hintText,
+                hintStyle: bodyLarge.apply(color: Colors.white70),
+                border: InputBorder.none))),
       const CircleAvatar(
           radius: 15,
           backgroundColor: Colors.white24,
           child: Icon(Icons.search, color: Colors.white70)),
-    ]).paddingAll(5);
+          SizedBox(width: Get.width*0.01)
+    ]);
   }
 
   Future<bool> _calendarDialog(BuildContext context) {
@@ -107,7 +94,7 @@ class HomeCardFilter extends GetView<HomeController> {
                   title: "Aceptar",
                   height: Get.height * 0.02,
                   width: Get.width * 0.4,
-                  color: Colors.black,
+                  backgroundColor: Colors.black,
                   onPressed: () => Get.back(result: true))))
     ]));
   }
@@ -156,7 +143,7 @@ class HomeCardFilter extends GetView<HomeController> {
                           title: "Aceptar",
                           height: Get.height * 0.02,
                           width: Get.width * 0.4,
-                          color: Colors.black,
+                          backgroundColor: Colors.black,
                           onPressed: controller.isFilterValid()
                               ? () => Get.back(result: true)
                               : null)))

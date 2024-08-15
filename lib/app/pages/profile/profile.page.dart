@@ -474,7 +474,7 @@ class ProfilePage extends GetView<ProfileController> {
                 width: Get.width * 0.3,
                 height: Get.height * 0.05,
                 title: "Agregar",
-                color: Globals.principalColor,
+                backgroundColor: Globals.principalColor,
                 onPressed: () {})),
         BuildTimelineTile(
             icon: Icons.local_shipping,
@@ -483,7 +483,7 @@ class ProfilePage extends GetView<ProfileController> {
                 width: Get.width * 0.3,
                 height: Get.height * 0.05,
                 title: "Agregar",
-                color: Globals.principalColor,
+                backgroundColor: Globals.principalColor,
                 onPressed: () {})),
         BuildTimelineTile(
             icon: Icons.group,
@@ -492,7 +492,7 @@ class ProfilePage extends GetView<ProfileController> {
                 width: Get.width * 0.3,
                 height: Get.height * 0.05,
                 title: "Agregar",
-                color: Globals.principalColor,
+                backgroundColor: Globals.principalColor,
                 onPressed: () {}))
       ]).paddingAll(5)
     ]);
@@ -549,7 +549,7 @@ class ProfilePage extends GetView<ProfileController> {
                                 title: "Guardar",
                                 width: Get.width * 0.4,
                                 height: Get.height * 0.05,
-                                color: Colors.black,
+                                backgroundColor: Colors.black,
                                 onPressed: controller.isValid()
                                     ? () => controller.onFinishGeneralCard()
                                     : null))

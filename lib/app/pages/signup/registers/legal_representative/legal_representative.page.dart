@@ -47,7 +47,7 @@ class LegalRepresentativePage extends GetView<LegalRepresentativeController> {
                       onPressed: controller.isValid()
                           ? () => controller.onFinish()
                           : null,
-                      color: Colors.black)
+                      backgroundColor: Colors.black)
                   .paddingAll(10))
             ]).paddingAll(15));
   }

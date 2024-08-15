@@ -88,7 +88,7 @@ class LoginPage extends GetView<LoginController> {
                     bottom: 10, top: 20, right: 10, left: 10),
                 child: CustomButton(
                     title: "Crear cuenta",
-                    color: Colors.black,
+                    backgroundColor: Colors.black,
                     onPressed: () => controller.onSingUp())),
           ]),
     );

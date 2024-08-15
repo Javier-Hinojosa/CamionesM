@@ -40,7 +40,7 @@ class SignUpFinishPage extends StatelessWidget {
                 fit: BoxFit.fill),
             Container(padding: const EdgeInsets.all(20)),
             CustomButton(
-                color: Globals.principalColor,
+                backgroundColor: Globals.principalColor,
                 title: "Continuar",
                 onPressed: () => Get.toNamed(Routes.splashScreen)).paddingAll(10),
           ]).paddingAll(15)),

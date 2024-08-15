@@ -3,6 +3,7 @@ class Paths {
   static const String key = 'assets/icons/key.png';
   static const String bulk = 'assets/icons/bulk.png';
   static const String logo = 'assets/images/logo.png';
+  static const String trash = 'assets/icons/trash.png';
   static const String truck = 'assets/icons/truck.png';
   static const String search = 'assets/images/search.png';
   static const String splash = 'assets/images/splash.png';
@@ -26,5 +27,6 @@ class Paths {
   static const String truckCharger = 'assets/images/truck_charger.png';
   static const String clipboardPlus = 'assets/icons/clipboard_plus.png';
   static const String clipboardTruck = 'assets/images/clipboard_truck.png';
+
 
 }

@@ -60,7 +60,7 @@ class MyCustomTransportItem extends StatelessWidget {
                                   height: Get.height * 0.05,
                                   child: CustomButton(
                                       title: "Carlos Fuentes",
-                                      color: Globals.principalColor,
+                                      backgroundColor: Globals.principalColor,
                                       width: Get.width * 0.4,
                                       height: Get.height * 0.05,
                                       onPressed: () {}))
@@ -105,13 +105,13 @@ class MyCustomTransportItem extends StatelessWidget {
                             child: CustomButton(
                                 title: "Rechazar",
                                 onPressed: onPressedReject,
-                                color: Colors.black)),
+                                backgroundColor: Colors.black)),
                         SizedBox(
                             width: Get.width * 0.45,
                             child: CustomButton(
                                 title: "Aceptar viaje",
                                 onPressed: onPressedAccept,
-                                color: Globals.principalColor))
+                                backgroundColor: Globals.principalColor))
                       ]),
                   SizedBox(height: Get.height * 0.02),
                   const Align(

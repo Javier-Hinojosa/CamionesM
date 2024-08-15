@@ -113,7 +113,7 @@ import 'package:reactive_forms/reactive_forms.dart';
                       title: "Terminar registro",
                       height: Get.height * 0.02,
                       width: Get.width * 0.4,
-                      color: Globals.principalColor,
+                      backgroundColor: Globals.principalColor,
                       onLongPressed: ()=>onDialogError(context),
                       onPressed: controller.isValidRegisterPhotoForm1() && controller.isValidRegisterPhotoForm2() //&& controller.isValidRegisterPhotoForm3()
                           ? ()=>controller.onFinishRegister()
@@ -184,7 +184,7 @@ import 'package:reactive_forms/reactive_forms.dart';
                       title: "Aceptar",
                       height: Get.height * 0.02,
                       width: Get.width * 0.4,
-                      color: Colors.black,
+                      backgroundColor: Colors.black,
                       onPressed: () => Get.back(result: true))))
         ]));
   }
@@ -220,7 +220,7 @@ import 'package:reactive_forms/reactive_forms.dart';
                 style: bodyMedium.apply(color: Colors.redAccent) ,maxLines: 4))
           ]),
          SizedBox(height: Get.height*0.02),
-         CustomButton(title: "Intenta nuevamente",color: Colors.black,onPressed: (){
+         CustomButton(title: "Intenta nuevamente",backgroundColor: Colors.black,onPressed: (){
            Get.back();
            onDialogError2();}),
          SizedBox(height: Get.height*0.01),
@@ -252,9 +252,9 @@ import 'package:reactive_forms/reactive_forms.dart';
                     style: bodyMedium.apply(color: Colors.redAccent) ,maxLines: 5))
               ]),
           SizedBox(height: Get.height*0.06),
-          CustomButton(title: "Contactanos",color: Colors.white,onPressed: ()=>controller.openWhatsApp()),
+          CustomButton(title: "Contactanos",backgroundColor: Colors.white,onPressed: ()=>controller.openWhatsApp()),
           SizedBox(height: Get.height*0.01),
-          CustomButton(title: "Regresar",color: Colors.black,onPressed: ()=>Get.back()),
+          CustomButton(title: "Regresar",backgroundColor: Colors.black,onPressed: ()=>Get.back()),
           SizedBox(height: Get.height*0.03)
         ]));
   }

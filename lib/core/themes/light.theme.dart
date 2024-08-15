@@ -1,3 +1,4 @@
+import 'package:camionesm/core/themes/material_state_property.theme.dart';
 import 'package:camionesm/core/themes/text_style.theme.dart';
 import 'package:camionesm/core/values/globals.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,8 @@ final ThemeData lightTheme = ThemeData(
     dividerColor: Globals.backgroundColor,
     canvasColor: Colors.grey.shade300,
     primaryColorDark: Colors.black45,
+    checkboxTheme: CheckboxThemeData(
+        fillColor: CustomWidgetStateProperty.principalColor()),
     iconTheme: const IconThemeData(color: Colors.white70),
     progressIndicatorTheme: const ProgressIndicatorThemeData(
         color: Colors.black,

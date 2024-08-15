@@ -1,4 +1,3 @@
-import 'package:camionesm/app/pages/nav/items/truks/home/trucks.controller.dart';
 import 'package:camionesm/app/pages/nav/items/truks/register/trucks_register.controller.dart';
 import 'package:camionesm/app/pages/nav/items/truks/register/trucks_register_photo.page.dart';
 import 'package:camionesm/app/pages/nav/items/truks/widgets/step_progress.widget.dart';
@@ -56,7 +55,7 @@ class TrucksRegisterSpecificPage extends GetView<TrucksRegisterController>{
                         title: "Siguiente",
                         height: Get.height * 0.02,
                         width: Get.width * 0.2,
-                        color: Colors.black,
+                        backgroundColor: Colors.black,
                         onPressed: controller.isValidRegisterSpecificForm()
                             ? () => Get.to(()=>const TrucksRegisterPhotoPage())
                             : null)),

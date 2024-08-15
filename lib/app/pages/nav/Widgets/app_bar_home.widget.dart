@@ -28,38 +28,36 @@ class AppBarHome extends StatelessWidget {
   }
 
   Widget _customAppbar(BuildContext context) {
-    return Column(children: [
-      CustomAppBarUndulate(
-          backgroundColor: backgroundColor,
-          child: Row(children: [
-            GestureDetector(
-              onTap: () => Get.toNamed(Routes.profile),
-              child: const Hero(
-                  tag: Keys.animationAppBarToProfile,
-                  child: CircleAvatar(
-                      backgroundImage: AssetImage(Paths.profile),
-                      radius: 30.0)),
-            ),
-            SizedBox(width: Get.width * 0.05),
-            Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  CustomText("Bienvenido,",
-                      style: labelLarge.apply(
-                          color: lettersColor,
-                          fontWeightDelta: FontWeight.w100.index)),
-                  CustomText(name, style: titleLarge.apply(color: lettersColor))
-                ]),
-            SizedBox(width: Get.width * 0.2),
-            SizedBox(
-                height: Get.height * 0.05,
-                child: CustomNotification(
-                    haveNotification: enableNotification,
-                    child: const CustomIconButton(
-                        icon: Icons.notifications_none_outlined,
-                        backgroundColor: Colors.black)))
-          ]).paddingAll(15))
-    ]);
+    return CustomAppBarUndulate(
+        backgroundColor: backgroundColor,
+        child: Row(children: [
+          GestureDetector(
+            onTap: () => Get.toNamed(Routes.profile),
+            child: const Hero(
+                tag: Keys.animationAppBarToProfile,
+                child: CircleAvatar(
+                    backgroundImage: AssetImage(Paths.profile),
+                    radius: 30.0)),
+          ),
+          SizedBox(width: Get.width * 0.05),
+          Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CustomText("Bienvenido,",
+                    style: labelLarge.apply(
+                        color: lettersColor,
+                        fontWeightDelta: FontWeight.w100.index)),
+                CustomText(name, style: titleLarge.apply(color: lettersColor))
+              ]),
+          SizedBox(width: Get.width * 0.2),
+          SizedBox(
+              height: Get.height * 0.05,
+              child: CustomNotification(
+                  haveNotification: enableNotification,
+                  child: const CustomIconButton(
+                      icon: Icons.notifications_none_outlined,
+                      backgroundColor: Colors.black)))
+        ]).paddingAll(15));
   }
 }

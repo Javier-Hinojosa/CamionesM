@@ -1,9 +1,7 @@
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
-import 'package:camionesm/app/widgets/buttons/icon_button.widget.dart';
 import 'package:camionesm/app/widgets/containers/container.widget.dart';
 import 'package:camionesm/app/widgets/containers/container_loading.widget.dart';
 import 'package:camionesm/app/widgets/containers/container_outline.widget.dart';
-import 'package:camionesm/app/widgets/dotted_divider.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
 import 'package:camionesm/core/values/globals.dart';
 import 'package:camionesm/core/values/paths.dart';
@@ -22,7 +20,7 @@ class MyCustomTransportItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomContainer(
-            backgroundColor: Globals.backgroundColor,
+            backgroundColor: Colors.white.withOpacity(1.0),
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,7 +32,7 @@ class MyCustomTransportItem extends StatelessWidget {
                         SizedBox(width: Get.width * 0.01),
                         const CustomText("TR01284")]),
                   SizedBox(height: Get.height * 0.02),
-                  CustomContainerLoading.image(context, height: Get.height * 0.1, path: Paths.truck2),
+                  CustomContainerLoading.image(context, height: Get.height * 0.13, path: Paths.truck2),
                   SizedBox(height: Get.height * 0.02),
                   CustomContainerOutline(
                       radius: 20,
@@ -63,7 +61,7 @@ class MyCustomTransportItem extends StatelessWidget {
                                 height: Get.height*0.05,
                                 width: Get.width*0.4,
                                 onPressed: onDetail,
-                                color: Globals.principalColor)),
+                                backgroundColor: Globals.principalColor)),
                          Row(
                           children: [
                             GestureDetector(

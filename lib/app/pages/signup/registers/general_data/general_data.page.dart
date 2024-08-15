@@ -57,7 +57,7 @@ class GeneralDataPage extends GetView<GeneralDataController>{
              ])),
        Obx(()=>CustomButton(title: "Siguiente",
                onPressed: controller.isValid()?()=>controller.onFinish():null,
-               color: Colors.black).paddingAll(10))
+               backgroundColor: Colors.black).paddingAll(10))
        ]
      ).paddingAll(15)
     );

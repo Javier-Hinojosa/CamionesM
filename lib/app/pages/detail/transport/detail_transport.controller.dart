@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:get/get.dart';
 
-class DetailController extends GetxController{
+class DetailTransportController extends GetxController{
 
   final controllerCarrousel = CarouselController().obs;
   final indexCarrousel= 0.obs;
@@ -16,7 +16,7 @@ class DetailController extends GetxController{
     Paths.papers,
     'assets/images/carrousel.png',
     'assets/images/map.png',
-    'assets/images/truck1.png',
+    Paths.truck1,
   ];
 
   void fitBounds(LatLngBounds bounds) {

@@ -32,6 +32,7 @@ class Keys {
   static const String typeTruck ='type_truck';
   static const String brand ='brand';
   static const String year ='year';
+  static const String fuel ='fuel';
   static const String howMuchWeight ='how_much_weight';
   static const String typeLoad ='type_load';
   static const String typeAgricultural ='type_agricultural';

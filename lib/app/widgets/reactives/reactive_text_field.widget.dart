@@ -16,6 +16,7 @@ class CustomReactiveTextField extends StatelessWidget {
   final IconData? iconSuffix;
   final void Function(FormControl<dynamic>)? onSubmitted;
   final void Function(FormControl<dynamic>)? onChanged;
+  final void Function(FormControl<dynamic>)? onTap;
   final GestureTapCallback? onSuffixIconTap;
   final TextEditingController textEditing = TextEditingController(text: "");
   final InputDecoration? decoration;
@@ -26,7 +27,7 @@ class CustomReactiveTextField extends StatelessWidget {
   final IconData? iconPrefix;
   final GestureTapCallback? onPrefixIconTap;
   final Color? secondaryColor;
-  void Function(FormControl<dynamic>)? onTap;
+
 
 
   CustomReactiveTextField(

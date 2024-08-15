@@ -1,4 +1,4 @@
-import 'package:camionesm/app/pages/detail/detail.controller.dart';
+import 'package:camionesm/app/pages/detail/transport/detail_transport.controller.dart';
 import 'package:camionesm/app/pages/nav/nav_bar.controller.dart';
 import 'package:camionesm/app/utils/dialog.utils.dart';
 import 'package:camionesm/app/widgets/app_bar/app_bar.widget.dart';
@@ -17,8 +17,8 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:get/get.dart';
 import 'package:latlong2/latlong.dart';
 
-class DetailPage extends GetView<DetailController> {
-  const DetailPage({super.key});
+class DetailTransportPage extends GetView<DetailTransportController> {
+  const DetailTransportPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,8 @@ class DetailPage extends GetView<DetailController> {
               SliverToBoxAdapter(
                 child: ImagesCarrousel(
                     images: controller.imgList,
-                    index: controller.indexCarrousel,
+                    valueIndex: controller.indexCarrousel(),
+                    onPageChanged: (p0, p1) => controller.indexCarrousel(p0),
                     carouselController: controller.controllerCarrousel()),
               ),
               SliverPadding(
@@ -57,7 +58,7 @@ class DetailPage extends GetView<DetailController> {
                           height: Get.height * 0.05,
                           child: CustomButton(
                               title: "Carlos Fuentes",
-                              color: Globals.secondColor,
+                              backgroundColor: Globals.secondColor,
                               width: Get.width * 0.4,
                               height: Get.height * 0.05,
                               onPressed: () {}))
@@ -169,12 +170,12 @@ class DetailPage extends GetView<DetailController> {
                     SizedBox(height: Get.height * 0.05),
                     CustomButton(
                         title: "Enviar Solicitud A",
-                        color: Globals.principalColor,
+                        backgroundColor: Globals.principalColor,
                         onPressed: () => _onDialogSend(context)),
                     SizedBox(height: Get.height * 0.02),
                     CustomButton(
                         title: "Enviar Solicitud B",
-                        color: Globals.principal2Color,
+                        backgroundColor: Globals.principal2Color,
                         onPressed: () => _onDialogSendClient(context))
                   ])))
             ])));
@@ -251,8 +252,7 @@ class DetailPage extends GetView<DetailController> {
         .paddingOnly(top: 10, bottom: 10);
   }
 
-  Widget _textWithBold(String textBold,
-      {String? normalText, String? endNormalText}) {
+  Widget _textWithBold(String textBold, {String? normalText, String? endNormalText}) {
     return RichText(
         maxLines: 3,
         textAlign: TextAlign.start,
@@ -325,7 +325,7 @@ class DetailPage extends GetView<DetailController> {
                         title: "Cotizar",
                         height: Get.height * 0.02,
                         width: Get.width,
-                        color: Colors.black,
+                        backgroundColor: Colors.black,
                         onPressed: () => Get.back(result: true))))
           ])
     ]));
@@ -353,7 +353,7 @@ class DetailPage extends GetView<DetailController> {
               title: "Continuar",
               height: Get.height * 0.02,
               width: Get.width,
-              color: Colors.black,
+              backgroundColor: Colors.black,
               onPressed: () async {
                 Get.back(result: true);
                 await _onDialogConfirm(context);
@@ -393,7 +393,7 @@ class DetailPage extends GetView<DetailController> {
           title: "Solicitar Viaje",
           height: Get.height * 0.07,
           width: Get.width,
-          color: Globals.principalColor,
+          backgroundColor: Globals.principalColor,
           onPressed: () async {
             Get.back(result: true);
             await _onDialogSuccess(context);
@@ -423,7 +423,7 @@ class DetailPage extends GetView<DetailController> {
           title: "Ir a mis solicitudes",
           height: Get.height * 0.07,
           width: Get.width,
-          color: Globals.principalColor,
+          backgroundColor: Globals.principalColor,
           onPressed: () async {
             Get.back(result: true); //close dialog
             Get.back(); //exit DetailPage
@@ -489,7 +489,7 @@ class DetailPage extends GetView<DetailController> {
                         title: "Cotizar",
                         height: Get.height * 0.02,
                         width: Get.width,
-                        color: Colors.black,
+                        backgroundColor: Colors.black,
                         onPressed: () => Get.back(result: true))))
           ])
     ]));

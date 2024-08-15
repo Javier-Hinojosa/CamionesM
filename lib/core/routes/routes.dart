@@ -3,6 +3,7 @@ abstract class Routes {
   static const login = '/login';
   static const singUp= '/singUp';
   static const navBar = '/navBar';
-  static const detail = '/detail';
+  static const detailTransport = '/detail_transport';
+  static const detailTruck = '/detail_truck';
   static const profile = '/profile';
 }

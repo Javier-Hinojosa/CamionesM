@@ -7,6 +7,7 @@ abstract class Globals{
   static const Color principalColor  =  Color(0xfff6c700);
   static const Color principal2Color  =  Color(0xfff8a404);
   static const Color secondColor = Colors.black;
+  static const Color errorColor =  Color(0xffba1a1a);
   static const Color backgroundColorBlack = Colors.black54;//Color(0x222b2b2b);
 
   static const String currentLocale = 'es';

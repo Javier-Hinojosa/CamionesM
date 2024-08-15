@@ -87,7 +87,7 @@ class SingUp2Page extends GetView<SingUpController> {
                                   TypePerson.none
                               ? null
                               : () => Get.to(() => const SingUp3Page()),
-                          color: Colors.black)
+                          backgroundColor: Colors.black)
                       .paddingAll(10)
                 ]).paddingAll(15)));
   }
