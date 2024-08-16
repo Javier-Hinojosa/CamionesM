@@ -1,6 +1,6 @@
 import 'package:camionesm/app/pages/nav/Widgets/simple_title_card.widget.dart';
-import 'package:camionesm/app/pages/nav/items/truks/home/trucks.controller.dart';
 import 'package:camionesm/app/pages/nav/items/truks/register/trucks_register_general.page.dart';
+import 'package:camionesm/app/pages/nav/items/truks/trucks.controller.dart';
 import 'package:camionesm/app/pages/nav/items/truks/widgets/my_truck_card.widget.dart';
 import 'package:camionesm/app/utils/dialog.utils.dart';
 import 'package:camionesm/app/widgets/app_bar/app_bar.widget.dart';

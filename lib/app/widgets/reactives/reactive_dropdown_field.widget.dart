@@ -18,7 +18,7 @@ class CustomReactiveDropDown<T> extends StatelessWidget{
   final GestureTapCallback? onPrefixIconTap;
   final Color? secondaryColor;
 
-  CustomReactiveDropDown(
+  const CustomReactiveDropDown(
       this.controlName, {
         super.key,
       required  this.items,
@@ -52,6 +52,7 @@ class CustomReactiveDropDown<T> extends StatelessWidget{
                 items: items,
                 formControlName: controlName,
                 autofocus: false,
+                isExpanded: true,
                 validationMessages: validationMessages(equals: isNotMatch ?? ""),
                 onChanged: onChanged,
                 readOnly: !(isActive ?? true),

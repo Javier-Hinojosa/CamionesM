@@ -1,4 +1,4 @@
-import 'package:camionesm/app/pages/drivers/home/drivers.controller.dart';
+import 'package:camionesm/app/pages/drivers/drivers.controller.dart';
 import 'package:camionesm/app/pages/drivers/register/driver_register_general.page.dart';
 import 'package:camionesm/app/pages/drivers/widgets/my_driver_card.widget.dart';
 import 'package:camionesm/app/pages/nav/Widgets/simple_title_card.widget.dart';

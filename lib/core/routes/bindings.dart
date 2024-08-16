@@ -1,15 +1,16 @@
 import 'package:camionesm/app/pages/detail/driver/detail_driver.controller.dart';
 import 'package:camionesm/app/pages/detail/transport/detail_transport.controller.dart';
 import 'package:camionesm/app/pages/detail/truck/detail_truck.controller.dart';
-import 'package:camionesm/app/pages/drivers/home/drivers.controller.dart';
+import 'package:camionesm/app/pages/drivers/drivers.controller.dart';
 import 'package:camionesm/app/pages/drivers/register/driver_register.controller.dart';
 import 'package:camionesm/app/pages/login/login.controller.dart';
 import 'package:camionesm/app/pages/nav/items/home/home.controller.dart';
 import 'package:camionesm/app/pages/nav/items/petitions/petitions.controller.dart';
 import 'package:camionesm/app/pages/nav/items/settings/settings.controller.dart';
+import 'package:camionesm/app/pages/nav/items/trips/register/trip_register.controller.dart';
 import 'package:camionesm/app/pages/nav/items/trips/trips.controller.dart';
-import 'package:camionesm/app/pages/nav/items/truks/home/trucks.controller.dart';
 import 'package:camionesm/app/pages/nav/items/truks/register/trucks_register.controller.dart';
+import 'package:camionesm/app/pages/nav/items/truks/trucks.controller.dart';
 import 'package:camionesm/app/pages/nav/nav_bar.controller.dart';
 import 'package:camionesm/app/pages/profile/profile.controller.dart';
 import 'package:camionesm/app/pages/signup/registers/access_data/access_data.controller.dart';
@@ -56,10 +57,15 @@ class NavBarBinding implements Bindings  {
   void dependencies() {
     Get.lazyPut<NavBarController>(() => NavBarController());
     Get.lazyPut<HomeController>(() => HomeController(iCountryService),fenix: true);
+
+    Get.lazyPut<PetitionsController>(() => PetitionsController(),fenix: true);
+
     Get.lazyPut<TrucksController>(()=> TrucksController(), fenix: true);
     Get.lazyPut<TrucksRegisterController>(() => TrucksRegisterController());
-    Get.lazyPut<PetitionsController>(() => PetitionsController(),fenix: true);
+
     Get.lazyPut<TripsController>(() => TripsController(),fenix: true);
+    Get.lazyPut<TripRegisterController>(() => TripRegisterController(iCountryService));
+
     Get.lazyPut<SettingsController>(() => SettingsController(),fenix: true);
   }
 

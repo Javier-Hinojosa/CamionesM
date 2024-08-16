@@ -32,9 +32,9 @@ class ResidenceFiscalPage extends GetView<ResidenceFiscalController>{
                           labelText: "Estado",
                           hintText: "Elige tu estado",
                           items: controller.states.map((e) => DropdownMenuItem(
-                        value: e,
-                        onTap: () => controller.onChangeState(e),
-                        child: Text(e))).toList()),
+                              value: e,
+                              onTap: () => controller.onChangeState(e),
+                              child: Text(e))).toList()),
                       CustomReactiveDropDown(Keys.municipal,
                           labelText: "Municipio o Delegación",
                           hintText: "Elige tu localidad",

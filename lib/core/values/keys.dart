@@ -17,9 +17,21 @@ class Keys {
   static const String streetNoInt ='street_no_int';
   static const String postalCode ='postal_code';
 
-  static const String stateOrigin ='stateOrigin';
-  static const String stateDestiny ='stateDestiny';
+  static const String truck ='truck';
+  static const String driver ='driver';
   static const String date ='date';
+
+  static const String stateOrigin ='state_origin';
+  static const String municipalOrigin ='municipal_origin';
+  static const String cpOrigin ='cp_origin';
+  static const String dateOrigin ='date_origin';
+  static const String hourOrigin ='hour_origin';
+
+  static const String stateDestiny ='state_Destiny';
+  static const String municipalDestiny ='municipal_Destiny';
+  static const String cpDestiny ='cp_destiny';
+  static const String dateDestiny ='date_destiny';
+  static const String hourDestiny ='hour_destiny';
 
   static const String name ='name';
   static const String lastName ='last_name';
@@ -48,5 +60,7 @@ class Keys {
   static const String picksTarget1 ='picks_target_1';
   static const String picksTarget2 ='picks_target_2';
   static const String dueDate ='due_date';
+
+
 
 }

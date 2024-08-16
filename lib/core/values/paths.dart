@@ -29,6 +29,6 @@ class Paths {
   static const String clipboardPlus = 'assets/icons/clipboard_plus.png';
   static const String clipboardTruck = 'assets/images/clipboard_truck.png';
   static const String clipboardPersons = 'assets/images/clipboard_persons.png';
-
+  static const String clipboardLocation = 'assets/images/clipboard_location.png';
 
 }

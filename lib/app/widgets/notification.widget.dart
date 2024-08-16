@@ -23,16 +23,11 @@ class CustomNotification extends StatelessWidget {
                   padding: const EdgeInsets.all(2),
                   decoration: BoxDecoration(
                     color: Colors.orange,
-                    borderRadius: BorderRadius.circular(6),
-                  ),
+                    borderRadius: BorderRadius.circular(6)),
                   constraints: const BoxConstraints(
                     minWidth: 12,
-                    minHeight: 12,
-                  )
-              )
-          )
-        ]
-    );
+                    minHeight: 12)))
+        ]);
   }
 
 }

@@ -1,7 +1,6 @@
 import 'package:camionesm/app/pages/drivers/register/driver_register.controller.dart';
 import 'package:camionesm/app/pages/drivers/register/driver_register_photo.page.dart';
 import 'package:camionesm/app/pages/drivers/widgets/step_progress_driver.widget.dart';
-import 'package:camionesm/app/pages/nav/items/truks/register/trucks_register_specific.page.dart';
 import 'package:camionesm/app/widgets/app_bar/app_bar.widget.dart';
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
 import 'package:camionesm/app/widgets/reactives/reactive_text_field.widget.dart';

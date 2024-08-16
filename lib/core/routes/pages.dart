@@ -1,7 +1,7 @@
 import 'package:camionesm/app/pages/detail/driver/detail_driver.page.dart';
 import 'package:camionesm/app/pages/detail/transport/detail_transport.page.dart';
 import 'package:camionesm/app/pages/detail/truck/detail_truck.page.dart';
-import 'package:camionesm/app/pages/drivers/home/drivers.page.dart';
+import 'package:camionesm/app/pages/drivers/drivers.page.dart';
 import 'package:camionesm/app/pages/login/login.page.dart';
 import 'package:camionesm/app/pages/nav/nav_bar.page.dart';
 import 'package:camionesm/app/pages/profile/profile.page.dart';

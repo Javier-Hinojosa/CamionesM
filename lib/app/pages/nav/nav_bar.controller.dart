@@ -2,7 +2,7 @@ import 'package:camionesm/app/pages/nav/items/home/home.page.dart';
 import 'package:camionesm/app/pages/nav/items/petitions/petitions.page.dart';
 import 'package:camionesm/app/pages/nav/items/settings/settings.page.dart';
 import 'package:camionesm/app/pages/nav/items/trips/trips.page.dart';
-import 'package:camionesm/app/pages/nav/items/truks/home/truks.page.dart';
+import 'package:camionesm/app/pages/nav/items/truks/truks.page.dart';
 import 'package:camionesm/core/values/enums.dart';
 import 'package:camionesm/data/models/items/nav_bar.item.dart';
 import 'package:flutter/material.dart';
