@@ -1,3 +1,6 @@
+import 'package:camionesm/app/pages/drivers/home/drivers.page.dart';
+import 'package:camionesm/app/pages/nav/nav_bar.controller.dart';
+import 'package:camionesm/core/routes/routes.dart';
 import 'package:camionesm/core/values/enums.dart';
 import 'package:camionesm/data/models/items/profile.item.dart';
 import 'package:flutter/material.dart';
@@ -10,8 +13,8 @@ class SettingsController extends GetxController with GetSingleTickerProviderStat
   final lightTheme=true.obs;
 
   static final List<ProfileItem> profileItems = [
-    ProfileItem(ProfileItems.myCars,FontAwesomeIcons.truckField,"Mis vehículos",haveNotification: true),
-    ProfileItem(ProfileItems.myDrivers,Icons.group_outlined,"Mis conductores",haveNotification: true),
+    ProfileItem(ProfileItems.myCars,FontAwesomeIcons.truckField,"Mis vehículos",haveNotification: true,onPressed: ()=> Get.find<NavBarController>().onItemTapped(2)),
+    ProfileItem(ProfileItems.myDrivers,Icons.group_outlined,"Mis conductores",haveNotification: true,onPressed:()=> Get.toNamed(Routes.drivers)),
     ProfileItem(ProfileItems.registerNewTrip,Icons.assignment_add,"Registrar nuevo viaje"),
     ProfileItem(ProfileItems.myTrips,FontAwesomeIcons.flag,"Mis viajes"),
     ProfileItem(ProfileItems.solicitudes,FontAwesomeIcons.envelope,"Solicitudes"),

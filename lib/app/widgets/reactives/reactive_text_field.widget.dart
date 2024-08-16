@@ -72,6 +72,7 @@ class CustomReactiveTextField extends StatelessWidget {
             child: ReactiveTextField(
               onTap: onTap,
               formControlName: controlName,
+              textInputAction: TextInputAction.next,
               controller: textEditing,
               autofocus: false,
               textAlign: TextAlign.left,

@@ -31,7 +31,6 @@ class NavBarController extends GetxController{
 
 
  Future<bool> onItemTapped(int index) async{
-    print('hola');
     selectedItem(index);
     pageController().animateToPage(index, duration: const Duration(milliseconds: 200), curve: Curves.easeIn);
     if(selectedItem()==0){//onRefresh

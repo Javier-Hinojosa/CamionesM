@@ -151,22 +151,6 @@ class TrucksRegisterController extends GetxController{
   }
 
 
-  void openWhatsApp() async {
-    final Uri whatsappUri = Uri(
-        scheme: 'https',
-        host: 'wa.me',
-        path: "5531779992",
-        queryParameters: {
-          'text': "Hola tuve un problema con su app 😕"
-        });
-
-    if (await canLaunchUrl(whatsappUri)) {
-      await launchUrl(whatsappUri);
-    } else {
-      print('Could not open WhatsApp');
-    }
-  }
-
   void pickFile() async {
     final result = await FilePicker.platform.pickFiles(
       type: FileType.custom,

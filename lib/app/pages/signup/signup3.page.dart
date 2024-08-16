@@ -5,7 +5,7 @@ import 'package:camionesm/app/widgets/buttons/button.widget.dart';
 import 'package:camionesm/app/widgets/buttons/icon_button.widget.dart';
 import 'package:camionesm/app/widgets/containers/container.widget.dart';
 import 'package:camionesm/app/widgets/containers/container_outline.widget.dart';
-import 'package:camionesm/app/widgets/images/images_assets.widget.dart';
+import 'package:camionesm/app/widgets/images/image_assets.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
 import 'package:camionesm/core/routes/routes.dart';
 import 'package:camionesm/core/values/enums.dart';

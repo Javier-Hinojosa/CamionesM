@@ -3,7 +3,8 @@ import 'package:camionesm/data/models/items/list.item.dart';
 
 class ProfileItem  extends ListItem{
   ProfileItems id;
-  ProfileItem(this.id,super.icon, super.label, {super.haveNotification=false});
+  void Function()? onPressed;
+  ProfileItem(this.id,super.icon, super.label, {super.haveNotification=false, this.onPressed});
 
 
 }

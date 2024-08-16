@@ -1,5 +1,5 @@
 import 'package:camionesm/app/widgets/containers/container.widget.dart';
-import 'package:camionesm/app/widgets/images/images_assets.widget.dart';
+import 'package:camionesm/app/widgets/images/image_assets.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
 import 'package:camionesm/core/values/text_styles.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +19,6 @@ class SimpleTitleCard<T> extends StatelessWidget {
         backgroundColor: _disableColor,
         child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
-            mainAxisSize: MainAxisSize.max,
             children: [
               SizedBox(width: Get.width * 0.03),
               _genericWidget(icon),

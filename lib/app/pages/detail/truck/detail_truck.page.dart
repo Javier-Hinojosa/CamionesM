@@ -5,7 +5,7 @@ import 'package:camionesm/app/widgets/buttons/icon_button.widget.dart';
 import 'package:camionesm/app/widgets/containers/container.widget.dart';
 import 'package:camionesm/app/widgets/containers/container_expandable.widget.dart';
 import 'package:camionesm/app/widgets/dotted_divider.widget.dart';
-import 'package:camionesm/app/widgets/images/images_carrousel.dart';
+import 'package:camionesm/app/widgets/images/image_carrousel.dart';
 import 'package:camionesm/app/widgets/reactives/reactive_text_field.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
 import 'package:camionesm/core/values/globals.dart';
@@ -51,7 +51,6 @@ class DetailTruckPage extends GetView<DetailTruckController> {
               padding: const EdgeInsets.all(20),
               sliver: SliverList(
                   delegate: SliverChildListDelegate([
-
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -218,7 +217,6 @@ class DetailTruckPage extends GetView<DetailTruckController> {
         CustomText(content,maxLines: 5, style: bodyMedium.apply(color: Colors.black,fontWeightDelta: FontWeight.w300.index,fontSizeDelta: 2))
       ]);
   }
-
   //endregion
 
 }

@@ -12,6 +12,7 @@ class Paths {
   static const String papers  = 'assets/images/papers.png';
   static const String profile = 'assets/images/profile.png';
   static const String profile2 ='assets/images/profile2.png';
+  static const String profile3 ='assets/images/profile3.png';
   static const String boxIcon = 'assets/images/box_icon.png';
   static const String location = 'assets/icons/location.png';
   static const String insignia = 'assets/images/insignia.png';
@@ -27,6 +28,7 @@ class Paths {
   static const String truckCharger = 'assets/images/truck_charger.png';
   static const String clipboardPlus = 'assets/icons/clipboard_plus.png';
   static const String clipboardTruck = 'assets/images/clipboard_truck.png';
+  static const String clipboardPersons = 'assets/images/clipboard_persons.png';
 
 
 }

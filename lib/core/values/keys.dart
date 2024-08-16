@@ -24,6 +24,7 @@ class Keys {
   static const String name ='name';
   static const String lastName ='last_name';
   static const String rfcLR ='rfc_lr';
+  static const String rfc ='rfc';
 
   static const String user ='user';
   static const String pass ='pass';

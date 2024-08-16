@@ -1,5 +1,8 @@
+import 'package:camionesm/app/pages/detail/driver/detail_driver.controller.dart';
 import 'package:camionesm/app/pages/detail/transport/detail_transport.controller.dart';
 import 'package:camionesm/app/pages/detail/truck/detail_truck.controller.dart';
+import 'package:camionesm/app/pages/drivers/home/drivers.controller.dart';
+import 'package:camionesm/app/pages/drivers/register/driver_register.controller.dart';
 import 'package:camionesm/app/pages/login/login.controller.dart';
 import 'package:camionesm/app/pages/nav/items/home/home.controller.dart';
 import 'package:camionesm/app/pages/nav/items/petitions/petitions.controller.dart';
@@ -25,14 +28,12 @@ class LoginBinding implements Bindings {
     Get.lazyPut<LoginController>(() => LoginController());
   }
 }
-
 class SplashScreenBinding implements Bindings {
   @override
   void dependencies() {
     Get.lazyPut<SplashScreenController>(() => SplashScreenController());
   }
 }
-
 class SingUpBinding implements Bindings {
 
   final ICountryService iCountryService;
@@ -47,7 +48,6 @@ class SingUpBinding implements Bindings {
     Get.lazyPut<AccessDataController>(()=> AccessDataController(),fenix: true);
   }
 }
-
 class NavBarBinding implements Bindings  {
   final ICountryService iCountryService;
 
@@ -73,7 +73,6 @@ class DetailTransportBinding implements Bindings{
   }
 
 }
-
 class DetailTruckBinding implements Bindings{
 
   @override
@@ -82,8 +81,24 @@ class DetailTruckBinding implements Bindings{
   }
 
 }
+class DetailDriverBinding implements Bindings{
 
+  @override
+  void dependencies() {
+    Get.lazyPut<DetailDriverController>(()=> DetailDriverController());
+  }
 
+}
+
+class DriversBinding implements Bindings{
+
+  @override
+  void dependencies() {
+    Get.lazyPut<DriversController>(()=> DriversController());
+    Get.lazyPut<DriverRegisterController>(()=> DriverRegisterController());
+  }
+
+}
 class ProfileBinding implements Bindings{
 
   @override

@@ -26,17 +26,20 @@ class SettingsPage extends GetView<SettingsController>{
                             lettersColor: Theme.of(context).scaffoldBackgroundColor,
                             name: "Jorge M."),
                         SizedBox(height: Get.height*0.6),
-                        Align(alignment: Alignment.bottomLeft,child: _cardTheme(context)).paddingAll(15)
+                        Align(alignment: Alignment.bottomLeft,
+                            child: _cardTheme(context)).paddingAll(15)
                       ]),
                   Padding(
                       padding: const EdgeInsets.only(top: 100),
-                      child: ListView(children: SettingsController.profileItems.map((item)=> _cardItem(context,item)).toList()))
+                      child: ListView(
+                          physics: const NeverScrollableScrollPhysics(),
+                          children: SettingsController.profileItems.map((item)=> _cardItem(context,item)).toList()))
                 ]))));
   }
 
  Widget  _cardItem(BuildContext context, ProfileItem item){
     return GestureDetector(
-        onTap: ()=>controller.onSelectProfileItem(item.id),
+        onTap: item.onPressed,
         child: CustomContainer(
             backgroundColor: Theme.of(context).canvasColor,
             child: Row(

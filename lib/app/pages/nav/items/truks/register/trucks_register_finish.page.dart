@@ -1,7 +1,7 @@
 import 'package:camionesm/app/pages/nav/items/truks/register/trucks_register.controller.dart';
 import 'package:camionesm/app/widgets/app_bar/app_bar.widget.dart';
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
-import 'package:camionesm/app/widgets/images/images_assets.widget.dart';
+import 'package:camionesm/app/widgets/images/image_assets.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
 import 'package:camionesm/core/values/globals.dart';
 import 'package:camionesm/core/values/paths.dart';

@@ -1,10 +1,10 @@
 import 'package:camionesm/app/pages/nav/items/truks/register/trucks_register.controller.dart';
 import 'package:camionesm/app/pages/nav/items/truks/register/trucks_register_specific.page.dart';
+import 'package:camionesm/app/pages/nav/items/truks/widgets/step_progress_truck.widget.dart';
 import 'package:camionesm/app/widgets/app_bar/app_bar.widget.dart';
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
 import 'package:camionesm/app/widgets/reactives/reactive_dropdown_field.widget.dart';
 import 'package:camionesm/app/widgets/reactives/reactive_text_field.widget.dart';
-import 'package:camionesm/app/pages/nav/items/truks/widgets/step_progress.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
 import 'package:camionesm/core/values/globals.dart';
 import 'package:camionesm/core/values/keys.dart';

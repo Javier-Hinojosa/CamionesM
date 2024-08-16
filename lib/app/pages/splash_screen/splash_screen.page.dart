@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:camionesm/app/pages/splash_screen/splash_screen.controller.dart';
 import 'package:camionesm/app/utils/animation.utils.dart';
-import 'package:camionesm/app/widgets/images/images_assets.widget.dart';
+import 'package:camionesm/app/widgets/images/image_assets.widget.dart';
 import 'package:camionesm/core/values/paths.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

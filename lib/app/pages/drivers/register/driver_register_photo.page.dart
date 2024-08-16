@@ -1,5 +1,5 @@
-import 'package:camionesm/app/pages/nav/items/truks/register/trucks_register.controller.dart';
-import 'package:camionesm/app/pages/nav/items/truks/widgets/step_progress_truck.widget.dart';
+import 'package:camionesm/app/pages/drivers/register/driver_register.controller.dart';
+import 'package:camionesm/app/pages/drivers/widgets/step_progress_driver.widget.dart';
 import 'package:camionesm/app/utils/dialog.utils.dart';
 import 'package:camionesm/app/widgets/app_bar/app_bar.widget.dart';
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
@@ -7,22 +7,17 @@ import 'package:camionesm/app/widgets/containers/container.widget.dart';
 import 'package:camionesm/app/widgets/containers/container_expandable.widget.dart';
 import 'package:camionesm/app/widgets/containers/container_outline.widget.dart';
 import 'package:camionesm/app/widgets/images/image_assets.widget.dart';
-import 'package:camionesm/app/widgets/reactives/reactive_calendar.dart';
-import 'package:camionesm/app/widgets/reactives/reactive_text_field.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
 import 'package:camionesm/core/common/settings_extern.dart';
 import 'package:camionesm/core/values/globals.dart';
-import 'package:camionesm/core/values/keys.dart';
 import 'package:camionesm/core/values/paths.dart';
 import 'package:camionesm/core/values/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
- class TrucksRegisterPhotoPage extends GetView<TrucksRegisterController>{
-  const TrucksRegisterPhotoPage({super.key});
-
-
+ class DriverRegisterPhotoPage extends GetView<DriverRegisterController>{
+  const DriverRegisterPhotoPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,71 +27,39 @@ import 'package:reactive_forms/reactive_forms.dart';
       body: SingleChildScrollView(
         child: Column(children: [
           Align(alignment: Alignment.centerLeft, child: CustomText("¡Ya en el último paso!", style: titleLarge.apply(fontSizeDelta: -4))),
-          Align(alignment: Alignment.centerLeft, child: _textWithBold("No te mortifiques, posteriormente en la sección de ",textBold: "“Mis vehículos”",endNormalText: " podrás editar o agregar nueva información si lo deseas.",)),
+          Align(alignment: Alignment.centerLeft, child: CustomText("Ya a unos pasos de terminar con tu registro",style: bodyMedium)),
           SizedBox(height: Get.height*0.02),
           ReactiveForm(
             formGroup: controller.formRegisterPhoto1(),
             child: CustomContainerExpandable(
               backgroundColor: controller.isValidRegisterPhotoForm1()?Colors.grey[300]:null,
                 contentPadding: 10,
-                title: _customTitleExpandable("Tarjeta de circulación", controller.isValidRegisterPhotoForm1()),
+                title: _customTitleExpandable("Identificación", controller.isValidRegisterPhotoForm1()),
                 children: [
                   SizedBox(height: Get.height*0.02),
-                  _containerPhoto("Tarjeta de circulación frontal",onTap: () =>  controller.pickImage()),
+                  _containerPhoto("Identificación frontal",onTap: () =>  controller.pickImage()),
                   SizedBox(height: Get.height*0.02),
-                  _containerPhoto("Tarjeta de circulación trasero",onTap: () =>  controller.pickImage()),
-                  SizedBox(height: Get.height*0.02),
-                  CustomReactiveTextField(Keys.dueDate,
-                    isActive: false,
-                    onTap: (p0) => _calendarDialog(context,"Selecciona tu fecha de vencimiento de Tarjeta de circulación",controller.formRegisterPhoto1()),
-                    labelText: "Fecha de vencimiento de Tarjeta de circulación",
-                    hintText: "DD/MM/AA")
-            ])),
+                  _containerPhoto("Identificación trasera",onTap: () =>  controller.pickImage())
+                ])),
           SizedBox(height: Get.height*0.02),
           ReactiveForm(
               formGroup: controller.formRegisterPhoto2(),
               child: CustomContainerExpandable(
                   backgroundColor: controller.isValidRegisterPhotoForm2()?Colors.grey[300]:null,
                   contentPadding: 10,
-                  title: _customTitleExpandable("Poliza de seguro", controller.isValidRegisterPhotoForm2()),
+                  title: _customTitleExpandable("Licencia Tipo “B” ó “C”", controller.isValidRegisterPhotoForm2()),
                   children: [
                     SizedBox(height: Get.height*0.02),
-                    _containerPhoto("Poliza de seguro",onTap: () =>  controller.pickImage()),
+                    _containerPhoto("Licencia frontal",onTap: () =>  controller.pickImage()),
                     SizedBox(height: Get.height*0.02),
-                    CustomReactiveTextField(Keys.dueDate,
-                        isActive: false,
-                        onTap: (p0) => _calendarDialog(context,"Selecciona la fecha de vencimiento de la Poliza de seguro",controller.formRegisterPhoto2()),
-                        labelText: "Fecha de vencimiento",
-                        hintText: "DD/MM/AA")
-                  ])),
-          SizedBox(height: Get.height*0.02),
-          ReactiveForm(
-              formGroup: controller.formRegisterPhoto3(),
-              child: CustomContainerExpandable(
-                  backgroundColor: controller.isValidRegisterPhotoForm3()?Colors.grey[300]:null,
-                  contentPadding: 10,
-                  title: _customTitleExpandable("Fotos de camión", controller.isValidRegisterPhotoForm3()),
-                  children: [
-                    SizedBox(height: Get.height*0.02),
-                    Align(alignment: Alignment.centerLeft, child: CustomText("Recuerda que mientras mejores fotos mejores posibilidades de posicionamiento en la plataforma", style: bodyMedium)),
-                    SizedBox(height: Get.height*0.02),
-                    _containerPhoto("Fotos de tu camión",onTap: () =>  controller.pickImage()),
-                    SizedBox(height: Get.height*0.02),
+                    _containerPhoto("Licencia trasera",onTap: () =>  controller.pickImage())
                   ])),
           SizedBox(height: Get.height*0.2)
+
         ]).paddingAll(20))
     );
   }
 
-  Widget _textWithBold(String normalText,{String? textBold, String? endNormalText}) {
-    return RichText(
-        text:
-        TextSpan(text: normalText, style: bodyMedium, children: <TextSpan>[
-          TextSpan(
-              text: textBold, style: const TextStyle(fontWeight: FontWeight.bold)),
-          TextSpan(text: endNormalText ?? "")
-        ]));
-  }
   Widget _customBottom(BuildContext context) {
     return Container(
         color: Theme.of(context).scaffoldBackgroundColor,
@@ -105,7 +68,7 @@ import 'package:reactive_forms/reactive_forms.dart';
         child: ListView(
             shrinkWrap: true,
             children: [
-              const CustomProgressStepTruck(isActive: [false,false,true]),
+              const CustomProgressStepDriver(isActive: [false,true]),
               SizedBox(height: Get.height*0.02),
               Obx(()=> SizedBox(
                   height: Get.height*0.06,
@@ -163,32 +126,6 @@ import 'package:reactive_forms/reactive_forms.dart';
         ]));
   }
 
-  Future<bool> _calendarDialog(BuildContext context,String subtitle, FormGroup form) {
-    return DialogUtils.dialog(
-        child: ListView(shrinkWrap: true, children: [
-          Align(
-              alignment: Alignment.centerLeft,
-              child: CustomText("Calendario", style: titleLarge)),
-          CustomText(subtitle,
-              textAlign: TextAlign.start,
-              style: bodyMedium.apply(color: Theme.of(context).disabledColor)),
-          ReactiveForm(
-              formGroup: form,
-              child: const CustomReactiveCalendar(Keys.dueDate)),
-          Container(padding: const EdgeInsets.all(10)),
-          Align(
-              alignment: Alignment.bottomRight,
-              child: SizedBox(
-                  height: Get.height * 0.05,
-                  width: Get.width * 0.4,
-                  child: CustomButton(
-                      title: "Aceptar",
-                      height: Get.height * 0.02,
-                      width: Get.width * 0.4,
-                      backgroundColor: Colors.black,
-                      onPressed: () => Get.back(result: true))))
-        ]));
-  }
   Future<bool> onDialogError(BuildContext context) {
    return DialogUtils.dialog(
        child: ListView(shrinkWrap: true, children: [
