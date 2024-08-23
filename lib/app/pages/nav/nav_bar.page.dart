@@ -10,7 +10,7 @@ class NavBarPage extends GetView<NavBarController>{
   @override
   Widget build(BuildContext context) {
     return PopScope(
-      onPopInvoked: (didPop) => controller.onItemTapped(0),
+      onPopInvokedWithResult: (didPop, result) => controller.onItemTapped(0),
       child: Obx(()=>Scaffold(
         body: PageView(
             controller: controller.pageController(),

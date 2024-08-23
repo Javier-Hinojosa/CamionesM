@@ -6,16 +6,17 @@ class CustomImageCircle extends CustomImageAssets {
   final double? radius;
   final Color? borderColor;
   final double? borderWidth;
-  const CustomImageCircle({this.backgroundColor,this.radius,this.borderColor, this.borderWidth, super.key,super.height, super.width,super.fit, super.hasOpacity, required super.url});
+  final double? paddingAll;
+  const CustomImageCircle({this.backgroundColor,this.radius,this.borderColor,this.paddingAll, this.borderWidth, super.key,super.height, super.width,super.fit, super.hasOpacity, required super.url});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.all(borderWidth ?? 2.0), // Espaciado para el grosor del borde
+        padding: EdgeInsets.all(paddingAll ?? 2.0),
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           border: Border.all(
-            color: borderColor ?? Theme.of(context).disabledColor, // Color del borde
+            color: borderColor ?? Theme.of(context).disabledColor,
             width: borderWidth ?? 2.0)),
       child: CircleAvatar(
         backgroundColor: backgroundColor,

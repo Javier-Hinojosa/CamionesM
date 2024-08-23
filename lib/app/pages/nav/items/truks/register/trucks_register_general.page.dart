@@ -18,8 +18,7 @@ class TrucksRegisterGeneralPage extends GetView<TrucksRegisterController>{
 
   @override
   Widget build(BuildContext context) {
-    return Obx(
-        ()=> Scaffold(
+    return Obx(()=> Scaffold(
           appBar: CustomAppBar(leadingColor: Theme.of(context).scaffoldBackgroundColor,backgroundColor: Globals.principalColor),
           bottomSheet: _customBottom(context),
           body: SingleChildScrollView(
@@ -34,18 +33,16 @@ class TrucksRegisterGeneralPage extends GetView<TrucksRegisterController>{
               child: Column(
                 children: [
                   _customTextFieldSearch(Keys.typeTruck,"Tipo de camión","Elije el tipo de camión",["Carga"],(p0) {}),
-                 SizedBox(height: Get.height*0.02),
+                  SizedBox(height: Get.height*0.02),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Flexible(
-                        flex:5,
-                          child: _customTextFieldSearch(Keys.brand,"Marca","Elije la marca",["Man","Volvo"],(p0) {})),
-                      const Spacer(),
-                      Flexible(
-                          flex:4,
-                          child: _customTextFieldSearch(Keys.year,"Año","Elije el año",["2024","2018"],(p0) {}))
-                    ]),
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Flexible(
+                            flex:5,
+                            child: _customTextFieldSearch(Keys.brand,"Marca","Elije la marca",["Man","Volvo"],(p0) {})),
+                        const Spacer(),
+                        Flexible(flex:4, child: _customTextFieldSearch(Keys.year,"Año","Elije el año",["2024","2018"],(p0) {}))
+                      ]),
                   SizedBox(height: Get.height*0.02),
                   CustomReactiveTextField(Keys.howMuchWeight,labelText: "Cuánto peso puede llevar", hintText: "Ej:11,000 KG",paddingAll: 0,onChanged: (p0) => controller.onHowMuchWeightChange(p0.value), keyboard: const TextInputType.numberWithOptions()),
                   SizedBox(height: Get.height*0.02),
@@ -65,9 +62,7 @@ class TrucksRegisterGeneralPage extends GetView<TrucksRegisterController>{
                       itemBuilder: (context, index) =>
                           Row(mainAxisAlignment: MainAxisAlignment.start, children: [
                             Checkbox(value: false, onChanged: (d) {}),
-                            Expanded(
-                                child: CustomText(controller.typeProducts[index],
-                                    maxLines: 1, style: titleMedium))
+                            Expanded(child: CustomText(controller.typeProducts[index], maxLines: 1, style: titleMedium))
                           ])),
                   SizedBox(height: Get.height*0.02),
                    const Align(alignment: Alignment.centerLeft,child: Text("Carga tipo Agrícola",style:  TextStyle(color: Colors.black, fontWeight: FontWeight.w400))),
@@ -85,17 +80,11 @@ class TrucksRegisterGeneralPage extends GetView<TrucksRegisterController>{
                       itemBuilder: (context, index) =>
                           Row(mainAxisAlignment: MainAxisAlignment.start, children: [
                             Checkbox(value: false, onChanged: (d) {}),
-                            Expanded(
-                                child: CustomText(controller.typeProducts[index],
-                                    maxLines: 1, style: titleMedium))
+                            Expanded(child: CustomText(controller.typeProducts[index], maxLines: 1, style: titleMedium))
                           ])),
                   SizedBox(height: Get.height*0.2)
-                ])
-            )
-
-          ]).paddingAll(20)
-        )
-      ));
+                ]))
+          ]).paddingAll(20))));
   }
 
   Widget _customTextFieldSearch(String key,String labelText, String hintText, List items, void Function(FormControl<dynamic>)? onChanged ) {

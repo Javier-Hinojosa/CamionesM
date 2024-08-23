@@ -1,8 +1,10 @@
 import 'package:camionesm/app/pages/detail/driver/detail_driver.controller.dart';
 import 'package:camionesm/app/pages/detail/transport/detail_transport.controller.dart';
+import 'package:camionesm/app/pages/detail/trips/detail_trips.controller.dart';
 import 'package:camionesm/app/pages/detail/truck/detail_truck.controller.dart';
 import 'package:camionesm/app/pages/drivers/drivers.controller.dart';
 import 'package:camionesm/app/pages/drivers/register/driver_register.controller.dart';
+import 'package:camionesm/app/pages/invoice/invoice.controller.dart';
 import 'package:camionesm/app/pages/login/login.controller.dart';
 import 'package:camionesm/app/pages/nav/items/home/home.controller.dart';
 import 'package:camionesm/app/pages/nav/items/petitions/petitions.controller.dart';
@@ -95,6 +97,13 @@ class DetailDriverBinding implements Bindings{
   }
 
 }
+class DetailTripsBinding implements Bindings{
+  @override
+  void dependencies() {
+    Get.lazyPut<DetailTripsController>(()=> DetailTripsController());
+  }
+
+}
 
 class DriversBinding implements Bindings{
 
@@ -110,6 +119,14 @@ class ProfileBinding implements Bindings{
   @override
   void dependencies() {
     Get.lazyPut<ProfileController>(()=> ProfileController());
+  }
+
+}
+class InvoiceBinding implements Bindings{
+
+  @override
+  void dependencies() {
+    Get.lazyPut<InvoiceController>(()=> InvoiceController());
   }
 
 }

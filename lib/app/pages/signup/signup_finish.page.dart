@@ -15,7 +15,7 @@ class SignUpFinishPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PopScope(
-      onPopInvoked: (didPop) => () => Get.toNamed(Routes.splashScreen),
+      onPopInvokedWithResult: (didPop, result) => Get.toNamed(Routes.splashScreen),
       child: Scaffold(
           extendBodyBehindAppBar: true,
           appBar: CustomAppBar(onBack: () => Get.toNamed(Routes.splashScreen)),

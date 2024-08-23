@@ -8,15 +8,16 @@ import 'package:reactive_forms/reactive_forms.dart';
 
 class DetailTruckController extends GetxController{
 
-  final controllerCarrousel = CarouselController().obs;
+  final controllerCarrousel = CarouselSliderController().obs;
   final indexCarrousel= 0.obs;
   final List<String> imgList = [
     Paths.truck2,
     'assets/images/carrousel.png',
     'assets/images/map.png',
     Paths.truck1,
-    Paths.papers,
+    Paths.papers
   ];
+
 
   final isEditedTransport= false.obs;
   final formRegisterTruck=FormGroup({}).obs;

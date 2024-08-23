@@ -61,6 +61,17 @@ class Keys {
   static const String picksTarget2 ='picks_target_2';
   static const String dueDate ='due_date';
 
+  static const String cp ='cp';
+  static const String fiscalRegime ='fiscal_regime';
+  static const String use ='use';
+  static const String paymentMethod ='payment_method';
+  static const String invoiceFiscal ='invoice_fiscal';
+
+  static const String bank ='bank';
+  static const String beneficiary ='beneficiary';
+  static const String noAccount ='no_account';
+  static const String interbankCode ='interbank_code';
+
 
 
 }

@@ -261,7 +261,7 @@ class HomePage extends GetView<HomeController> {
             paddingAll: 5,
             onPressed: () => controller.onLabelChange(
                 HomeFilterController.labelsFilters[index], state),
-            color: Colors.white,
+            backgroundColor: Colors.white,
             leading: const Icon(Icons.add, color: Colors.black)));
   }
 

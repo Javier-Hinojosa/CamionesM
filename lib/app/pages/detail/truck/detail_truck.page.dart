@@ -4,7 +4,7 @@ import 'package:camionesm/app/widgets/buttons/button.widget.dart';
 import 'package:camionesm/app/widgets/buttons/icon_button.widget.dart';
 import 'package:camionesm/app/widgets/containers/container.widget.dart';
 import 'package:camionesm/app/widgets/containers/container_expandable.widget.dart';
-import 'package:camionesm/app/widgets/dotted_divider.widget.dart';
+import 'package:camionesm/app/widgets/dividers/dotted_divider.widget.dart';
 import 'package:camionesm/app/widgets/images/image_carrousel.dart';
 import 'package:camionesm/app/widgets/reactives/reactive_text_field.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';

@@ -18,7 +18,7 @@ class CustomDropDown<T> extends StatelessWidget{
   final Color? secondaryColor;
   final T? value;
 
-  CustomDropDown({
+  const CustomDropDown({
         super.key,
         required  this.items,
         this.labelText,

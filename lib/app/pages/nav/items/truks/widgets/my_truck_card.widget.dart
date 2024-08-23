@@ -1,3 +1,4 @@
+import 'package:camionesm/app/utils/dialog.utils.dart';
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
 import 'package:camionesm/app/widgets/containers/container.widget.dart';
 import 'package:camionesm/app/widgets/containers/container_loading.widget.dart';
@@ -10,12 +11,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class MyTransportCard extends StatelessWidget {
-  const MyTransportCard(
-      {super.key, this.onDetail, this.onEdit, this.onDelete});
+  const MyTransportCard({super.key, this.onDetail, this.onEdit, required this.onDelete});
 
   final void Function()? onDetail;
   final void Function()? onEdit;
-  final void Function()? onDelete;
+  ///[onDelete] has required full this function, have a predetermine dialog
+  final void Function() onDelete;
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +72,11 @@ class MyTransportCard extends StatelessWidget {
                                   child: const Icon(Icons.edit_outlined))),
                             SizedBox(width: Get.width*0.01),
                             GestureDetector(
-                                onTap: onDelete,
+                                onTap: () async{
+                                  var result = await CustomDialogs.dialogDeleteItem(context);
+                                  if(result) {
+                                    onDelete();
+                                  }},
                                 child:  CircleAvatar(
                                     backgroundColor: Theme.of(context).disabledColor.withOpacity(0.1),
                                     child: const Icon(Icons.delete_outline_outlined)))

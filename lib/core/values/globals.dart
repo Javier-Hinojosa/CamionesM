@@ -19,6 +19,8 @@ abstract class Globals{
 
   static const LatLng locationMX =LatLng(19.432608, -99.133209);
   static const String templateURL= 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
+  static const String packageName= 'com.camiones.m.camionesm';
+
   static const List<LatLng> points = [
      LatLng(19.432608, -99.133209), // Ciudad de México
      LatLng(20.659698, -103.349609), // Guadalajara

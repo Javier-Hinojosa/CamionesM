@@ -14,10 +14,7 @@ class SingUpController extends GetxController{
     typeUser: TypeUser.none.obs
   );
 
-  @override
-  void onInit() async {
-    super.onInit();
-  }
+
 
   onDynamicPage(String pathIcon) {
     switch(pathIcon){//register definided in paths

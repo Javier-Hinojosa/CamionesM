@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_controller.dart' as carrousel;
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -6,7 +7,7 @@ class ImagesCarrousel extends StatelessWidget{
    const ImagesCarrousel({super.key, required this.images, required this.carouselController,required this.onPageChanged,required this.valueIndex });
 
   final List<String> images;
-  final CarouselController carouselController;
+  final carrousel.CarouselSliderController carouselController;
   final int valueIndex;
   final dynamic Function(int, CarouselPageChangedReason)? onPageChanged;
 

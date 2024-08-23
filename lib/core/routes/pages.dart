@@ -1,7 +1,9 @@
 import 'package:camionesm/app/pages/detail/driver/detail_driver.page.dart';
 import 'package:camionesm/app/pages/detail/transport/detail_transport.page.dart';
+import 'package:camionesm/app/pages/detail/trips/detail_trips.page.dart';
 import 'package:camionesm/app/pages/detail/truck/detail_truck.page.dart';
 import 'package:camionesm/app/pages/drivers/drivers.page.dart';
+import 'package:camionesm/app/pages/invoice/invoice.page.dart';
 import 'package:camionesm/app/pages/login/login.page.dart';
 import 'package:camionesm/app/pages/nav/nav_bar.page.dart';
 import 'package:camionesm/app/pages/profile/profile.page.dart';
@@ -26,8 +28,7 @@ abstract class Pages {
       page: () => const LoginPage(),
       binding: LoginBinding(),
       transition: Transition.rightToLeft,
-      transitionDuration: const Duration(seconds: 1),
-    ),
+      transitionDuration: const Duration(seconds: 1)),
     GetPage(
         name: Routes.singUp,
         page: ()=>const SingUpPage(),
@@ -45,6 +46,10 @@ abstract class Pages {
         page: ()=> const DetailTruckPage(),
         binding: DetailTruckBinding()),
     GetPage(
+        name: Routes.detailTrip,
+        page: ()=> const DetailTripsPage(),
+        binding: DetailTripsBinding()),
+    GetPage(
         name: Routes.profile,
         page: ()=> const ProfilePage(),
         binding: ProfileBinding()),
@@ -55,6 +60,10 @@ abstract class Pages {
     GetPage(
         name: Routes.detailDriver,
         page: ()=> const DetailDriverPage(),
-        binding: DetailDriverBinding())
+        binding: DetailDriverBinding()),
+    GetPage(
+        name: Routes.invoice,
+        page: ()=> const InvoicePage(),
+        binding: InvoiceBinding())
   ];
 }

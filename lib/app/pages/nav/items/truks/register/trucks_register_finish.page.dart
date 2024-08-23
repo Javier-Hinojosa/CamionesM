@@ -15,7 +15,7 @@ class TrucksRegisterFinishPage extends GetView<TrucksRegisterController> {
   @override
   Widget build(BuildContext context) {
     return PopScope(
-      onPopInvoked: (didPop) => () => controller.onReturnHome(),
+      onPopInvokedWithResult: (didPop, result) => controller.onReturnHome(),
       child: Scaffold(
           extendBodyBehindAppBar: true,
           appBar: CustomAppBar(onBack: () => controller.onReturnHome()),

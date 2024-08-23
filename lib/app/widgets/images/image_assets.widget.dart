@@ -27,8 +27,6 @@ class CustomImageAssets extends StatelessWidget {
         filterQuality: FilterQuality.high,
         colorBlendMode:BlendMode.darken ,
         image: AssetImage(url),
-        fit: fit,
-      ),
-    );
+        fit: fit));
   }
 }

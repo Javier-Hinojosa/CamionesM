@@ -6,7 +6,7 @@ class CustomProgressBar extends StatelessWidget {
   final double size;
   final String? text;
 
-  const CustomProgressBar({Key? key, this.size = 100, this.text}) : super(key: key);
+  const CustomProgressBar({super.key, this.size = 100, this.text});
 
   @override
   Widget build(BuildContext context) {

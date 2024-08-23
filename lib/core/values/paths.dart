@@ -10,7 +10,9 @@ class Paths {
   static const String truck1 = 'assets/images/truck1.png';
   static const String truck2 = 'assets/images/truck2.png';
   static const String papers  = 'assets/images/papers.png';
-  static const String profile = 'assets/images/profile.png';
+  static const String invoice = 'assets/images/invoice.png';
+  static const String padlock = 'assets/images/padlock.png';
+  static const String profile1 = 'assets/images/profile.png';
   static const String profile2 ='assets/images/profile2.png';
   static const String profile3 ='assets/images/profile3.png';
   static const String boxIcon = 'assets/images/box_icon.png';
@@ -19,12 +21,15 @@ class Paths {
   static const String congrats = 'assets/images/congrats.png';
   static const String shopIcon = 'assets/images/shop_icon.png';
   static const String briefcase = 'assets/icons/briefcase.png';
+  static const String locations = 'assets/images/locations.png';
   static const String officeBag = 'assets/images/office_bag.png';
   static const String personPlus = 'assets/icons/person_plus.png';
   static const String filterList = 'assets/icons/filter_list.png';
   static const String chartsIcon = 'assets/images/charts_icon.png';
   static const String personIcon = 'assets/images/person_icon.png';
+  static const String aerialTruck = 'assets/icons/aerial_truck.png';
   static const String circleCheck = 'assets/images/circle_check.png';
+  static const String invoiceChart = 'assets/images/invoice_chart.png';
   static const String truckCharger = 'assets/images/truck_charger.png';
   static const String clipboardPlus = 'assets/icons/clipboard_plus.png';
   static const String clipboardTruck = 'assets/images/clipboard_truck.png';

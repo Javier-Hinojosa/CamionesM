@@ -32,7 +32,7 @@ final ThemeData lightTheme = ThemeData(
     shape: const RoundedRectangleBorder(
         side: BorderSide(width: 2),
         borderRadius: BorderRadius.all(Radius.circular(30)) ),
-    backgroundColor: Globals.secondColor,
+    backgroundColor: Globals.backgroundColor,
     labelStyle: CustomTextStyles().labelMedium!.apply(color: Colors.white),
     selectedColor: Globals.principalColor),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(

@@ -5,7 +5,7 @@ import 'package:camionesm/app/widgets/notification.widget.dart';
 import 'package:camionesm/app/widgets/progess_bar.widget.dart';
 import 'package:camionesm/app/widgets/switch_theme.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
-import 'package:camionesm/data/models/items/profile.item.dart';
+import 'package:camionesm/data/models/items/generic.item.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -37,7 +37,7 @@ class SettingsPage extends GetView<SettingsController>{
                 ]))));
   }
 
- Widget  _cardItem(BuildContext context, ProfileItem item){
+ Widget  _cardItem(BuildContext context, GenericItem item){
     return GestureDetector(
         onTap: item.onPressed,
         child: CustomContainer(

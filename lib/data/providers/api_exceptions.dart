@@ -1,9 +1,9 @@
 class AppException implements Exception {
 
-  late final _message;
-  late final _prefix;
+  final String _message;
+  final String _prefix;
 
-  AppException([this._message, this._prefix]);
+  AppException(this._message, this._prefix);
 
   @override
   String toString() {

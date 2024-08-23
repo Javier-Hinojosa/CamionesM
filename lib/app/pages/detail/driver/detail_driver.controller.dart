@@ -12,7 +12,7 @@ import 'package:reactive_forms/reactive_forms.dart';
 
 class DetailDriverController extends GetxController{
 
-  final controllerCarrousel = CarouselController().obs;
+  final controllerCarrousel = CarouselSliderController().obs;
   final indexCarrousel= 0.obs;
   final List<String> imgList = [
     Paths.truck2,
@@ -72,7 +72,7 @@ class DetailDriverController extends GetxController{
   }
 
   void pickImage() async {
-    final pickedFile = await ImagePicker().pickImage(source: ImageSource.gallery);;
+    final pickedFile = await ImagePicker().pickImage(source: ImageSource.gallery);
     if (pickedFile != null) {
       selectedFile.value = File(pickedFile.path);
       print(selectedFile());

@@ -17,7 +17,7 @@ class NavBarController extends GetxController{
     NavBarItem(NavBarItems.home,Icons.search,"Explorar",const HomePage()),
     NavBarItem(NavBarItems.petitions,Icons.notifications_none,"Solicitudes",const PetitionsPage()),
     NavBarItem(NavBarItems.trucks,Icons.local_shipping_outlined,"Camiones", const TrucksPage()),
-    NavBarItem(NavBarItems.trips,Icons.location_on_outlined,"Mis viajes",const TripsPage()),
+    NavBarItem(NavBarItems.trips,Icons.location_on_outlined,"Mis viajes", const TripsPage()),
     NavBarItem(NavBarItems.settings,Icons.menu,"Menú",const SettingsPage(),haveNotification: true)
   ];
 

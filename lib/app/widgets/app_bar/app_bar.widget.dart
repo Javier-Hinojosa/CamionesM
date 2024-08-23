@@ -20,7 +20,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
        backgroundColor: backgroundColor??Colors.transparent,
        elevation: 0,
        actions: trailing,
-       leadingWidth: Get.width*0.15,
+       leadingWidth: Get.width*0.13,
        leading: CustomIconButton(onPressed: onBack??()=>Get.back(),  backgroundColor: leadingColor).paddingAll(5)
    );
   }

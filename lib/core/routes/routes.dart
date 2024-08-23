@@ -6,6 +6,8 @@ abstract class Routes {
   static const detailTransport = '/detail_transport';
   static const detailTruck = '/detail_truck';
   static const detailDriver = '/detail_driver';
+  static const detailTrip = '/detail_trip';
   static const profile = '/profile';
   static const drivers = '/drivers';
+  static const invoice = '/invoice';
 }

@@ -92,7 +92,7 @@ class DriversPage extends GetView<DriversController> {
         return CustomChip.selector(
           isSelected: item.isSelect,
           paddingAll: 5,
-          color: Colors.white,
+          backgroundColor: Colors.white,
           label: item.title,
           leading: const Icon(Icons.add, size: 18),
           onPressed: () {

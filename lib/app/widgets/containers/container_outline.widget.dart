@@ -29,7 +29,7 @@ class CustomContainerOutline extends StatelessWidget{
   CustomContainerOutline.principal({required this.children, this.onPressed, this.backgroundColor, this.contentPadding=2.5,this.borderWidth=2, this.borderColor, this.radius=30,this.crossAxisAlignment, super.key}){
      border=BoxDecoration(
          color: backgroundColor,
-         borderRadius: BorderRadius.circular(30.0),
+         borderRadius: BorderRadius.circular(radius),
          border:  Border(
              top: BorderSide(width: borderWidth, color: borderColor??Colors.black),
              left: BorderSide(width: borderWidth, color: borderColor??Colors.black),

@@ -36,7 +36,7 @@ class AppBarHome extends StatelessWidget {
             child: const Hero(
                 tag: Keys.animationAppBarToProfile,
                 child: CircleAvatar(
-                    backgroundImage: AssetImage(Paths.profile),
+                    backgroundImage: AssetImage(Paths.profile1),
                     radius: 30.0)),
           ),
           SizedBox(width: Get.width * 0.05),

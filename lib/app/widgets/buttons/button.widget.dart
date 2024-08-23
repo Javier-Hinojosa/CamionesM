@@ -11,8 +11,19 @@ class CustomButton extends StatelessWidget{
   final double? width;
   final Color? backgroundColor;
   final Color? textColor;
+  late final BoxBorder? _border;
 
-  const CustomButton({super.key, this.onPressed,this.onLongPressed, this.title="",this.backgroundColor,this.textColor, this.height,this.width});
+   CustomButton({super.key, this.onPressed,this.onLongPressed, this.title="",this.backgroundColor,this.textColor, this.height,this.width}){
+     _border=const Border(
+         top: BorderSide(width: 2.0, color: Colors.black),
+         left: BorderSide(width: 2.0, color: Colors.black),
+         right: BorderSide(width: 2.0, color: Colors.black),
+         bottom: BorderSide(width: 4.0, color: Colors.black));
+   }
+
+   CustomButton.withoutBorder({super.key, this.onPressed,this.onLongPressed, this.title="",this.backgroundColor,this.textColor, this.height,this.width}){
+     _border=null;
+   }
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +32,7 @@ class CustomButton extends StatelessWidget{
       height: height,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30.0),
-        border: const Border(
-          top: BorderSide(width: 2.0, color: Colors.black),
-          left: BorderSide(width: 2.0, color: Colors.black),
-          right: BorderSide(width: 2.0, color: Colors.black),
-          bottom: BorderSide(width: 4.0, color: Colors.black)
-        )
-      ),
+        border: _border),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(30.0),
         child: ElevatedButton(

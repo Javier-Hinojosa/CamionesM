@@ -2,7 +2,7 @@ import 'package:camionesm/app/widgets/buttons/button.widget.dart';
 import 'package:camionesm/app/widgets/buttons/icon_button.widget.dart';
 import 'package:camionesm/app/widgets/containers/container.widget.dart';
 import 'package:camionesm/app/widgets/containers/container_loading.widget.dart';
-import 'package:camionesm/app/widgets/dotted_divider.widget.dart';
+import 'package:camionesm/app/widgets/dividers/dotted_divider.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
 import 'package:camionesm/core/values/globals.dart';
 import 'package:camionesm/core/values/paths.dart';

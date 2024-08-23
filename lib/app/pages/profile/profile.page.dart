@@ -65,7 +65,7 @@ class ProfilePage extends GetView<ProfileController> {
             child: const Hero(
                 tag: Keys.animationAppBarToProfile,
                 child: CircleAvatar(
-                    backgroundImage: AssetImage(Paths.profile),
+                    backgroundImage: AssetImage(Paths.profile1),
                     radius: 60.0))));
   }
 
@@ -466,9 +466,9 @@ class ProfilePage extends GetView<ProfileController> {
     return CustomContainerOutline.principal(children: [
       CustomTimeLine(items: [
         const BuildTimelineTile(
-            icon: Icons.account_box, text: "Registro", isActive: true),
+            leadingIcon: Icons.account_box, text: "Registro", isActive: true),
         BuildTimelineTile(
-            icon: Icons.create_new_folder_rounded,
+            leadingIcon: Icons.create_new_folder_rounded,
             text: "Documentos",
             trailing: CustomButton(
                 width: Get.width * 0.3,
@@ -477,7 +477,7 @@ class ProfilePage extends GetView<ProfileController> {
                 backgroundColor: Globals.principalColor,
                 onPressed: () {})),
         BuildTimelineTile(
-            icon: Icons.local_shipping,
+            leadingIcon: Icons.local_shipping,
             text: "Registro camiones",
             trailing: CustomButton(
                 width: Get.width * 0.3,
@@ -486,7 +486,7 @@ class ProfilePage extends GetView<ProfileController> {
                 backgroundColor: Globals.principalColor,
                 onPressed: () {})),
         BuildTimelineTile(
-            icon: Icons.group,
+            leadingIcon: Icons.group,
             text: "Registro conductores",
             trailing: CustomButton(
                 width: Get.width * 0.3,
