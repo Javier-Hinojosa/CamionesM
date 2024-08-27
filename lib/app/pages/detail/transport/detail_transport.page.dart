@@ -24,7 +24,7 @@ class DetailTransportPage extends GetView<DetailTransportController> {
   Widget build(BuildContext context) {
     return Scaffold(
         extendBodyBehindAppBar: true,
-        appBar: CustomAppBar(leadingColor: Colors.white, trailing: [
+        appBar: CustomAppBar(trailing: [
           IconButton(
               onPressed: () {},
               icon: const CustomIconButton(

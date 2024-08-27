@@ -4,5 +4,7 @@ enum TypePerson { physicalPerson, moralPerson, none }
 enum WidgetStatus { enabled, disabled, closed }
 enum NavBarItems { home, petitions, trucks,trips, settings }
 enum ProfileItems { myCars, myDrivers, registerNewTrip ,myTrips, solicitudes,myEarnings }
-enum TripsList { actives, inProgress, historical }
+enum TypeTrip { actives, inProgress, historical }
+enum TypePetition { receives, sends, approves }
+enum Archives { jpg, png, pdf, xml }
 

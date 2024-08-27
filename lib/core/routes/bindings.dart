@@ -1,4 +1,5 @@
 import 'package:camionesm/app/pages/detail/driver/detail_driver.controller.dart';
+import 'package:camionesm/app/pages/detail/petition/detail_petition.controller.dart';
 import 'package:camionesm/app/pages/detail/transport/detail_transport.controller.dart';
 import 'package:camionesm/app/pages/detail/trips/detail_trips.controller.dart';
 import 'package:camionesm/app/pages/detail/truck/detail_truck.controller.dart';
@@ -101,6 +102,13 @@ class DetailTripsBinding implements Bindings{
   @override
   void dependencies() {
     Get.lazyPut<DetailTripsController>(()=> DetailTripsController());
+  }
+
+}
+class DetailPetitionBinding implements Bindings{
+  @override
+  void dependencies() {
+    Get.lazyPut<DetailPetitionController>(()=> DetailPetitionController());
   }
 
 }

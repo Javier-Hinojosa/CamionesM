@@ -16,7 +16,7 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:get/get.dart';
 import 'package:latlong2/latlong.dart';
 
-class MyTripCardInProgress extends MyTripCard{
+class MyTripCardInProgress extends MyTripCardContract{
   const MyTripCardInProgress({super.key});
 
 
@@ -129,7 +129,7 @@ class MyTripCardInProgress extends MyTripCard{
                                 title: "Finalizar viaje",
                                 height: Get.height*0.05,
                                 width: Get.width*0.4,
-                                onPressed: ()=>Get.toNamed("${Routes.detailTrip}?type=${TripsList.inProgress}"),
+                                onPressed: ()=>Get.toNamed("${Routes.detailTrip}?type=${TypeTrip.inProgress}"),
                                 backgroundColor: Globals.principalColor)),
                         SizedBox(
                           width: Get.width*0.13,

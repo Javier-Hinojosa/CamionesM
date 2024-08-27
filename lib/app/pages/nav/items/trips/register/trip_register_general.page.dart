@@ -22,7 +22,7 @@ class TripRegisterGeneralPage extends GetView<TripRegisterController>{
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-          appBar: CustomAppBar(leadingColor: Theme.of(context).scaffoldBackgroundColor,backgroundColor: Globals.principalColor),
+          appBar: const CustomAppBar(backgroundColor: Globals.principalColor),
           body: SingleChildScrollView(
               child: Column(children: [
                 const SimpleTitleCard(CustomNotification(child: CircleAvatar(backgroundColor:Colors.white, child: Icon(Icons.flag_outlined))), "Registrar nuevo viaje"),
@@ -206,7 +206,7 @@ class TripRegisterGeneralPage extends GetView<TripRegisterController>{
     var datePicker= TimeOfDay.now();
     final TimeOfDay? pickedTime = await showTimePicker(context: context, initialTime: datePicker);
     if (pickedTime != null) {
-      controller.formRegisterTrip().control(key).value=pickedTime.format(context);
+      controller.formRegisterTrip().control(key).value = pickedTime.format(context);
     }
     return true;
   }

@@ -26,7 +26,6 @@ class TrucksPage extends GetView<TrucksController>{
         floatingActionButton: _floatingButton(),
         appBar: CustomAppBar(
             backgroundColor: Globals.principalColor,
-            leadingColor: Theme.of(context).scaffoldBackgroundColor,
             trailing: [
               SizedBox(
                   width: Get.width*0.15,

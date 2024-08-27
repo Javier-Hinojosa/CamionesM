@@ -1,98 +1,83 @@
-import 'package:camionesm/app/pages/detail/trips/categories/detail_trip_active.page.dart';
-import 'package:camionesm/app/pages/detail/trips/categories/detail_trip_historical.page.dart';
-import 'package:camionesm/app/pages/detail/trips/categories/detail_trip_in_progress.page.dart';
-import 'package:camionesm/app/pages/detail/trips/detail_trips.controller.dart';
+import 'package:camionesm/app/pages/detail/petition/categories/detail_petition_approve.page.dart';
+import 'package:camionesm/app/pages/detail/petition/categories/detail_petition_receive.page.dart';
+import 'package:camionesm/app/pages/detail/petition/categories/detail_petition_send.page.dart';
+import 'package:camionesm/app/pages/detail/petition/detail_petition.controller.dart';
 import 'package:camionesm/app/widgets/app_bar/app_bar.widget.dart';
-import 'package:camionesm/app/widgets/buttons/icon_button.widget.dart';
 import 'package:camionesm/app/widgets/containers/container.widget.dart';
-import 'package:camionesm/app/widgets/map.widget.dart';
+import 'package:camionesm/app/widgets/images/image_assets.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
 import 'package:camionesm/core/values/enums.dart';
 import 'package:camionesm/core/values/globals.dart';
 import 'package:camionesm/core/values/paths.dart';
 import 'package:camionesm/core/values/text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
-class DetailTripsPage extends GetView<DetailTripsController> {
-  const DetailTripsPage({super.key});
+class DetailPetitionPage extends GetView<DetailPetitionController> {
+  const DetailPetitionPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         extendBodyBehindAppBar: true,
         appBar: const CustomAppBar(),
-    body: CustomScrollView(
-      slivers: [
-        _header(context),
-        SliverPadding(
-            padding: const EdgeInsets.all(20),
-            sliver: SliverList(
-                delegate: SliverChildListDelegate([_dynamicPage(context)])))
-      ]));
+        body: CustomScrollView(
+            slivers: [
+              SliverToBoxAdapter(
+                  child: Obx(()=>
+                      Stack(children: [
+                        Column(
+                            children: [
+                              SizedBox(
+                                  height: Get.height * 0.25,
+                                  width: Get.width,
+                                  child: const CustomImageAssets(url:Paths.papers)),
+                              SizedBox(height: Get.height*0.04)
+                            ]),
+                        Positioned(
+                            bottom: 0,
+                            width: Get.width,
+                            child: CustomContainer.circularTop(
+                                elevation: 0,
+                                backgroundColor: Globals.principalColor,
+                                child: _dynamicRow().paddingOnly(left: 10,right: 10)))
+                      ]))),
+              SliverPadding(
+                  padding: const EdgeInsets.all(20),
+                  sliver: SliverList(
+                      delegate: SliverChildListDelegate([_dynamicPage(context)])))
+            ]));
   }
+
 //region privates
-  Widget _customCardMap(BuildContext context) {
-    return SizedBox(
-        height: Get.height * 0.25,
-        width: Get.width,
-        child: Card(
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
-            clipBehavior: Clip.antiAlias,
-            child: CustomFlutterMap(controller.mapController(), haveIntermediary: true)));
-  }
   Widget _dynamicPage(BuildContext context){
-    switch(controller.tripsList()){
-      case TypeTrip.actives: return const DetailTripActivePage();
-      case TypeTrip.inProgress: return const DetailTripInProgressPage();
-      case TypeTrip.historical: return const DetailTripHistoricalPage();
+    switch(controller.petitionsList()){
+      case TypePetition.receives: return const DetailPetitionReceivePage();
+      case TypePetition.sends: return const DetailPetitionSendPage();
+      case TypePetition.approves: return const DetailPetitionApprovePage();
     }
   }
-  Widget _dynamicContainerId(BuildContext context,TypeTrip tripsList){
-    switch(tripsList){
-      case TypeTrip.actives: return rowText(context,"ID ","TR01284");
-      case TypeTrip.inProgress: return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [ CustomText("Viaje en curso",style: titleSmall.apply(color: Colors.white)), rowText(context,"ID ","TR01284",color: Colors.white38) ]);
-      case TypeTrip.historical: return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [ CustomText("Historial",style: titleSmall.apply(color: Colors.white)), rowText(context,"ID ","TR01284",color: Colors.white38) ]);
+  Widget _dynamicRow(){
+    switch(controller.petitionsList()){
+      case TypePetition.receives: return _rowTypePetition(Icons.mail_outline,"Recibidas");
+      case TypePetition.sends: return _rowTypePetition(FontAwesomeIcons.paperPlane,"Enviadas");
+      case TypePetition.approves: return _rowTypePetition(Icons.done_all_outlined,"Aprobadas");
     }
   }
-  SliverToBoxAdapter _header(BuildContext context){
-    return SliverToBoxAdapter(
-        child: Obx(()=>
-            Stack(children: [
-                  Column(
-                      children: [
-                        _customCardMap(context),
-                        SizedBox(height: Get.height*0.04)
-                      ]),
-                  Positioned(
-                      bottom: 0,
-                      width: Get.width,
-                      child: CustomContainer.circularTop(
-                          elevation: 0,
-                          backgroundColor: controller.tripsList()==TypeTrip.actives?null:Colors.black87,
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                    children: [
-                                      SizedBox(
-                                          width: Get.width*0.18,
-                                          child: Card(
-                                              color: Globals.principalColor,
-                                              child: Icon(controller.getIcon(),color: Colors.black,size: 28))),
-                                      SizedBox(width: Get.width*0.02),
-                                      _dynamicContainerId(context,controller.tripsList())
-                                    ]),
-                                SizedBox(
-                                    width: Get.width*.11,
-                                    height: Get.height*0.055,
-                                    child: CustomIconButton(
-                                        icon: Icons.share_outlined,
-                                        backgroundColor: controller.tripsList()==TypeTrip.actives?Colors.black:Globals.principalColor,
-                                        onPressed: (){}))
-                              ]).paddingOnly(left: 10,right: 10)))
-                ])));
-}
+  Widget _rowTypePetition( IconData icon, String title){
+    return Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          SizedBox(
+              width: Get.width*0.18,
+              child: Card(
+                  color: Globals.principalColor,
+                  child: Icon(icon,color: Colors.black,size: 28))),
+          SizedBox(width: Get.width*0.02),
+          CustomText(title,style: titleSmall.apply(color: Colors.white))
+        ]);
+ }
 //endregion
 
 //region public
@@ -141,7 +126,7 @@ class DetailTripsPage extends GetView<DetailTripsController> {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-           ListTile(
+          ListTile(
               contentPadding: const EdgeInsets.all(0),
               minVerticalPadding: 0,
               leading:  CircleAvatar(
@@ -156,7 +141,7 @@ class DetailTripsPage extends GetView<DetailTripsController> {
                   maxLines: 4,
                   style: TextStyle(fontWeight: FontWeight.w800))),
           SizedBox(height: Get.height * 0.02),
-           ListTile(
+          ListTile(
               contentPadding: const EdgeInsets.all(0),
               minVerticalPadding: 0,
               leading:  CircleAvatar(
@@ -174,4 +159,5 @@ class DetailTripsPage extends GetView<DetailTripsController> {
         ]);
   }
 //endregion
+
 }

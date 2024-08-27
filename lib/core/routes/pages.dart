@@ -1,4 +1,5 @@
 import 'package:camionesm/app/pages/detail/driver/detail_driver.page.dart';
+import 'package:camionesm/app/pages/detail/petition/detail_petition.page.dart';
 import 'package:camionesm/app/pages/detail/transport/detail_transport.page.dart';
 import 'package:camionesm/app/pages/detail/trips/detail_trips.page.dart';
 import 'package:camionesm/app/pages/detail/truck/detail_truck.page.dart';
@@ -20,7 +21,7 @@ abstract class Pages {
 
   static final pages = [
     GetPage(
-        name: Routes.splashScreen,
+        name: Routes.splash,
         page: () => const SplashScreenPage(),
         binding: SplashScreenBinding()),
     GetPage(
@@ -38,9 +39,21 @@ abstract class Pages {
         page: () =>  const NavBarPage(),
         binding: NavBarBinding(countryApiService)),
     GetPage(
-      name: Routes.detailTransport,
-      page: ()=> const DetailTransportPage(),
-      binding: DetailTransportBinding()),
+        name: Routes.profile,
+        page: ()=> const ProfilePage(),
+        binding: ProfileBinding()),
+    GetPage(
+        name: Routes.drivers,
+        page: ()=> const DriversPage(),
+        binding: DriversBinding()),
+    GetPage(
+        name: Routes.invoice,
+        page: ()=> const InvoicePage(),
+        binding: InvoiceBinding()),
+    GetPage(
+        name: Routes.detailTransport,
+        page: ()=> const DetailTransportPage(),
+        binding: DetailTransportBinding()),
     GetPage(
         name: Routes.detailTruck,
         page: ()=> const DetailTruckPage(),
@@ -50,20 +63,12 @@ abstract class Pages {
         page: ()=> const DetailTripsPage(),
         binding: DetailTripsBinding()),
     GetPage(
-        name: Routes.profile,
-        page: ()=> const ProfilePage(),
-        binding: ProfileBinding()),
-    GetPage(
-        name: Routes.drivers,
-        page: ()=> const DriversPage(),
-        binding: DriversBinding()),
-    GetPage(
         name: Routes.detailDriver,
         page: ()=> const DetailDriverPage(),
         binding: DetailDriverBinding()),
     GetPage(
-        name: Routes.invoice,
-        page: ()=> const InvoicePage(),
-        binding: InvoiceBinding())
+        name: Routes.detailPetition,
+        page: ()=> const DetailPetitionPage(),
+        binding: DetailPetitionBinding())
   ];
 }

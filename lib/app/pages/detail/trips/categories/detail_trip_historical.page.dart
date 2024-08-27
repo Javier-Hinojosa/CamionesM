@@ -1,3 +1,4 @@
+import 'package:camionesm/app/pages/detail/trips/contract/detail_trip.contract.dart';
 import 'package:camionesm/app/pages/detail/trips/detail_trips.page.dart';
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
 import 'package:camionesm/app/widgets/buttons/icon_button.widget.dart';
@@ -12,7 +13,7 @@ import 'package:camionesm/core/values/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class DetailTripHistoricalPage extends DetailTripsPage {
+class DetailTripHistoricalPage extends DetailTripContract {
   const DetailTripHistoricalPage({super.key});
 
   @override

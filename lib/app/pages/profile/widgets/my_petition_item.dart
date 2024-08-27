@@ -10,8 +10,8 @@ import 'package:camionesm/core/values/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class MyCustomTransportItem extends StatelessWidget {
-  const MyCustomTransportItem(
+class MyCustomPetitionItem extends StatelessWidget {
+  const MyCustomPetitionItem(
       {super.key, this.onPressedReject, this.onPressedAccept});
 
   final void Function()? onPressedReject;

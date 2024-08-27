@@ -1,15 +1,15 @@
+import 'package:camionesm/app/pages/detail/trips/contract/detail_trip.contract.dart';
 import 'package:camionesm/app/pages/detail/trips/detail_trips.page.dart';
 import 'package:camionesm/app/widgets/containers/container_outline.widget.dart';
 import 'package:camionesm/app/widgets/dividers/dotted_divider.widget.dart';
 import 'package:camionesm/app/widgets/images/image_circle.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
-import 'package:camionesm/core/values/globals.dart';
 import 'package:camionesm/core/values/paths.dart';
 import 'package:camionesm/core/values/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class DetailTripActivePage extends DetailTripsPage {
+class DetailTripActivePage extends DetailTripContract {
   const DetailTripActivePage({super.key});
 
   @override

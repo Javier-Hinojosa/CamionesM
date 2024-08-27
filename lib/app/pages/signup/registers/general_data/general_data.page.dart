@@ -52,8 +52,7 @@ class GeneralDataPage extends GetView<GeneralDataController>{
                CustomReactiveTextField(Keys.rfcGD,
                    labelText: "RFC",
                    hintText: "RFC",
-                   keyboard: TextInputType.text),
-
+                   keyboard: TextInputType.text)
              ])),
        Obx(()=>CustomButton(title: "Siguiente",
                onPressed: controller.isValid()?()=>controller.onFinish():null,

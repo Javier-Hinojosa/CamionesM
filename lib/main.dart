@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
       //locale: Get.deviceLocale,
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
-      initialRoute: Routes.splashScreen,
+      initialRoute: Routes.splash,
       defaultTransition: Transition.cupertino,
       initialBinding: SplashScreenBinding(),
       getPages: Pages.pages,

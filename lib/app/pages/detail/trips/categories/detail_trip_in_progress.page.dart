@@ -1,4 +1,4 @@
-import 'package:camionesm/app/pages/detail/trips/detail_trips.page.dart';
+import 'package:camionesm/app/pages/detail/trips/contract/detail_trip.contract.dart';
 import 'package:camionesm/app/utils/dialog.utils.dart';
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
 import 'package:camionesm/app/widgets/buttons/icon_button.widget.dart';
@@ -6,7 +6,6 @@ import 'package:camionesm/app/widgets/containers/container.widget.dart';
 import 'package:camionesm/app/widgets/containers/container_outline.widget.dart';
 import 'package:camionesm/app/widgets/dividers/dotted_divider.widget.dart';
 import 'package:camionesm/app/widgets/images/image_assets.widget.dart';
-import 'package:camionesm/app/widgets/images/image_circle.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
 import 'package:camionesm/app/widgets/textfield_pin.widget.dart';
 import 'package:camionesm/app/widgets/time_line.widget.dart';
@@ -19,7 +18,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 
-class DetailTripInProgressPage extends DetailTripsPage {
+class DetailTripInProgressPage extends DetailTripContract {
   const DetailTripInProgressPage({super.key});
 
   @override

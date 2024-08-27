@@ -21,9 +21,7 @@ class TripsPage extends GetView<TripsController>{
   Widget build(BuildContext context) {
     return Scaffold(
         floatingActionButton: _floatingButton(),
-        appBar: CustomAppBar(
-            backgroundColor: Globals.principalColor,
-            leadingColor: Theme.of(context).scaffoldBackgroundColor),
+        appBar: const CustomAppBar(backgroundColor: Globals.principalColor),
         body: SingleChildScrollView(
             child: Column(children: [
               const SimpleTitleCard(CustomNotification(child: CircleAvatar(backgroundColor:Colors.white, child: Icon(Icons.flag_outlined))), "Mis viajes"),
@@ -130,7 +128,7 @@ class ItemTripColumnType extends StatelessWidget{
   final String subtitle;
   final bool visible;
   final Enum id;
-  final List<MyTripCard>? cards;
+  final List<MyTripCardContract>? cards;
   const ItemTripColumnType(this.id,this.title,this.subtitle,{super.key,this.cards, this.visible=true});
 
   @override

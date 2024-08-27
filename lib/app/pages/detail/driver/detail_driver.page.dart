@@ -23,7 +23,7 @@ class DetailDriverPage extends GetView<DetailDriverController> {
   Widget build(BuildContext context) {
     return Scaffold(
         extendBodyBehindAppBar: true,
-        appBar: const CustomAppBar(leadingColor: Colors.white),
+        appBar: const CustomAppBar(),
         body: Obx(() => CustomScrollView(slivers: [
           SliverToBoxAdapter(
             child: Stack(

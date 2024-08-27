@@ -58,7 +58,7 @@ class SingUp3Page extends GetView<SingUpController> {
                   WidgetStatus.enabled),
               CustomButton(
                       title: "Guardar y salir",
-                      onPressed: () => Get.toNamed(Routes.splashScreen))
+                      onPressed: () => Get.toNamed(Routes.splash))
                   .paddingAll(10),
               CustomButton(
                       title: "Siguiente",

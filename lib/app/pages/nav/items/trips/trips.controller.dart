@@ -1,7 +1,7 @@
+import 'package:camionesm/app/pages/nav/items/trips/categories/my_trip_card_active.widget.dart';
+import 'package:camionesm/app/pages/nav/items/trips/categories/my_trip_card_historical.widget.dart';
+import 'package:camionesm/app/pages/nav/items/trips/categories/my_trip_card_in_progress.widget.dart';
 import 'package:camionesm/app/pages/nav/items/trips/trips.page.dart';
-import 'package:camionesm/app/pages/nav/items/trips/widgets/my_trip_card_active.widget.dart';
-import 'package:camionesm/app/pages/nav/items/trips/widgets/my_trip_card_historical.widget.dart';
-import 'package:camionesm/app/pages/nav/items/trips/widgets/my_trip_card_in_progress.widget.dart';
 import 'package:camionesm/core/values/enums.dart';
 import 'package:camionesm/data/models/items/check.item.dart';
 import 'package:camionesm/data/models/items/generic_check.item.dart';
@@ -16,9 +16,9 @@ class TripsController extends GetxController{
   final mapController= MapController().obs;
 
   final typeListTrips = [
-        GenericCheck(TripsList.actives, "Activos",Icons.history_toggle_off_outlined,isSelect: true),
-        GenericCheck(TripsList.inProgress, "En curso",Icons.sensors_outlined),
-        GenericCheck(TripsList.historical, "Historial",Icons.book_outlined)].obs;
+        GenericCheck(TypeTrip.actives, "Activos",Icons.history_toggle_off_outlined,isSelect: true),
+        GenericCheck(TypeTrip.inProgress, "En curso",Icons.sensors_outlined),
+        GenericCheck(TypeTrip.historical, "Historial",Icons.book_outlined)].obs;
   final  columns= <ItemTripColumnType>[].obs;
 
   final tripsFilter= <CheckItem>[
@@ -83,17 +83,17 @@ class TripsController extends GetxController{
   }
   void _filledColumns() {
     columns.addAll([
-      ItemTripColumnType(TripsList.actives,"Viajes Activos", "Tus viajes registrados visibles para usuarios que deseen mandar una solicitud de envío.",
+      ItemTripColumnType(TypeTrip.actives,"Viajes Activos", "Tus viajes registrados visibles para usuarios que deseen mandar una solicitud de envío.",
           cards: [
             MyTripCardActive(onDelete: ()=>onDeleteItem()),
             MyTripCardActive(onDelete: ()=>onDeleteItem())
           ]),
-      const ItemTripColumnType(TripsList.inProgress,"Viajes en curso", "Visualiza tus viajes ya iniciados o en curso.",
+      const ItemTripColumnType(TypeTrip.inProgress,"Viajes en curso", "Visualiza tus viajes ya iniciados o en curso.",
           cards: [
             MyTripCardInProgress(),
             MyTripCardInProgress()
           ]),
-      const ItemTripColumnType(TripsList.historical,"Tu historial","Visualiza el historial de todos tus viajes.",
+      const ItemTripColumnType(TypeTrip.historical,"Tu historial","Visualiza el historial de todos tus viajes.",
           cards:[
             MyTripCardHistorical(),
             MyTripCardHistorical()

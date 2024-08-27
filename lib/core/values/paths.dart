@@ -23,8 +23,10 @@ class Paths {
   static const String briefcase = 'assets/icons/briefcase.png';
   static const String locations = 'assets/images/locations.png';
   static const String officeBag = 'assets/images/office_bag.png';
+  static const String chartMail = 'assets/images/chart_mail.png';
   static const String personPlus = 'assets/icons/person_plus.png';
   static const String filterList = 'assets/icons/filter_list.png';
+  static const String chartBills = 'assets/images/chart_bills.png';
   static const String chartsIcon = 'assets/images/charts_icon.png';
   static const String personIcon = 'assets/images/person_icon.png';
   static const String aerialTruck = 'assets/icons/aerial_truck.png';

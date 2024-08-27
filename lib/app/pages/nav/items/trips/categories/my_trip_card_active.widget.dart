@@ -15,7 +15,7 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:get/get.dart';
 import 'package:latlong2/latlong.dart';
 
-class MyTripCardActive extends MyTripCard {
+class MyTripCardActive extends MyTripCardContract {
    const MyTripCardActive({super.key, required this.onDelete});
 
 
@@ -111,11 +111,11 @@ class MyTripCardActive extends MyTripCard {
                                 height: Get.height*0.05,
                                 width: Get.width*0.4,
                                 backgroundColor: Globals.principalColor,
-                                onPressed: ()=>Get.toNamed("${Routes.detailTrip}?type=${TripsList.actives}"))),
+                                onPressed: ()=>Get.toNamed("${Routes.detailTrip}?type=${TypeTrip.actives}"))),
                          Row(
                           children: [
                             GestureDetector(
-                              onTap: ()=>Get.toNamed("${Routes.detailTrip}?type=${TripsList.actives}&isEdit=true"),
+                              onTap: ()=>Get.toNamed("${Routes.detailTrip}?type=${TypeTrip.actives}&isEdit=true"),
                               child:  CircleAvatar(
                                   backgroundColor: Theme.of(context).disabledColor.withOpacity(0.1),
                                   child: const Icon(Icons.edit_outlined))),

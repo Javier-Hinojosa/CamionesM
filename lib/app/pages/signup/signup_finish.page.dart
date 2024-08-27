@@ -15,10 +15,10 @@ class SignUpFinishPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PopScope(
-      onPopInvokedWithResult: (didPop, result) => Get.toNamed(Routes.splashScreen),
+      onPopInvokedWithResult: (didPop, result) => Get.toNamed(Routes.splash),
       child: Scaffold(
           extendBodyBehindAppBar: true,
-          appBar: CustomAppBar(onBack: () => Get.toNamed(Routes.splashScreen)),
+          appBar: CustomAppBar(onBack: () => Get.toNamed(Routes.splash)),
           body: ListView(shrinkWrap: true, children: [
             Container(padding: const EdgeInsets.all(50)),
             Align(
@@ -42,7 +42,7 @@ class SignUpFinishPage extends StatelessWidget {
             CustomButton(
                 backgroundColor: Globals.principalColor,
                 title: "Continuar",
-                onPressed: () => Get.toNamed(Routes.splashScreen)).paddingAll(10),
+                onPressed: () => Get.toNamed(Routes.splash)).paddingAll(10),
           ]).paddingAll(15)),
     );
   }

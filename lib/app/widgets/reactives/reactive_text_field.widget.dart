@@ -99,12 +99,8 @@ class CustomReactiveTextField extends StatelessWidget {
               obscureText: isPass,
               clipBehavior: Clip.none,
               scrollPhysics: const NeverScrollableScrollPhysics(),
-              showCursor: true,
-            ),
-          ),
-        ],
-      )
-    );
+              showCursor: true))
+        ]));
   }
 }
 

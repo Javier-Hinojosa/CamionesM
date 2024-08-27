@@ -150,21 +150,7 @@ class TrucksRegisterController extends GetxController{
   }
 
 
-  void pickFile() async {
-    final result = await FilePicker.platform.pickFiles(
-      type: FileType.custom,
-      allowedExtensions: ['pdf', 'jpg', 'png'],
-    );
 
-    if (result != null && result.files.single.path != null) {
-      selectedFile.value = File(result.files.single.path!);
-      if (selectedFile.value!.path.endsWith('.pdf')) {
-        pdfController = PdfController(document: PdfDocument.openFile(selectedFile.value!.path));
-      } else {
-        pdfController = null;
-      }
-    }
-  }
 
   void pickImage() async {
     final pickedFile = await ImagePicker().pickImage(source: ImageSource.gallery);

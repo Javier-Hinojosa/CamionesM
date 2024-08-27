@@ -18,7 +18,7 @@ class TrucksRegisterSpecificPage extends GetView<TrucksRegisterController>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(leadingColor: Theme.of(context).scaffoldBackgroundColor,backgroundColor: Globals.principalColor),
+      appBar: const CustomAppBar(backgroundColor: Globals.principalColor),
       bottomSheet: _customBottom(context),
       body: SingleChildScrollView(
         child: Column(children: [

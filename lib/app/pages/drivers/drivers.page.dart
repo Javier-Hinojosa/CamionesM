@@ -23,9 +23,7 @@ class DriversPage extends GetView<DriversController> {
   Widget build(BuildContext context) {
     return Scaffold(
         floatingActionButton: _floatingButton(),
-        appBar:  CustomAppBar(
-            backgroundColor: Globals.principalColor,
-            leadingColor: Theme.of(context).scaffoldBackgroundColor),
+        appBar:  const CustomAppBar(backgroundColor: Globals.principalColor),
         body:  SingleChildScrollView(
             child: Column(
               children: [

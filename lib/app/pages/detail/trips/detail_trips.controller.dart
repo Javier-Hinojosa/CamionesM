@@ -8,7 +8,7 @@ import 'package:latlong2/latlong.dart';
 class DetailTripsController extends GetxController{
 
   final mapController= MapControllerItem.empty().obs;
-  final Rx<TripsList> tripsList= TripsList.actives.obs;
+  final Rx<TypeTrip> tripsList= TypeTrip.actives.obs;
   final Rx<bool> isEdit= false.obs;
   final textEditingPinLock = TextEditingController().obs;
 
@@ -25,11 +25,12 @@ class DetailTripsController extends GetxController{
   void onClose() {
     super.onClose();
     mapController().mapController.dispose();
+    mapController.close();
   }
 
   void _assignPage(){
    if(Get.parameters.isNotEmpty){
-     tripsList.value = TripsList.values.firstWhere(
+     tripsList.value = TypeTrip.values.firstWhere(
              (e) => e.toString() == Get.parameters['type'],
          orElse: () => throw Exception('Invalid type'));
      if(Get.parameters['isEdit']!=null) {
@@ -42,14 +43,9 @@ class DetailTripsController extends GetxController{
 
   IconData getIcon(){
     switch(tripsList()){
-      case TripsList.actives: return Icons.history_toggle_off_outlined;
-      case TripsList.inProgress:return Icons.sensors_outlined;
-      case TripsList.historical:return Icons.book_outlined;
+      case TypeTrip.actives: return Icons.history_toggle_off_outlined;
+      case TypeTrip.inProgress:return Icons.sensors_outlined;
+      case TypeTrip.historical:return Icons.book_outlined;
     }
   }
-
-
-
-
-
 }

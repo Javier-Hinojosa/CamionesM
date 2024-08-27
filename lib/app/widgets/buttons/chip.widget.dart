@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 class CustomChip extends StatelessWidget{
 
   final String label;
+  final Color? labelColor;
   final Color? backgroundColor;
   final Widget? leading;
   final double paddingAll;
@@ -14,7 +15,7 @@ class CustomChip extends StatelessWidget{
   final void Function()? onPressed;
   late final Widget _child;
 
-   CustomChip({super.key, required this.label,this.borderRadius=30,this.borderColor,this.borderWidth, this.backgroundColor, this.paddingAll=7, this.leading, this.onPressed}){
+   CustomChip({super.key, required this.label,this.labelColor,this.borderRadius=30,this.borderColor,this.borderWidth, this.backgroundColor, this.paddingAll=7, this.leading, this.onPressed}){
      _child=Container(
        padding: EdgeInsets.all(paddingAll),
        decoration: BoxDecoration(
@@ -31,7 +32,7 @@ class CustomChip extends StatelessWidget{
            ],
            Text(
              label,
-             style: TextStyle(color:backgroundColor==Colors.white?Colors.black:null))
+             style: TextStyle(color:backgroundColor==Colors.white?Colors.black:labelColor))
          ]));
    }
 
@@ -40,6 +41,7 @@ class CustomChip extends StatelessWidget{
     this.borderRadius=30,
     this.borderColor,
     this.backgroundColor,
+    this.labelColor,
     this.borderWidth,
     Color? colorDisable,
     this.leading, this.paddingAll=15, this.onPressed}){
@@ -56,7 +58,7 @@ class CustomChip extends StatelessWidget{
       backgroundColor: !isSelected?backgroundColor:(colorDisable??Colors.black),
       label: Text(label),
       elevation: 2,
-      labelStyle: TextStyle(color:backgroundColor==Colors.white?Colors.black:null));
+      labelStyle: TextStyle(color:backgroundColor==Colors.white?Colors.black:labelColor));
   }
 
   @override

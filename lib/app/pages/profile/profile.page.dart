@@ -1,5 +1,5 @@
 import 'package:camionesm/app/pages/profile/profile.controller.dart';
-import 'package:camionesm/app/pages/profile/widgets/my_transport_item.dart';
+import 'package:camionesm/app/pages/profile/widgets/my_petition_item.dart';
 import 'package:camionesm/app/utils/dialog.utils.dart';
 import 'package:camionesm/app/widgets/app_bar/app_bar_undulated.widget.dart';
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
@@ -143,11 +143,11 @@ class ProfilePage extends GetView<ProfileController> {
                     height: Get.height * 0.69,
                     child:
                         ListView(scrollDirection: Axis.horizontal, children: [
-                      MyCustomTransportItem(
+                      MyCustomPetitionItem(
                           onPressedAccept: () {}, onPressedReject: () {}),
-                      MyCustomTransportItem(
+                      MyCustomPetitionItem(
                           onPressedAccept: () {}, onPressedReject: () {}),
-                      MyCustomTransportItem(
+                      MyCustomPetitionItem(
                           onPressedAccept: () {}, onPressedReject: () {})
                     ]))
               ]))),

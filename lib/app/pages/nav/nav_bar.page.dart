@@ -13,11 +13,10 @@ class NavBarPage extends GetView<NavBarController>{
       onPopInvokedWithResult: (didPop, result) => controller.onItemTapped(0),
       child: Obx(()=>Scaffold(
         body: PageView(
+          onPageChanged: (value) => controller.onItemTapped(value),
             controller: controller.pageController(),
             children: NavBarController.navItems.map((e) => e.page).toList()),
-        bottomNavigationBar: _customNavBar(context)
-      )),
-    );
+        bottomNavigationBar: _customNavBar(context))));
   }
 
   Widget _customNavBar(BuildContext context) {
@@ -26,8 +25,9 @@ class NavBarPage extends GetView<NavBarController>{
       onTap: (index) => controller.onItemTapped(index),
       items: NavBarController.navItems.map((e) =>
           BottomNavigationBarItem(
-              icon:  CustomNotification(haveNotification: e.haveNotification, child: Icon(e.icon, size: 25)),
-              label: e.label)).toList()
-    );
+              label: e.label,
+              icon:  CustomNotification(
+                  haveNotification: e.haveNotification,
+                  child: Icon(e.icon, size: 25)))).toList());
   }
 }

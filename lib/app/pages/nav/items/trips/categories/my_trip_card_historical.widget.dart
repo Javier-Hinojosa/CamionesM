@@ -15,7 +15,7 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:get/get.dart';
 import 'package:latlong2/latlong.dart';
 
-class MyTripCardHistorical extends MyTripCard {
+class MyTripCardHistorical extends MyTripCardContract {
   const MyTripCardHistorical({super.key});
 
 
@@ -128,7 +128,7 @@ class MyTripCardHistorical extends MyTripCard {
                           title: "Ver detalles",
                           height: Get.height*0.05,
                           width: Get.width*0.4,
-                          onPressed: ()=>Get.toNamed("${Routes.detailTrip}?type=${TripsList.historical}"),
+                          onPressed: ()=>Get.toNamed("${Routes.detailTrip}?type=${TypeTrip.historical}"),
                           backgroundColor: Globals.principalColor)),
                   SizedBox(height: Get.height * 0.02)
                 ]).paddingAll(5)).paddingOnly(top: 10,bottom: 10);

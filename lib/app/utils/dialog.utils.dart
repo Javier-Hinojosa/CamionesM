@@ -18,8 +18,9 @@ class DialogUtils {
         content: SizedBox(width: Get.width, child: child),
         actions: options,insetPadding: const EdgeInsets.all(15)));
     }catch(e){
-      return true;
       onClose;
+      return true;
+
     }
   }
 
