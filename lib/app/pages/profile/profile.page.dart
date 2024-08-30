@@ -82,7 +82,7 @@ class ProfilePage extends GetView<ProfileController> {
         ]),
         SizedBox(height: Get.height * 0.02),
         Card(
-                elevation: 0,
+                elevation: 5,
                 color: Colors.white,
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

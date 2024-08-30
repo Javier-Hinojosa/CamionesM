@@ -9,7 +9,6 @@ import 'package:camionesm/app/widgets/images/image_assets.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
 import 'package:camionesm/app/widgets/textfield_pin.widget.dart';
 import 'package:camionesm/app/widgets/time_line.widget.dart';
-import 'package:camionesm/core/routes/routes.dart';
 import 'package:camionesm/core/values/globals.dart';
 import 'package:camionesm/core/values/paths.dart';
 import 'package:camionesm/core/values/text_styles.dart';
@@ -164,13 +163,13 @@ class DetailTripInProgressPage extends DetailTripContract {
         shrinkWrap: true,
         children: [
           SizedBox(
-              width: Get.width*0.3,
+              width: Get.width*0.4,
               height: Get.height*0.16,
               child: CircleAvatar(
                   backgroundColor: Theme.of(context).disabledColor.withOpacity(0.1),
                   radius: 30,
                   child: CustomImageAssets(
-                      width: Get.width*0.14,
+                      width: Get.width*0.15,
                       height: Get.height*0.07,
                       url: Paths.padlock).paddingAll(10))),
           SizedBox(height: Get.height*0.02),
@@ -205,10 +204,10 @@ class DetailTripInProgressPage extends DetailTripContract {
           SizedBox(height: Get.height*0.02),
           CustomButton(
               title: "Emitir factura",
-              onPressed: () =>Get.toNamed(Routes.invoice),
+              onPressed: () =>DialogUtils.closeDialog(),
               backgroundColor: Globals.principalColor).paddingOnly(left: 10, right: 10),
           SizedBox(height: Get.height*0.02)
-        ]));
+        ])).whenComplete(()=>Get.close(2));
   }
 
 

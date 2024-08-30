@@ -6,6 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class DialogUtils {
+
+  ///[closeDialog]close the dialog correctly
+  static closeDialog()=>Get.back(result: true);
+
   static Future<bool> dialog({required Widget child, List<TextButton>? options,AlignmentGeometry? align,void onClose}) async {
     try{
       return await Get.dialog(AlertDialog(
@@ -18,9 +22,7 @@ class DialogUtils {
         content: SizedBox(width: Get.width, child: child),
         actions: options,insetPadding: const EdgeInsets.all(15)));
     }catch(e){
-      onClose;
-      return true;
-
+      return false;
     }
   }
 
@@ -47,8 +49,6 @@ class DialogUtils {
       return true;
     }
   }
-
-
 
 }
 

@@ -44,7 +44,7 @@ class MyTripCardActive extends MyTripCardContract {
                   _customCardMap(context),
                   _customCardReduce(context, "Calcular ganancia"),
                   SizedBox(height: Get.height * 0.02),
-                   CustomText("Registro de tu viaje",style: TextStyle(color: Theme.of(context).disabledColor.withOpacity(0.8))),
+                  CustomText("Registro de tu viaje",style: TextStyle(color: Theme.of(context).disabledColor.withOpacity(0.8))),
                   SizedBox(height: Get.height * 0.01),
                   Align(alignment: Alignment.centerLeft, child: CustomText("Puebla a CDMX", style: titleMedium.apply(fontSizeDelta: 2))),
                   SizedBox(height: Get.height * 0.02),
@@ -192,7 +192,7 @@ class MyTripCardActive extends MyTripCardContract {
     const disableColor = Colors.transparent;
     return CustomContainer(
         backgroundColor: disableColor,
-        circularRadius: 15,
+        radius: 15,
         child: Align(
             alignment: Alignment.centerRight,
             child: CustomText(title,

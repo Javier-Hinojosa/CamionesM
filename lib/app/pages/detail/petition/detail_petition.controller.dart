@@ -1,5 +1,6 @@
 import 'package:camionesm/core/values/enums.dart';
 import 'package:camionesm/data/models/items/map_controller.item.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:latlong2/latlong.dart';
 
@@ -7,6 +8,8 @@ class DetailPetitionController extends GetxController{
 
   final mapController= MapControllerItem.empty().obs;
   final Rx<TypePetition> petitionsList= TypePetition.receives.obs;
+
+  final textEditingPinLock = TextEditingController().obs;
 
   @override
   void onInit() {

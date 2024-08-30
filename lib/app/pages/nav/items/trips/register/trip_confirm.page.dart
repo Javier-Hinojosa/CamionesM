@@ -157,7 +157,7 @@ class TripConfirmPage extends GetView<TripRegisterController>{
     const disableColor = Colors.transparent;
     return CustomContainer(
         backgroundColor: disableColor,
-        circularRadius: 15,
+        radius: 15,
         child: Align(
             alignment: Alignment.centerRight,
             child: CustomText(title,

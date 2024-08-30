@@ -4,6 +4,7 @@ import 'package:camionesm/app/pages/detail/transport/detail_transport.page.dart'
 import 'package:camionesm/app/pages/detail/trips/detail_trips.page.dart';
 import 'package:camionesm/app/pages/detail/truck/detail_truck.page.dart';
 import 'package:camionesm/app/pages/drivers/drivers.page.dart';
+import 'package:camionesm/app/pages/earnings/earnings.page.dart';
 import 'package:camionesm/app/pages/invoice/invoice.page.dart';
 import 'package:camionesm/app/pages/login/login.page.dart';
 import 'package:camionesm/app/pages/nav/nav_bar.page.dart';
@@ -50,6 +51,10 @@ abstract class Pages {
         name: Routes.invoice,
         page: ()=> const InvoicePage(),
         binding: InvoiceBinding()),
+    GetPage(
+        name: Routes.earnings,
+        page: ()=> const EarningsPage(),
+        binding: EarningsBinding()),
     GetPage(
         name: Routes.detailTransport,
         page: ()=> const DetailTransportPage(),

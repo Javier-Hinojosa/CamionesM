@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 
-class MapControllerItem{
+class MapControllerItem {
   late final MapController _mapController;
   final LatLng startLocation;
   final  LatLng endLocation;
@@ -33,8 +33,9 @@ class MapControllerItem{
           CameraFit.bounds(
               padding:const EdgeInsets.all(20.0),
               minZoom: 5,
-              maxZoom: 16,
-              bounds: LatLngBounds(startLocation, endLocation)));
+              forceIntegerZoomLevel: true,
+              maxZoom: 100,
+              bounds: LatLngBounds(startLocation, _intermediaryLocation)));
     });
   }
 

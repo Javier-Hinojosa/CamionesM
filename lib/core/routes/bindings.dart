@@ -5,6 +5,7 @@ import 'package:camionesm/app/pages/detail/trips/detail_trips.controller.dart';
 import 'package:camionesm/app/pages/detail/truck/detail_truck.controller.dart';
 import 'package:camionesm/app/pages/drivers/drivers.controller.dart';
 import 'package:camionesm/app/pages/drivers/register/driver_register.controller.dart';
+import 'package:camionesm/app/pages/earnings/eanings.controller.dart';
 import 'package:camionesm/app/pages/invoice/invoice.controller.dart';
 import 'package:camionesm/app/pages/login/login.controller.dart';
 import 'package:camionesm/app/pages/nav/items/home/home.controller.dart';
@@ -64,10 +65,10 @@ class NavBarBinding implements Bindings  {
     Get.lazyPut<PetitionsController>(() => PetitionsController(),fenix: true);
 
     Get.lazyPut<TrucksController>(()=> TrucksController(), fenix: true);
-    Get.lazyPut<TrucksRegisterController>(() => TrucksRegisterController());
+    Get.lazyPut<TrucksRegisterController>(() => TrucksRegisterController(),fenix: true);
 
     Get.lazyPut<TripsController>(() => TripsController(),fenix: true);
-    Get.lazyPut<TripRegisterController>(() => TripRegisterController(iCountryService));
+    Get.lazyPut<TripRegisterController>(() => TripRegisterController(iCountryService),fenix: true);
 
     Get.lazyPut<SettingsController>(() => SettingsController(),fenix: true);
   }
@@ -137,5 +138,11 @@ class InvoiceBinding implements Bindings{
     Get.lazyPut<InvoiceController>(()=> InvoiceController());
   }
 
+}
+class EarningsBinding implements Bindings{
+  @override
+  void dependencies() {
+    Get.lazyPut<EarningsController>(()=> EarningsController());
+  }
 }
 

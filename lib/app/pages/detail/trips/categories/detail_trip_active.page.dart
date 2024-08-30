@@ -1,5 +1,4 @@
 import 'package:camionesm/app/pages/detail/trips/contract/detail_trip.contract.dart';
-import 'package:camionesm/app/pages/detail/trips/detail_trips.page.dart';
 import 'package:camionesm/app/widgets/containers/container_outline.widget.dart';
 import 'package:camionesm/app/widgets/dividers/dotted_divider.widget.dart';
 import 'package:camionesm/app/widgets/images/image_circle.widget.dart';

@@ -23,9 +23,9 @@ class PetitionsController extends GetxController{
 
 
   final typeListPetitions = [
-    GenericCheck(TypePetition.receives, "Recibidas",Icons.mail_outline,isSelect: true),
-    GenericCheck(TypePetition.sends, "Enviadas",FontAwesomeIcons.paperPlane),
-    GenericCheck(TypePetition.approves, "Aprobadas",Icons.done_all_outlined)
+    GenericCheck(TypePetition.receives, "Recibidas",icon: Icons.mail_outline,isSelect: true),
+    GenericCheck(TypePetition.sends, "Enviadas",icon:  FontAwesomeIcons.paperPlane),
+    GenericCheck(TypePetition.approves, "Aprobadas",icon: Icons.done_all_outlined)
   ].obs;
 
   @override

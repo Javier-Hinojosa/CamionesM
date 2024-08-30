@@ -19,7 +19,7 @@ class HomeCardFilter extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return CustomContainer(
       backgroundColor: Globals.secondColor,
-      circularRadius: 60,
+      radius: 60,
       child: SizedBox(
         width: Get.width,
         height: Get.height * .06,

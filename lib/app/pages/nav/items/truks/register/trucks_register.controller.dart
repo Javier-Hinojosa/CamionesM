@@ -4,7 +4,6 @@ import 'package:camionesm/app/pages/nav/items/truks/register/trucks_register_fin
 import 'package:camionesm/app/pages/nav/nav_bar.controller.dart';
 import 'package:camionesm/core/values/globals.dart';
 import 'package:camionesm/core/values/keys.dart';
-import 'package:file_picker/file_picker.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:pdfx/pdfx.dart';

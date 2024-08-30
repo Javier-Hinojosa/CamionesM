@@ -14,7 +14,7 @@ class CustomFlutterMap extends StatelessWidget{
   Widget build(BuildContext context) {
     return FlutterMap(
         mapController: mapControllerItem.mapController,
-        options: const MapOptions(minZoom: 5, maxZoom: 16),
+        options: const MapOptions(),
         children: [
           TileLayer(urlTemplate: Globals.templateURL,
               userAgentPackageName: Globals.packageName,

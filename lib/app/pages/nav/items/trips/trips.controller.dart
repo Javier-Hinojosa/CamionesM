@@ -16,9 +16,9 @@ class TripsController extends GetxController{
   final mapController= MapController().obs;
 
   final typeListTrips = [
-        GenericCheck(TypeTrip.actives, "Activos",Icons.history_toggle_off_outlined,isSelect: true),
-        GenericCheck(TypeTrip.inProgress, "En curso",Icons.sensors_outlined),
-        GenericCheck(TypeTrip.historical, "Historial",Icons.book_outlined)].obs;
+        GenericCheck(TypeTrip.actives, "Activos",icon: Icons.history_toggle_off_outlined,isSelect: true),
+        GenericCheck(TypeTrip.inProgress, "En curso",icon: Icons.sensors_outlined),
+        GenericCheck(TypeTrip.historical, "Historial",icon: Icons.book_outlined)].obs;
   final  columns= <ItemTripColumnType>[].obs;
 
   final tripsFilter= <CheckItem>[
