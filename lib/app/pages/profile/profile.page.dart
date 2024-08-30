@@ -501,14 +501,15 @@ class ProfilePage extends GetView<ProfileController> {
   Widget _customCardDataPersonal(BuildContext context) {
     return CustomContainerExpandable(
         contentPadding: 0,
+        tilePadding: const EdgeInsets.only(right: 20,left: 10),
         title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             mainAxisSize: MainAxisSize.max,
             children: [
               CustomText("Datos generales", style: titleMedium),
               SizedBox(
-                  height: Get.height * 0.05,
-                  width: Get.width * 0.12,
+                  height: Get.height * 0.04,
+                  width: Get.width * 0.09,
                   child: CustomIconButton(
                       onPressed: () =>
                           controller.isActive(!controller.isActive()),
@@ -553,7 +554,7 @@ class ProfilePage extends GetView<ProfileController> {
                                 onPressed: controller.isValid()
                                     ? () => controller.onFinishGeneralCard()
                                     : null))
-                        .paddingOnly(top: 10, left: 10))
+                        .paddingOnly(top: 10, left: 10,bottom: 10))
               ])))
         ]);
   }
@@ -561,6 +562,7 @@ class ProfilePage extends GetView<ProfileController> {
   Widget _customCardDirection(BuildContext context) {
     return CustomContainerExpandable(
         contentPadding: 0,
+        tilePadding: const EdgeInsets.only(right: 20,left: 10),
         title: CustomText("Dirección", style: titleMedium),
         children: const []);
   }
@@ -568,6 +570,7 @@ class ProfilePage extends GetView<ProfileController> {
   Widget _customCardDocuments(BuildContext context) {
     return CustomContainerExpandable(
         contentPadding: 0,
+        tilePadding: const EdgeInsets.only(right: 20,left: 10),
         title: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.max,

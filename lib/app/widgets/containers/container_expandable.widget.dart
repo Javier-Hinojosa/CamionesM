@@ -27,6 +27,7 @@ class CustomContainerExpandable extends CustomContainerOutline {
         child: Container(
             decoration: border,
             child: ExpansionTile(
+              clipBehavior: Clip.none,
               minTileHeight: Get.height*0.04,
               tilePadding: tilePadding??EdgeInsets.zero,
               title: title,
