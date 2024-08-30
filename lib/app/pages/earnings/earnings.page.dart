@@ -1,12 +1,14 @@
 import 'package:camionesm/app/pages/earnings/eanings.controller.dart';
 import 'package:camionesm/app/pages/nav/Widgets/simple_title_card.widget.dart';
 import 'package:camionesm/app/widgets/app_bar/app_bar.widget.dart';
+import 'package:camionesm/app/widgets/buttons/chip.widget.dart';
 import 'package:camionesm/app/widgets/buttons/icon_button.widget.dart';
 import 'package:camionesm/app/widgets/containers/container.widget.dart';
 import 'package:camionesm/app/widgets/containers/container_outline.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
 import 'package:camionesm/core/values/globals.dart';
 import 'package:camionesm/core/values/text_styles.dart';
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -30,6 +32,11 @@ class EarningsPage extends GetView<EarningsController>{
             _customCardEarningsMonthly(),
             SizedBox(height: Get.height*0.02),
             CustomText("Generar reporte", style: titleLarge.apply(fontSizeDelta: -5)),
+            SizedBox(height: Get.height*0.02),
+            _customChipsPeriodic(),
+            SizedBox(height: Get.height*0.02),
+            _customChart(),
+            SizedBox(height: Get.height*0.02),
             _simpleCardBottom(),
             SizedBox(height: Get.height*0.02),
           ]).paddingAll(15))));
@@ -157,5 +164,89 @@ class EarningsPage extends GetView<EarningsController>{
             ]));
 
   }
-
+  Widget _customChipsPeriodic(){
+    return SizedBox(
+        height: Get.height*0.048,
+        width: Get.width,
+        child: Obx(()=>
+            ListView(
+                scrollDirection: Axis.horizontal,
+                children: controller.typeListTrips.map((e) =>
+                    CustomChip(label: e.title,
+                        labelColor: e.isSelect?null:Colors.white,
+                        backgroundColor:  e.isSelect?null:Colors.black87,
+                        onPressed: ()=>controller.onChangeListType(e)).paddingOnly(right: 10)).toList())));
+  }
+  Widget _customChart(){
+    return  CustomContainer(
+      height: Get.height*0.3,
+      backgroundColor: Colors.black,
+      radius: 30,
+      contentPadding: 40,
+      child: BarChart(
+        BarChartData(
+            alignment: BarChartAlignment.spaceAround,
+            maxY: 40,
+            barTouchData: BarTouchData(enabled: false),
+            titlesData: FlTitlesData(
+                leftTitles: AxisTitles(
+              sideTitles: SideTitles(
+                showTitles: true,
+                getTitlesWidget: (value, meta) =>
+                    CustomText('${value.toInt()} mil', style: const TextStyle(color: Colors.white)),
+                reservedSize: 40)),
+                bottomTitles: AxisTitles(
+                    sideTitles: SideTitles(
+                        showTitles: true,
+                        getTitlesWidget: (value, meta) {
+                          switch (value.toInt()) {
+                            case 0:return const Text('Abr', style: TextStyle(color: Colors.white));
+                            case 1:return const Text('May', style: TextStyle(color: Colors.white));
+                            case 2:return const Text('Jun', style: TextStyle(color: Colors.white));
+                            default:return const Text('');
+                          }
+                        })),
+            topTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+            rightTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false))),
+            gridData: const FlGridData(show: false),
+            borderData: FlBorderData(show: false),
+            barGroups: [
+              BarChartGroupData(
+              x: 0,
+              barRods: [
+                BarChartRodData(
+                  toY: 15,
+                  width: 70,
+                  borderRadius: BorderRadius.circular(8),
+                  gradient: LinearGradient(
+                    colors: [Colors.yellow.withOpacity(0.4), Colors.yellow],
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter))
+              ]),
+              BarChartGroupData(
+              x: 1,
+              barRods: [
+                BarChartRodData(
+                  toY: 30,
+                  width: 70,
+                  borderRadius: BorderRadius.circular(8),
+                  gradient: LinearGradient(
+                    colors: [Colors.yellow.withOpacity(0.4), Colors.yellow],
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter))
+              ]),
+              BarChartGroupData(
+              x: 2,
+              barRods: [
+                BarChartRodData(
+                  toY: 40,
+                  width: 70,
+                  borderRadius: BorderRadius.circular(8),
+                  gradient: LinearGradient(
+                    colors: [Colors.yellow.withOpacity(0.4), Colors.yellow],
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter))
+              ])
+            ])));
+  }
 }
