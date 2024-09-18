@@ -6,9 +6,11 @@ import 'package:camionesm/app/pages/detail/truck/detail_truck.controller.dart';
 import 'package:camionesm/app/pages/drivers/drivers.controller.dart';
 import 'package:camionesm/app/pages/drivers/register/driver_register.controller.dart';
 import 'package:camionesm/app/pages/earnings/eanings.controller.dart';
+import 'package:camionesm/app/pages/home/client/home_client.controller.dart';
+import 'package:camionesm/app/pages/home/transport/home_transport.controller.dart';
 import 'package:camionesm/app/pages/invoice/invoice.controller.dart';
-import 'package:camionesm/app/pages/login/login.controller.dart';
 import 'package:camionesm/app/pages/nav/items/home/home.controller.dart';
+import 'package:camionesm/app/pages/home/home.controller.dart' as home;
 import 'package:camionesm/app/pages/nav/items/petitions/petitions.controller.dart';
 import 'package:camionesm/app/pages/nav/items/settings/settings.controller.dart';
 import 'package:camionesm/app/pages/nav/items/trips/register/trip_register.controller.dart';
@@ -27,12 +29,7 @@ import 'package:camionesm/data/services/country/country.contract.dart';
 import 'package:get/get.dart';
 
 
-class LoginBinding implements Bindings {
-  @override
-  void dependencies() {
-    Get.lazyPut<LoginController>(() => LoginController());
-  }
-}
+
 class SplashScreenBinding implements Bindings {
   @override
   void dependencies() {
@@ -52,6 +49,20 @@ class SingUpBinding implements Bindings {
     Get.lazyPut<LegalRepresentativeController>(()=> LegalRepresentativeController(),fenix: true);
     Get.lazyPut<AccessDataController>(()=> AccessDataController(),fenix: true);
   }
+}
+
+class HomeBinding implements Bindings{
+  final ICountryService iCountryService;
+
+  HomeBinding(this.iCountryService);
+
+  @override
+  void dependencies() {
+    Get.lazyPut<HomeClientController>(() => HomeClientController(iCountryService));
+    Get.lazyPut<HomeTransportController>(() => HomeTransportController(iCountryService));
+   // Get.lazyPut<home.HomeController>(()=> home.HomeController());
+  }
+
 }
 class NavBarBinding implements Bindings  {
   final ICountryService iCountryService;

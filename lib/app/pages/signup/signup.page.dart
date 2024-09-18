@@ -43,8 +43,8 @@ class SingUpPage extends GetView<SingUpController> {
                           style: bodyMedium)
                     ]).paddingAll(10),
                 CustomContainerOutline(
-                    backgroundColor: controller.signUpModel.typeUser() == TypeUser.independentCarrier ? Globals.principalColor : null,
-                    onPressed: () => controller.signUpModel.typeUser(TypeUser.independentCarrier),
+                    backgroundColor: controller.signUpModel.typeUser() == TypeUser.transports ? Globals.principalColor : null,
+                    onPressed: () => controller.signUpModel.typeUser(TypeUser.transports),
                     children: [
                       CustomImageAssets(
                           url: Paths.chartsIcon,

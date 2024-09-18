@@ -5,8 +5,9 @@ import 'package:camionesm/app/pages/detail/trips/detail_trips.page.dart';
 import 'package:camionesm/app/pages/detail/truck/detail_truck.page.dart';
 import 'package:camionesm/app/pages/drivers/drivers.page.dart';
 import 'package:camionesm/app/pages/earnings/earnings.page.dart';
+import 'package:camionesm/app/pages/home/client/home_client.page.dart';
+import 'package:camionesm/app/pages/home/transport/home_transport.page.dart';
 import 'package:camionesm/app/pages/invoice/invoice.page.dart';
-import 'package:camionesm/app/pages/login/login.page.dart';
 import 'package:camionesm/app/pages/nav/nav_bar.page.dart';
 import 'package:camionesm/app/pages/profile/profile.page.dart';
 import 'package:camionesm/app/pages/signup/signup.page.dart';
@@ -25,12 +26,6 @@ abstract class Pages {
         name: Routes.splash,
         page: () => const SplashScreenPage(),
         binding: SplashScreenBinding()),
-    GetPage(
-      name: Routes.login,
-      page: () => const LoginPage(),
-      binding: LoginBinding(),
-      transition: Transition.rightToLeft,
-      transitionDuration: const Duration(seconds: 1)),
     GetPage(
         name: Routes.singUp,
         page: ()=>const SingUpPage(),
@@ -74,6 +69,14 @@ abstract class Pages {
     GetPage(
         name: Routes.detailPetition,
         page: ()=> const DetailPetitionPage(),
-        binding: DetailPetitionBinding())
+        binding: DetailPetitionBinding()),
+    GetPage(
+        name: Routes.homeClient,
+        page: ()=> const HomeClientPage(),
+        binding: HomeBinding(countryApiService)),
+    GetPage(
+        name: Routes.homeTransport,
+        page: ()=> const HomeTransportPage(),
+        binding: HomeBinding(countryApiService)),
   ];
 }

@@ -29,16 +29,16 @@ class DetailTripsController extends GetxController{
   }
 
   void _assignPage(){
-   if(Get.parameters.isNotEmpty){
-     tripsList.value = TypeTrip.values.firstWhere(
-             (e) => e.toString() == Get.parameters['type'],
-         orElse: () => throw Exception('Invalid type'));
-     if(Get.parameters['isEdit']!=null) {
-       isEdit(bool.tryParse(Get.parameters['isEdit'].toString())??false);
-     }
-   }else {
-     throw "No se ah asignado ningun tipo de pagina";
-   }
+    if(Get.parameters.isNotEmpty){
+      tripsList.value = TypeTrip.values.firstWhere(
+              (e) => e.toString() == Get.parameters['type'],
+          orElse: () => throw Exception('Invalid type'));
+      if(Get.parameters['isEdit']!=null) {
+        isEdit(bool.tryParse(Get.parameters['isEdit'].toString())??false);
+      }
+    }else {
+      throw "No se ah asignado ningun tipo de pagina";
+    }
   }
 
   IconData getIcon(){

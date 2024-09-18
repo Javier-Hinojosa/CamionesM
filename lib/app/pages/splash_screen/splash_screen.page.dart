@@ -24,7 +24,7 @@ class SplashScreenPage extends GetView<SplashScreenController> {
 
   Widget _cardLogo(BuildContext context) {
     return Obx(() => AnimationUtils.downToUP(
-        controller: controller.showCardController,
+        controller: controller.showCardController(),
         child: Container(
             width: Get.width * 0.6,
             height: Get.height * 0.4,
@@ -52,7 +52,6 @@ class SplashScreenPage extends GetView<SplashScreenController> {
                               url: Paths.logo,
                               width: Get.width * 0.3,
                               height: Get.height*0.5,
-                              fit: BoxFit.fill),
-                        )))))));
+                              fit: BoxFit.fill))))))));
   }
 }

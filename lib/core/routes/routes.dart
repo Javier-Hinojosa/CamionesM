@@ -1,5 +1,6 @@
 abstract class Routes {
-  static const login = '/login';
+  static const homeClient= '/home_client';
+  static const homeTransport= '/home_transport';
   static const singUp= '/singUp';
   static const splash = '/splash';
   static const navBar = '/navBar';
