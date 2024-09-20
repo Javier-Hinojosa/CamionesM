@@ -10,7 +10,6 @@ import 'package:camionesm/app/pages/home/client/home_client.controller.dart';
 import 'package:camionesm/app/pages/home/transport/home_transport.controller.dart';
 import 'package:camionesm/app/pages/invoice/invoice.controller.dart';
 import 'package:camionesm/app/pages/nav/items/home/home.controller.dart';
-import 'package:camionesm/app/pages/home/home.controller.dart' as home;
 import 'package:camionesm/app/pages/nav/items/petitions/petitions.controller.dart';
 import 'package:camionesm/app/pages/nav/items/settings/settings.controller.dart';
 import 'package:camionesm/app/pages/nav/items/trips/register/trip_register.controller.dart';

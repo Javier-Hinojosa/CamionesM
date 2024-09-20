@@ -9,6 +9,7 @@ import 'package:camionesm/app/widgets/dividers/dotted_divider.widget.dart';
 import 'package:camionesm/app/widgets/drop_down.widget.dart';
 import 'package:camionesm/app/widgets/images/image_carrousel.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
+import 'package:camionesm/core/routes/routes.dart';
 import 'package:camionesm/core/values/globals.dart';
 import 'package:camionesm/core/values/paths.dart';
 import 'package:camionesm/core/values/text_styles.dart';
@@ -171,7 +172,7 @@ class DetailTransportPage extends GetView<DetailTransportController> {
                     CustomButton(
                         title: "Enviar Solicitud A",
                         backgroundColor: Globals.principalColor,
-                        onPressed: () => _onDialogSend(context)),
+                        onPressed: () => Get.toNamed(Routes.singUp)),//_onDialogSend(context)),
                     SizedBox(height: Get.height * 0.02),
                     CustomButton(
                         title: "Enviar Solicitud B",

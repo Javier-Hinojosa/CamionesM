@@ -47,7 +47,6 @@ class SelectUserPage extends  GetView<SplashScreenController>{
             children: const <TextSpan>[
               TextSpan(text: 'Por eso, te invitamos a identificarte según tu rol en nuestra red.', style: TextStyle(fontWeight: FontWeight.bold))
             ])).paddingAll(10);
-
   }
 
   Widget _buildClientOption() {
@@ -91,16 +90,6 @@ class SelectUserPage extends  GetView<SplashScreenController>{
       backgroundColor: Colors.black,
       onPressed: controller.typeUser() == TypeUser.none ? null : () => _selectPage(controller.typeUser()),
     ).paddingAll(10);
-  }
-
-  Widget _textWithBold(String normalText, {String? textBold, String? endNormalText}) {
-    return RichText(
-        text:
-        TextSpan(text: normalText, style: bodyMedium, children: <TextSpan>[
-          TextSpan(
-              text: textBold, style: const TextStyle(fontWeight: FontWeight.bold)),
-          TextSpan(text: endNormalText ?? "")
-        ]));
   }
 
   _selectPage(TypeUser typeUser){
