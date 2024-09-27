@@ -3,7 +3,14 @@ class Keys {
   static const String prod = 'PROD';
 
   static const String animationAppBarToProfile = 'app_bar-profile';
+  static const String isLogged= 'is_logged';
 
+  //region shared keys
+  static const String saveRegisterModel = 'save_register';
+  static const String userKey = 'userKey';
+  //endregion
+
+  //region form keys
   static const String reasonSocial = 'reason_social';
   static const String phone = 'phone';
   static const String email = 'email';
@@ -71,7 +78,6 @@ class Keys {
   static const String beneficiary ='beneficiary';
   static const String noAccount ='no_account';
   static const String interbankCode ='interbank_code';
-
-
+//endregion
 
 }

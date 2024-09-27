@@ -119,19 +119,16 @@ class HomeCardFilter extends GetView<HomeController> {
                         hintText: "Selecciona el estado de origen",
                         items: controller.statesOrigin
                             .map((e) =>
-                                DropdownMenuItem(value: e, child: Text(e)))
+                                DropdownMenuItem(value: e.id??0, child: Text(e.name??"")))
                             .toList()),
                     Align(
                         alignment: Alignment.centerLeft,
                         child: CustomText("Destino", style: titleLarge)),
-                    CustomReactiveDropDown(Keys.stateDestiny,
+                    CustomReactiveDropDown<int>(Keys.stateDestiny,
                         paddingAll: 0,
                         labelText: "Estado",
                         hintText: "Selecciona el estado de destino",
-                        items: controller.statesDestiny
-                            .map((e) =>
-                                DropdownMenuItem(value: e, child: Text(e)))
-                            .toList())
+                        items: controller.statesDestiny.map((e) => DropdownMenuItem<int>(value: e.id??0, child: Text(e.name??""))).toList())
                   ])),
               Container(padding: const EdgeInsets.all(10)),
               Align(

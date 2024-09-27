@@ -3,6 +3,7 @@ import 'package:camionesm/app/pages/nav/items/trips/register/trip_register_gener
 import 'package:camionesm/app/pages/nav/items/truks/register/trucks_register_finish.page.dart';
 import 'package:camionesm/app/pages/nav/nav_bar.controller.dart';
 import 'package:camionesm/core/values/keys.dart';
+import 'package:camionesm/data/models/models/state.model.dart';
 import 'package:camionesm/data/services/country/country.contract.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
@@ -18,8 +19,8 @@ class TripRegisterController extends GetxController{
   final formRegisterTrip=FormGroup({}).obs;
   final isValidRegisterTripForm=false.obs;
 
-  final RxList<String> states = <String>[].obs;
-  final Map<String, List<String>> municipals = {};
+  final RxList<StateModel> states = <StateModel>[].obs;
+
   final RxList<String> municipalsOriginSelect = <String>[].obs;
   final RxList<String> municipalsDestinySelect = <String>[].obs;
 
@@ -75,16 +76,15 @@ class TripRegisterController extends GetxController{
 
   Future<void> _getStates () async {
     var states=  await iCountryService.getStates();
-    this.states(states.keys.toList());
-    municipals.addAll(states);
+    this.states(states);
   }
-  onChangeStateOrigin(String e) {
-    municipalsOriginSelect(municipals[e]!.toList());
-    print(municipalsOriginSelect.map((element) => element));
+  onChangeStateOrigin(int e) {
+    municipalsOriginSelect(states.firstWhere((element) => element.id==e).municipals);
     municipalsOriginSelect.refresh();
   }
-  onChangeStateDestiny(String e) {
-    municipalsDestinySelect(municipals[e]!.toList());
+  onChangeStateDestiny(int e) {
+    municipalsDestinySelect(states.firstWhere((element) => element.id==e).municipals);
+    municipalsDestinySelect.refresh();
   }
 
   onFinishRegister() {

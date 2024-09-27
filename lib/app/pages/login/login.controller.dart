@@ -38,13 +38,13 @@ class LoginController extends GetxController{
   }
 
   onLogin() {
-  if(loginForm().valid){
-    Get.toNamed(Routes.navBar);
-  }else{
-    loginForm().markAllAsTouched();
+    if(loginForm().valid){
+      Get.close(1);
+    }else{
+      loginForm().markAllAsTouched();
+    }
   }
-  }
-  onSingUp()=>
-    Get.toNamed(Routes.singUp);
+
+  onSingUp()=> Get.toNamed(Routes.singUp);
 
 }

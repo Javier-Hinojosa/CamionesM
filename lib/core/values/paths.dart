@@ -29,6 +29,7 @@ class Paths {
   static const String chartBills = 'assets/images/chart_bills.png';
   static const String chartsIcon = 'assets/images/charts_icon.png';
   static const String personIcon = 'assets/images/person_icon.png';
+  static const String profileNone = 'assets/images/profile_none.png';
   static const String aerialTruck = 'assets/icons/aerial_truck.png';
   static const String circleCheck = 'assets/images/circle_check.png';
   static const String invoiceChart = 'assets/images/invoice_chart.png';

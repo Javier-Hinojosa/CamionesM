@@ -27,6 +27,4 @@ extension Formats on String {
   int toInt() {
     return int.parse(this);
   }
-
-
 }

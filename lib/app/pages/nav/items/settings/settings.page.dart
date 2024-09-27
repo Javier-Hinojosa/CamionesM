@@ -23,8 +23,7 @@ class SettingsPage extends GetView<SettingsController>{
                   Column(children: [
                         AppBarHome(
                             enableNotification: controller.enableNotification(),
-                            lettersColor: Theme.of(context).scaffoldBackgroundColor,
-                            name: "Jorge M."),
+                            lettersColor: Theme.of(context).scaffoldBackgroundColor),
                         SizedBox(height: Get.height*0.6),
                         Align(alignment: Alignment.bottomLeft,
                             child: _cardTheme(context)).paddingAll(15)

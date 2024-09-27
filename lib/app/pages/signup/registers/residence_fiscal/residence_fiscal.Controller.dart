@@ -1,4 +1,5 @@
 import 'package:camionesm/core/values/keys.dart';
+import 'package:camionesm/data/models/models/state.model.dart';
 import 'package:camionesm/data/services/country/country.contract.dart';
 import 'package:get/get.dart';
 import 'package:reactive_forms/reactive_forms.dart';
@@ -8,8 +9,7 @@ class ResidenceFiscalController extends GetxController{
 
   final form=FormGroup({}).obs;
   final isValid=false.obs;
-  final RxList<String> states = <String>[].obs;
-  final Map<String, List<String>> municipals = {};
+  final RxList<StateModel> states = <StateModel>[].obs;
   final RxList<String> municipalsSelect = <String>[].obs;
 
   ResidenceFiscalController(this.iCountryService);
@@ -54,11 +54,10 @@ class ResidenceFiscalController extends GetxController{
 
   Future<void> _getStates ()async {
     var states=  await iCountryService.getStates();
-    this.states(states.keys.toList());
-    municipals.addAll(states);
+    this.states(states);
   }
 
-  onChangeState(String e) {
-    municipalsSelect(municipals[e]!.toList());
+  onChangeState(int e) {
+    municipalsSelect(states.firstWhere((x)=>x.id==e).municipals!.toList());
   }
 }

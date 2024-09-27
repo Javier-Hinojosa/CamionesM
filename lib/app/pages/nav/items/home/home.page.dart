@@ -27,12 +27,10 @@ class HomePage extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() => Scaffold(
-        floatingActionButton: _customFloatingButton(),
-        body: Visibility(
-            visible: !controller.loading(),
-            replacement: const CustomProgressBar(),
-            child: Stack(children: [
+    return  Obx(()=>
+        Scaffold(
+            floatingActionButton: _customFloatingButton(),
+            body: Stack(children: [
               AnimatedCrossFade(
                   duration: const Duration(milliseconds: 400),
                   crossFadeState: controller.isHomeView()
@@ -41,8 +39,9 @@ class HomePage extends GetView<HomeController> {
                   firstChild: _frameHome(context),
                   secondChild: _frameMap()),
               const Padding(
-                  padding: EdgeInsets.only(top: 115), child: HomeCardFilter())
-            ]))));
+                  padding: EdgeInsets.only(top: 115),
+                  child: HomeCardFilter())
+            ])));
   }
 
   //region frames
@@ -50,8 +49,7 @@ class HomePage extends GetView<HomeController> {
     return Column(children: [
       AppBarHome(
           backgroundColor: Globals.principalColor,
-          enableNotification: controller.enableNotification(),
-          name: "Jorge M."),
+          enableNotification: controller.enableNotification()),
       SizedBox(height: Get.height * 0.07),
       _filterChips(context),
       _listItems(context)

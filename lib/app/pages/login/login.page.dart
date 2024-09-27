@@ -63,7 +63,7 @@ class LoginPage extends GetView<LoginController> {
                 padding: const EdgeInsets.only(
                     bottom: 20, top: 10, right: 10, left: 10),
                 child: CustomButton(
-                    title: "Entrar", onPressed: () => controller.onLogin())),
+                    title: "Iniciar sesión", onPressed: () => controller.onLogin())),
             Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,

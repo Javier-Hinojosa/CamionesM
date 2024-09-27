@@ -8,7 +8,7 @@ class CustomReactiveDropDown<T> extends StatelessWidget{
   final String? hintText;
   final bool? isActive;
   final IconData? iconSuffix;
-  final void Function(FormControl<dynamic>)? onChanged;
+  final void Function(FormControl<T>)? onChanged;
   final GestureTapCallback? onSuffixIconTap;
   final InputDecoration? decoration;
   final String? isNotMatch;

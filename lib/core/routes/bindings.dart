@@ -9,6 +9,7 @@ import 'package:camionesm/app/pages/earnings/eanings.controller.dart';
 import 'package:camionesm/app/pages/invoice/invoice.controller.dart';
 import 'package:camionesm/app/pages/login/login.controller.dart';
 import 'package:camionesm/app/pages/nav/items/home/home.controller.dart';
+import 'package:camionesm/app/pages/nav/items/home/home_filter.controller.dart';
 import 'package:camionesm/app/pages/nav/items/petitions/petitions.controller.dart';
 import 'package:camionesm/app/pages/nav/items/settings/settings.controller.dart';
 import 'package:camionesm/app/pages/nav/items/trips/register/trip_register.controller.dart';

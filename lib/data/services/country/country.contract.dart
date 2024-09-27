@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:camionesm/data/models/models/state.model.dart';
+
 abstract class ICountryService {
-  FutureOr<Map<String, List<String>>> getStates();
+  Future<List<StateModel>> getStates();
 }
