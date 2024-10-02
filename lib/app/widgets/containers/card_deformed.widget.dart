@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CustomCardDeformed extends StatelessWidget{
-  const CustomCardDeformed({super.key,required this.child});
+  const CustomCardDeformed({super.key,required this.child, this.height=0.6});
 
  final Widget child;
+ final double height;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: Get.width*0.9,
-      height: Get.height*0.6,
+      height: Get.height*height,
       child: CustomPaint(
         painter: CardPainter(),
         child: child.paddingAll(10)

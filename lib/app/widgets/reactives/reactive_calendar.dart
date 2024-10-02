@@ -5,8 +5,9 @@ import 'package:table_calendar/table_calendar.dart';
 
 class CustomReactiveCalendar extends StatelessWidget {
   final String formControlName;
+  final bool isFirstDayNow;
 
-  const CustomReactiveCalendar( this.formControlName,{super.key});
+  const CustomReactiveCalendar( this.formControlName,{super.key, this.isFirstDayNow=false});
 
   @override
   Widget build(BuildContext context) {
@@ -14,14 +15,14 @@ class CustomReactiveCalendar extends StatelessWidget {
       formControlName: formControlName,
       builder: (field) {
         return TableCalendar(
-            firstDay: DateTime.utc(2022, 10, 16),
+            firstDay: isFirstDayNow?DateTime.now():DateTime.utc(1900, 3, 14),
             lastDay: DateTime.utc(2030, 3, 14),
             focusedDay: field.value??DateTime.now(),
             calendarFormat: CalendarFormat.month,
             rangeSelectionMode: RangeSelectionMode.disabled,
             selectedDayPredicate: (day) =>isSameDay(field.value, day),
             onDaySelected: (selectedDay, focusedDay) => field.didChange(selectedDay),
-            locale: 'es_ES', // Cambia esto según tu configuración global
+            locale: 'es_ES',
             weekNumbersVisible: false,
             headerStyle: HeaderStyle(
               formatButtonVisible: false,
@@ -35,8 +36,7 @@ class CustomReactiveCalendar extends StatelessWidget {
               BoxDecoration(color: Colors.yellow, shape: BoxShape.circle),
               selectedDecoration:
               BoxDecoration(color: Colors.black, shape: BoxShape.circle),
-            ),
-          );
+            ));
       }
     );
   }

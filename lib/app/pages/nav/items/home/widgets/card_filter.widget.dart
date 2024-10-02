@@ -5,6 +5,7 @@ import 'package:camionesm/app/widgets/containers/container.widget.dart';
 import 'package:camionesm/app/widgets/reactives/reactive_calendar.dart';
 import 'package:camionesm/app/widgets/reactives/reactive_dropdown_field.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
+import 'package:camionesm/core/common/extensors.dart';
 import 'package:camionesm/core/values/globals.dart';
 import 'package:camionesm/core/values/keys.dart';
 import 'package:camionesm/core/values/text_styles.dart';
@@ -19,32 +20,50 @@ class HomeCardFilter extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return CustomContainer(
       backgroundColor: Globals.secondColor,
-      radius: 60,
+      radius: 20,
       child: SizedBox(
         width: Get.width,
-        height: Get.height * .06,
+        height: Get.height * .14,
         child: ReactiveForm(
           formGroup: controller.filterForm(),
-          child: ListView(
-            scrollDirection: Axis.horizontal,
+          child: Column(
             children: [
-              SizedBox(
-                width: Get.width * .35,
-                child: _customTextFieldSearch(context, "Origen",
-                    (p0) => _localeDialog(context), Keys.stateOrigin)),
-              const VerticalDivider(color: Colors.white38, width: 5, thickness: 1),
-              SizedBox(
-                width: Get.width * .35,
-                child: _customTextFieldSearch(context, "Destino",
-                        (p0) => _localeDialog(context), Keys.stateDestiny)),
-              const VerticalDivider(color: Colors.white38, width: 5, thickness: 1),
-              SizedBox(width: Get.width * .05),
-              GestureDetector(
-                  onTap: () => _calendarDialog(context),
-                  child: const CircleAvatar(
-                      radius: 15,
-                      backgroundColor: Colors.white24,
-                      child: Icon(Icons.calendar_month_outlined, color: Colors.white70, size: 20)))
+              Row(
+                  children: [
+                  Flexible(
+                    child: _customTextFieldSearch(context, "Origen",
+                        (p0) => _localeDialog(context), Keys.stateOrigin),
+                  ),
+                  SizedBox(
+                      height: Get.height*0.05,
+                      child: const VerticalDivider(color: Colors.white38, width: 5, thickness: 1)),
+                  Flexible(
+                    child: _customTextFieldSearch(context, "Destino",
+                            (p0) => _localeDialog(context), Keys.stateDestiny),
+                  )
+                ]),
+             SizedBox(height: Get.height*0.015),
+             GestureDetector(
+               onTap: ()=>_calendarDialog(context),
+               child: CustomContainer(
+                   radius: 15,
+                   child: Row(
+                 mainAxisAlignment: MainAxisAlignment.end,
+                 children: [
+                   Obx(() {
+                   if(controller.filterForm().control(Keys.date).value!=null) {
+                     return  CustomText( (controller.filterForm().control(Keys.date).value as DateTime).formatInSpanish(), style: bodyLarge);
+                   } else {
+                     return  CustomText("Ingresa una fecha", style: bodyLarge);
+                   }
+                   }),
+                   SizedBox(width: Get.width*0.04),
+                   const CircleAvatar(
+                       radius: 15,
+                       backgroundColor: Colors.black,
+                       child: Icon(Icons.calendar_month_outlined, color: Colors.white70, size: 20))
+                 ])),
+             )
             ])))).paddingAll(15);
   }
 
@@ -52,6 +71,7 @@ class HomeCardFilter extends GetView<HomeController> {
       void Function(Object) onPressed, String key) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
       Expanded(
         child: ReactiveTextField(
@@ -67,8 +87,7 @@ class HomeCardFilter extends GetView<HomeController> {
       const CircleAvatar(
           radius: 15,
           backgroundColor: Colors.white24,
-          child: Icon(Icons.search, color: Colors.white70)),
-          SizedBox(width: Get.width*0.01)
+          child: Icon(Icons.search, color: Colors.white70))
     ]);
   }
 
@@ -83,33 +102,33 @@ class HomeCardFilter extends GetView<HomeController> {
           style: bodyMedium.apply(color: Theme.of(context).disabledColor)),
           ReactiveForm(
               formGroup: controller.filterForm(),
-              child: const CustomReactiveCalendar(Keys.date)),
-      Container(padding: const EdgeInsets.all(10)),
-      Align(
-          alignment: Alignment.bottomRight,
-          child: SizedBox(
-              height: Get.height * 0.05,
-              width: Get.width * 0.4,
-              child: CustomButton(
-                  title: "Aceptar",
-                  height: Get.height * 0.02,
+              child: const CustomReactiveCalendar(Keys.date, isFirstDayNow: true)),
+          Container(padding: const EdgeInsets.all(10)),
+          Align(
+              alignment: Alignment.bottomRight,
+              child: SizedBox(
+                  height: Get.height * 0.05,
                   width: Get.width * 0.4,
-                  backgroundColor: Colors.black,
-                  onPressed: () => Get.back(result: true))))
+                  child: CustomButton(
+                      title: "Aceptar",
+                      height: Get.height * 0.02,
+                      width: Get.width * 0.4,
+                      backgroundColor: Colors.black,
+                      onPressed: () => Get.back(result: true))))
     ]));
   }
 
   Future<bool> _localeDialog(BuildContext context) {
     return DialogUtils.dialog(
-        child: Obx(() => ListView(shrinkWrap: true, children: [
+        child:  ListView(shrinkWrap: true, children: [
               Align(
                   alignment: Alignment.centerLeft,
                   child: CustomText("Origen", style: titleLarge)),
               CustomText(
                   "Selecciona uno de tus envíos registrados o registra uno nuevo",
                   textAlign: TextAlign.start,
-                  style:
-                      bodyMedium.apply(color: Theme.of(context).disabledColor)),
+                  style: bodyMedium.apply(
+                      color: Theme.of(context).disabledColor)),
               ReactiveForm(
                   formGroup: controller.filterForm(),
                   child: Column(children: [
@@ -119,16 +138,17 @@ class HomeCardFilter extends GetView<HomeController> {
                         hintText: "Selecciona el estado de origen",
                         items: controller.statesOrigin
                             .map((e) =>
-                                DropdownMenuItem(value: e.id??0, child: Text(e.name??"")))
+                                DropdownMenuItem<String>(value: e.name, child: Text(e.name??"")))
                             .toList()),
                     Align(
                         alignment: Alignment.centerLeft,
                         child: CustomText("Destino", style: titleLarge)),
-                    CustomReactiveDropDown<int>(Keys.stateDestiny,
+                    CustomReactiveDropDown<String>(Keys.stateDestiny,
                         paddingAll: 0,
                         labelText: "Estado",
                         hintText: "Selecciona el estado de destino",
-                        items: controller.statesDestiny.map((e) => DropdownMenuItem<int>(value: e.id??0, child: Text(e.name??""))).toList())
+                        items: controller.statesDestiny.map((e) =>
+                            DropdownMenuItem<String>(value: e.name, child: Text(e.name??""))).toList())
                   ])),
               Container(padding: const EdgeInsets.all(10)),
               Align(
@@ -141,10 +161,8 @@ class HomeCardFilter extends GetView<HomeController> {
                           height: Get.height * 0.02,
                           width: Get.width * 0.4,
                           backgroundColor: Colors.black,
-                          onPressed: controller.isFilterValid()
-                              ? () => Get.back(result: true)
-                              : null)))
-            ])));
+                          onPressed: () => Get.back(result: true))))
+            ]));
   }
 
 

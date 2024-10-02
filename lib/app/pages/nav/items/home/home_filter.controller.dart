@@ -15,7 +15,7 @@ import 'package:reactive_forms/reactive_forms.dart';
   final RxList<StateModel> statesDestiny = <StateModel>[].obs;
 
   final filterForm=FormGroup({}).obs;
-  final isFilterValid=false.obs;
+
 
   HomeFilterController(this.iCountryService);
 
@@ -28,17 +28,10 @@ import 'package:reactive_forms/reactive_forms.dart';
 
   void _initForms() {
     filterForm.value=FormGroup({
-      Keys.stateOrigin: FormControl<int>(validators: [Validators.required]),
-      Keys.stateDestiny: FormControl<int>(validators: [Validators.required]),
+      Keys.stateOrigin: FormControl<String>(validators: [Validators.required]),
+      Keys.stateDestiny: FormControl<String>(validators: [Validators.required]),
       Keys.date: FormControl<DateTime>(validators: [])
     },validators: [Validators.required]);
-    filterForm.value.valueChanges.listen((p0) {
-      if(filterForm().valid){
-        isFilterValid(true);
-      }else{
-        isFilterValid(false);
-      }
-    });
   }
 
   Future<void> _getStates () async {

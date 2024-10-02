@@ -203,7 +203,7 @@ class HomePage extends GetView<HomeController> {
 
   Future<bool> _frameItemSelect(LatLng point) {
     return DialogUtils.screen(
-        height: 0.69,
+        height: 0.74,
         alignment: Alignment.center,
         backgroundColor: Colors.transparent,
         child: ListView(
