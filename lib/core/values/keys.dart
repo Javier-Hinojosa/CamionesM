@@ -6,8 +6,9 @@ class Keys {
   static const String isLogged= 'is_logged';
 
   //region shared keys
-  static const String saveRegisterModel = 'save_register';
-  static const String userKey = 'userKey';
+  static const String userData = 'user_data';
+  static const String accessToken = 'access_token';
+  static const String refreshToken = 'refresh_token';
   //endregion
 
   //region form keys

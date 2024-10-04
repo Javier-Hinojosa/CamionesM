@@ -1,4 +1,5 @@
 import 'package:camionesm/app/pages/login/login.controller.dart';
+import 'package:camionesm/app/widgets/buttons/button.loading.widget.dart';
 import 'package:camionesm/app/widgets/buttons/button.widget.dart';
 import 'package:camionesm/app/widgets/reactives/reactive_text_field.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
@@ -62,8 +63,12 @@ class LoginPage extends GetView<LoginController> {
             Padding(
                 padding: const EdgeInsets.only(
                     bottom: 20, top: 10, right: 10, left: 10),
-                child: CustomButton(
-                    title: "Iniciar sesión", onPressed: () => controller.onLogin())),
+                child: GetBuilder<LoginController>(
+                  builder: (controller) =>
+                   CustomButtonLoading(
+                      isLoading: controller.isLoading,
+                      title: "Iniciar sesión",
+                      onPressed: () => controller.onLogin()))),
             Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -77,8 +82,7 @@ class LoginPage extends GetView<LoginController> {
                 padding: EdgeInsets.all(10),
                 child: Divider(
                   height: 2,
-                  thickness: 1,
-                )),
+                  thickness: 1)),
             Align(
                 alignment: Alignment.center,
                 child: CustomText("Aun no tienes cuenta, crea una",

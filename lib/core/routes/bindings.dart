@@ -25,19 +25,26 @@ import 'package:camionesm/app/pages/signup/registers/residence_fiscal/residence_
 import 'package:camionesm/app/pages/signup/signup.controller.dart';
 import 'package:camionesm/app/pages/splash_screen/splash_screen.controller.dart';
 import 'package:camionesm/data/services/country/country.contract.dart';
+import 'package:camionesm/data/services/user/user.contract.dart';
 import 'package:get/get.dart';
 
 
 class LoginBinding implements Bindings {
+  final IUserService iUserService;
+
+  LoginBinding(this.iUserService);
   @override
   void dependencies() {
-    Get.lazyPut<LoginController>(() => LoginController());
+    Get.lazyPut<LoginController>(() => LoginController(iUserService));
   }
 }
 class SplashScreenBinding implements Bindings {
+  final IUserService iUserService;
+
+  SplashScreenBinding(this.iUserService);
   @override
   void dependencies() {
-    Get.lazyPut<SplashScreenController>(() => SplashScreenController());
+    Get.lazyPut<SplashScreenController>(() => SplashScreenController(iUserService));
   }
 }
 class SingUpBinding implements Bindings {

@@ -4,6 +4,7 @@ import 'package:camionesm/core/routes/pages.dart';
 import 'package:camionesm/core/routes/routes.dart';
 import 'package:camionesm/core/themes/light.theme.dart';
 import 'package:camionesm/core/values/globals.dart';
+import 'package:camionesm/data/services/user/user.services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
       theme: lightTheme,
       initialRoute: Routes.splash,
       defaultTransition: Transition.cupertino,
-      initialBinding: SplashScreenBinding(),
+      initialBinding: SplashScreenBinding(UserApiService()),
       getPages: Pages.pages,
       home: const SplashScreenPage()
     );

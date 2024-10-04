@@ -24,6 +24,8 @@ class ApiProvider {
       headers.addAll(addHeaders);
     }else{
       headers.putIfAbsent(HttpHeaders.contentTypeHeader, () => 'application/json');
+      headers.putIfAbsent(HttpHeaders.acceptHeader, () => 'application/json');
+      headers.putIfAbsent('X-CSRFToken', () => '1xrgpHS9zSFcDLLuIM3nuwAArtItd5FW3LpoYV4iAIepAjaM8vZGQ0LhIzQQlKN3');
       headers.putIfAbsent(HttpHeaders.contentTypeHeader, () => 'Access-Control-Allow-Origin');
     }
 
@@ -64,8 +66,11 @@ class ApiProvider {
       return _returnResponse(resp, returnFullResponse);
     } on TimeoutException catch (_) {
       throw Exception("tiempo de espera agotado, intente nuevamente");
-    } on SocketException {
-      throw Exception();
+    } on SocketException catch(r) {
+      print(r);
+      _returnResponse(http.Response(
+        r.message,
+        404), returnFullResponse);
     } on Error catch (_) {
       _returnResponse(jsonError, returnFullResponse);
       throw Exception();
@@ -86,7 +91,6 @@ class ApiProvider {
           return response.body;
         case 401:
           return response.body;
-         // return ExitApp().singOut();
         case 403:
           return response.body;
         case 500:

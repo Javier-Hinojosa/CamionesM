@@ -1,14 +1,11 @@
 import 'package:camionesm/app/widgets/app_bar/app_bar_undulated.widget.dart';
 import 'package:camionesm/app/widgets/buttons/icon_button.widget.dart';
-import 'package:camionesm/app/widgets/containers/container_outline.widget.dart';
-import 'package:camionesm/app/widgets/images/image_circle.widget.dart';
 import 'package:camionesm/app/widgets/notification.widget.dart';
 import 'package:camionesm/app/widgets/text.widget.dart';
 import 'package:camionesm/core/routes/routes.dart';
 import 'package:camionesm/core/values/keys.dart';
 import 'package:camionesm/core/values/paths.dart';
 import 'package:camionesm/core/values/text_styles.dart';
-import 'package:camionesm/data/models/services/profile_user.service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -16,18 +13,23 @@ import 'package:get/get.dart';
 class AppBarHome extends StatelessWidget {
   const AppBarHome(
       {super.key,
-      required this.enableNotification,
-      this.backgroundColor,
-      this.lettersColor});
+        required this.enableNotification,
+        this.backgroundColor,
+        this.isRegister=false,
+        this.lettersColor,
+        this.name, this.photoUrl
+      });
 
   final bool enableNotification;
   final Color? backgroundColor;
   final Color? lettersColor;
+  final bool isRegister;
+  final String? name;
+  final String? photoUrl;
 
   @override
   Widget build(BuildContext context) {
-    final ProfileUserService tempDataService = ProfileUserService();
-    if(tempDataService.isLogged){
+    if(isRegister){
       return _customAppbar(context);
     }else{
       return _customAppbarRegister(context);

@@ -6,14 +6,19 @@ class CustomButton extends StatelessWidget{
 
   final void Function()? onPressed;
   final void Function()? onLongPressed;
-  final String title;
   final double? height;
   final double? width;
   final Color? backgroundColor;
-  final Color? textColor;
-  late final BoxBorder? _border;
 
-   CustomButton({super.key, this.onPressed,this.onLongPressed, this.title="",this.backgroundColor,this.textColor, this.height,this.width}){
+  late final BoxBorder? _border;
+  late final Color? _textColor;
+  late final String? _title;
+  late final Widget? _child;
+
+   CustomButton({super.key, this.onPressed,this.onLongPressed,this.backgroundColor, this.height,this.width, String? title, Color? textColor}){
+     _title=title;
+     _textColor=textColor;
+     _child=null;
      _border=const Border(
          top: BorderSide(width: 2.0, color: Colors.black),
          left: BorderSide(width: 2.0, color: Colors.black),
@@ -21,9 +26,17 @@ class CustomButton extends StatelessWidget{
          bottom: BorderSide(width: 4.0, color: Colors.black));
    }
 
-   CustomButton.withoutBorder({super.key, this.onPressed,this.onLongPressed, this.title="",this.backgroundColor,this.textColor, this.height,this.width}){
-     _border=null;
-   }
+   CustomButton.withoutBorder({super.key, this.onPressed,this.onLongPressed,this.backgroundColor, this.height,this.width,String? title, Color? textColor})
+       :_border=null,_title=title,_textColor=textColor,_child=null;
+
+   CustomButton.child({super.key, this.onPressed,this.onLongPressed,this.backgroundColor, this.height,this.width, Widget? child}){
+     _child=child;
+     _border=const Border(
+        top: BorderSide(width: 2.0, color: Colors.black),
+        left: BorderSide(width: 2.0, color: Colors.black),
+        right: BorderSide(width: 2.0, color: Colors.black),
+        bottom: BorderSide(width: 4.0, color: Colors.black));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,22 +54,22 @@ class CustomButton extends StatelessWidget{
               padding: width==null?const EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0):null),
           onPressed: onPressed,
           onLongPress: onLongPressed,
-          child: Container(
+          child: _child??Container(
             alignment: Alignment.center,
             width: width??Get.width,
               height: height,
-            child: Text(title, style: TextStyle(color: _validateTextColor(),fontWeight: FontWeight.w600))
+            child: Text(_title??"", style: TextStyle(color: validateTextColor(),fontWeight: FontWeight.w600))
           )
         )
       )
     );
   }
 
-Color  _validateTextColor(){
+Color validateTextColor(){
  if(onPressed==null){
    return Colors.black45;
- } else if(textColor!=null) {
-   return textColor!;
+ } else if(_textColor!=null) {
+   return _textColor;
  } else{
    switch(backgroundColor){
      case Colors.black:return Colors.white;

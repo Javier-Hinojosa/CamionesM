@@ -1,7 +1,7 @@
 
 
-import 'package:camionesm/core/config/config.dev.dart';
-import 'package:camionesm/core/config/config.prod.dart';
+import 'package:camionesm/core/environment/environment.dev.dart';
+import 'package:camionesm/core/environment/environment.prod.dart';
 import 'package:camionesm/core/values/keys.dart';
 import 'package:camionesm/data/services/base.config.dart';
 
@@ -13,7 +13,7 @@ class ApiEnvironment {
   ApiEnvironment._internal();
 
   static final ApiEnvironment _singleton = ApiEnvironment._internal();
-  BaseConfig config = DevConfig();
+  BaseConfig config = EnvironmentDev();
 
   initConfig(String environment) {
     config = _getConfig(environment);
@@ -22,11 +22,11 @@ class ApiEnvironment {
   BaseConfig _getConfig(String environment) {
     switch (environment) {
       case Keys.prod:
-        return ProdConfig();
+        return EnvironmentProd();
       case Keys.dev:
-        return DevConfig();
+        return EnvironmentDev();
       default:
-        return DevConfig();
+        return EnvironmentDev();
     }
   }
 }

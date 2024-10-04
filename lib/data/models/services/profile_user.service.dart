@@ -1,3 +1,5 @@
+import 'package:camionesm/data/models/models/auth.model.dart';
+
 class ProfileUserService {
   // Singleton: la única instancia de la clase
   static final ProfileUserService _instance = ProfileUserService._internal();
@@ -11,14 +13,13 @@ class ProfileUserService {
   }
 
   // Variables que deseas almacenar temporalmente
-  String token = '';
+  AuthUserModel userModel = AuthUserModel(0,false,"","","",false);
 
-
-  bool get isLogged => token.isNotEmpty;
+  bool get isLogged => userModel.username.isNotEmpty;
 
 
   // Métodos para actualizar los datos
-  void updateUser(String token) {
-    this.token = token;
+  void updateUser(AuthUserModel userModel) {
+    this.userModel = userModel;
   }
 }
