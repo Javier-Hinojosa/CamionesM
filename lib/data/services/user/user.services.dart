@@ -29,7 +29,7 @@ class UserApiService extends BaseService implements IUserService {
     try{
       final response = await provider.request(RequestMethod.post,
           apiHost.apiRefresh,
-          body: '{"refresh": "$tokenRefresh"}');
+          body: '{"refresh": "${tokenRefresh.isNotEmpty?tokenRefresh:"x"}"}');
       final Map<String, dynamic> jsonData = json.decode(response);
       return AuthModel.fromJson(jsonData);
     }

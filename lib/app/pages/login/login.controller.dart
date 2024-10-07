@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:camionesm/app/pages/nav/items/home/home.controller.dart';
 import 'package:camionesm/app/utils/shared_prefrences.utils.dart';
 import 'package:camionesm/app/utils/snack_bar.utils.dart';
@@ -58,11 +60,9 @@ class LoginController extends GetxController{
         var shared= await SharedUtils.create<String>();
         shared.setValue(Keys.accessToken, value.access!);
         shared.setValue(Keys.refreshToken, value.refresh!);
-        shared.setValue(Keys.userData, value.user.toString());
-        //await Get.delete<HomeController>();
+        shared.setValue(Keys.userData, json.encode(value.user!.toJson()));
         SnackBarUtils.success("Acceso autorizado");
-        //Get.find<HomeController>().resetController();
-         Get.offAll(Routes.splash);
+         Get.offAllNamed(Routes.splash);
         }else {
           SnackBarUtils.error("Usuario Inactivo");
         }

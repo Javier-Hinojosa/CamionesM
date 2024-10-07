@@ -11,7 +11,7 @@ class EnvironmentDev implements BaseConfig {
   @override
   bool get useHttps => false;
   @override
-  String get apiAuth => "http://192.168.1.12:8080/api/v1/api-token-auth/";
+  String get apiAuth => "http://192.168.1.5:8080/api/v1/api-token-auth/";
   @override
-  String get apiRefresh => "http://192.168.1.12:8080/api/v1/api/token/refresh/";
+  String get apiRefresh => "http://192.168.1.5:8080/api/v1/api/token/refresh/";
 }

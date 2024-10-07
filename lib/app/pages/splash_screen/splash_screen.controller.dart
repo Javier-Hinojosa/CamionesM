@@ -21,24 +21,21 @@ class SplashScreenController extends GetxController{
     await _loadingChangePage();
   }
 
-  _loadingChangeCard()=>
-  Future.delayed(const Duration(milliseconds: 500), () => showCardController.value = true);
+  _loadingChangeCard()=> Future.delayed(const Duration(milliseconds: 500), () => showCardController.value = true);
 
-  _loadingChangePage() =>
-      _validateTokenRefresh();
+  _loadingChangePage() => _validateTokenRefresh();
   //  Timer(const Duration(seconds: 2,milliseconds: 500), () => _validateRoute());
 
   _validateTokenRefresh() async{
     var shared = await SharedUtils.create<String>();
    var refreshToken= shared.getValue(Keys.refreshToken);
     _userService.refresh(refreshToken??"").then((value)async {
-     if(value.access!=null){
+     if(value.access==null){
        await  shared.clearAll();
      }
     }).whenComplete(() async{
       await _validateRoute(shared);
     });
-
   }
 
   _validateRoute(SharedUtils<String> shared)async{
@@ -52,8 +49,13 @@ class SplashScreenController extends GetxController{
 
   AuthUserModel? _getDataUser(SharedUtils<String> shared){
     var userDataJson= shared.getValue(Keys.userData);
+
+    if (userDataJson == null || userDataJson.isEmpty) {
+      return null;
+    }
+
     try{
-      final Map<String, dynamic> jsonData = json.decode(userDataJson??"");
+      final Map<String, dynamic> jsonData = json.decode(userDataJson);
       var userData=AuthUserModel.fromJson(jsonData);
       return userData;
     }catch(e){
