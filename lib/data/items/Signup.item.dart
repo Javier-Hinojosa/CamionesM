@@ -1,4 +1,4 @@
-import 'package:camionesm/core/values/enums.dart';
+import 'package:camionesmtransportist/core/values/enums.dart';
 import 'package:get/get.dart';
 
 class SignUpItem{

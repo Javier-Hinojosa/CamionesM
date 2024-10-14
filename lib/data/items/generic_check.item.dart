@@ -1,4 +1,4 @@
-import 'package:camionesm/data/models/items/check.item.dart';
+import 'package:camionesmtransportist/data/models/items/check.item.dart';
 import 'package:flutter/cupertino.dart';
 
 class GenericCheck extends CheckItem{

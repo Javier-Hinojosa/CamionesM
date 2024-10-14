@@ -1,4 +1,4 @@
-import 'package:camionesm/data/models/items/list.item.dart';
+import 'package:camionesmtransportist/data/models/items/list.item.dart';
 
 class GenericItem  extends ListItem{
   Enum id;
